@@ -1,6 +1,6 @@
 //
-//  PFTableViewManager.h
-//  PFTableViewManagerDemo
+//  TFTableViewManager.h
+//  TFTableViewManagerDemo
 //
 //  Created by Summer on 16/8/24.
 //  Copyright © 2016年 Summer. All rights reserved.
@@ -8,9 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import <AsyncDisplayKit.h>
 
 #import "TFTableViewSection.h"
 #import "TFTableViewItem.h"
+
+@protocol TFTableViewManagerDelegate;
+
 /**
  *  Base table view manager.
  */
@@ -21,20 +25,51 @@
 ///-----------------------------
 
 /**
- *  @brief The array of sections. See PFTableViewSection reference for details.
+ *  @brief The 'ASTableNode' that needs to be managed using this 'TFTableViewManager'.
  */
-@property (strong, readonly, nonatomic) NSArray *sections;
+@property (weak, nonatomic) ASTableNode *tableNode;
 
 /**
- *  @brief An mutable array of sections.
- *  @warning get sections use self.sections.
+ *  @brief The `UITableView` that needs to be managed using this `TFTableViewManager`.
  */
-@property (nonatomic, readonly, strong) NSMutableArray *mutableSections;
+@property (weak, nonatomic) UITableView *tableView;
+
+/**
+ *  @brief The object that acts as the delegate of the receiving table view.
+ */
+@property (weak, nonatomic) id<TFTableViewManagerDelegate> delegate;
+
+/**
+ *  @brief The array of sections. See TFTableViewSection reference for details.
+ */
+@property (strong, readonly, nonatomic) NSArray *sections;
 
 /**
  *  @brief The array of pairs of items / cell classes.
  */
 @property (strong, nonatomic) NSMutableDictionary *registeredClasses;
+
+///-----------------------------
+/// @name Creating and Initializing a TFTableViewManager.
+///-----------------------------
+
+/**
+ *  Initialize a table view manager object for a specific `UITableView`.
+ *
+ *  @param tableView The ASTableView or UITableView that needs to be managed.
+ *
+ *  @return The pointer to the instance, or `nil` if initialization failed.
+ */
+- (instancetype)initWithTableView:(UITableView *)tableView;
+
+/**
+ *  Initialize a table view manager object for a specific `ASTableView`.
+ *
+ *  @param tableView The ASTableView that needs to be managed.
+ *
+ *  @return The pointer to the instance, or `nil` if initialization failed.
+ */
+- (instancetype)initWithTableNode:(ASTableNode *)tableNode;
 
 /**
  *  Get the item at index path.
@@ -236,3 +271,23 @@
 
 
 @end
+
+@protocol TFTableViewManagerDelegate <UITableViewDelegate,ASTableDelegate>
+
+@optional;
+
+/**
+ *  Tells the delegate the table view has created a cell for a particular row and made it reusable.
+ *
+ *  @param tableView The table-view object informing the delegate of this impending event.
+ *  @param cell       A table-view cell object that tableView is going to use when drawing the row.
+ *  @param indexPath  An index path locating the row in tableView.
+ *  @warning only UITableView support.
+ */
+- (void)tableView:(UITableView *)tableView didLoadCellSubViews:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath;
+
+
+@end
+
+
+

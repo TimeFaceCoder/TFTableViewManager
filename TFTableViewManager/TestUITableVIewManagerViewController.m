@@ -1,21 +1,21 @@
 //
 //  TestUITableVIewManagerViewController.m
-//  PFTableViewManagerDemo
+//  TFTableViewManagerDemo
 //
 //  Created by Summer on 16/9/5.
 //  Copyright © 2016年 Summer. All rights reserved.
 //
 
 #import "TestUITableVIewManagerViewController.h"
-#import "TFUITableViewManager.h"
+#import "TFTableViewManager.h"
 #import "TestUIItemCell.h"
 #import "TestUIItem.h"
 
-@interface TestUITableVIewManagerViewController ()<PFUITableViewManagerDelegate>
+@interface TestUITableVIewManagerViewController ()<TFTableViewManagerDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
 
-@property (nonatomic, strong) TFUITableViewManager *manager;
+@property (nonatomic, strong) TFTableViewManager *manager;
 
 
 @end
@@ -25,7 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view addSubview:self.tableView];
-    self.manager = [[TFUITableViewManager alloc]initWithTableView:self.tableView];
+    self.manager = [[TFTableViewManager alloc]initWithTableView:self.tableView];
     self.manager[@"TestUIItem"] = @"TestUIItemCell";
     NSArray *sectionTitles = @[@"A", @"B", @"C", @"D", @"E", @"F", @"G", @"H", @"I", @"J", @"K", @"L", @"M",
                                @"N", @"O", @"P", @"Q", @"R", @"S", @"T", @"U", @"V", @"W", @"X", @"Y", @"Z"];
@@ -62,7 +62,7 @@
 - (void)dealCellSelectionActionWithItem:(TestUIItem *)item {
     NSLog(@"%@",item.model.userName);
     item.model.selected = !item.model.selected;
-    [item reloadRowWithAnimation:UITableViewRowAnimationAutomatic];
+    [item reloadRowWithAnimation:UITableViewRowAnimationNone];
 }
 
 - (UITableView *)tableView {

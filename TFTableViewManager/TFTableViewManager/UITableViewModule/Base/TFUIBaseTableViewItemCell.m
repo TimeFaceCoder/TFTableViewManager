@@ -1,6 +1,6 @@
 //
 //  TFUIBaseTableViewItemCell.m
-//  PFTableViewManagerDemo
+//  TFTableViewManagerDemo
 //
 //  Created by Summer on 16/9/5.
 //  Copyright © 2016年 Summer. All rights reserved.
@@ -12,7 +12,7 @@
 
 @dynamic tableViewItem;
 
-+ (CGFloat)heightWithItem:(TFUIBaseTableViewItem *)item tableViewManager:(TFUITableViewManager *)tableViewManager {
++ (CGFloat)heightWithItem:(TFUIBaseTableViewItem *)item tableViewManager:(TFTableViewManager *)tableViewManager {
     return item.cellHeight ? :44.0;
 }
 

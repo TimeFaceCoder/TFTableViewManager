@@ -1,6 +1,6 @@
 //
 //  PFASTableViewItemCell.h
-//  PFTableViewManagerDemo
+//  TFTableViewManagerDemo
 //
 //  Created by Summer on 16/9/5.
 //  Copyright © 2016年 Summer. All rights reserved.
@@ -8,7 +8,7 @@
 
 #import <AsyncDisplayKit/AsyncDisplayKit.h>
 
-@class TFASTableViewManager;
+@class TFTableViewManager;
 @class TFTableViewItem;
 
 @interface TFASTableViewItemCell : ASCellNode
@@ -16,7 +16,7 @@
 /**
  *  @brief The `TFASTableViewManager` that needs to be managed using this `PFASTableViewItemCell`.
  */
-@property (weak, nonatomic) TFASTableViewManager *tableViewManager;
+@property (weak, nonatomic) TFTableViewManager *tableViewManager;
 
 /**
  *  @brief the item of the cell.

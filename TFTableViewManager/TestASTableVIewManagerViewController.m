@@ -1,13 +1,13 @@
 //
 //  TestASTableVIewManagerViewController.m
-//  PFTableViewManagerDemo
+//  TFTableViewManagerDemo
 //
 //  Created by Summer on 16/9/5.
 //  Copyright © 2016年 Summer. All rights reserved.
 //
 
 #import "TestASTableVIewManagerViewController.h"
-#import "TFASTableViewManager.h"
+#import "TFTableViewManager.h"
 #import "TFASTableViewItemCell.h"
 #import "TestASItemCell.h"
 
@@ -15,7 +15,7 @@
 
 @property (nonatomic, strong) ASTableNode *tableNode;
 
-@property (nonatomic, strong) TFASTableViewManager *manager;
+@property (nonatomic, strong) TFTableViewManager *manager;
 
 @end
 
@@ -24,7 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view addSubnode:self.tableNode];
-    self.manager = [[TFASTableViewManager alloc] initWithTableNode:self.tableNode];
+    self.manager = [[TFTableViewManager alloc] initWithTableNode:self.tableNode];
     self.manager[@"TestUIItem"] = @"TestASItemCell";
     NSArray *sectionTitles = @[@"A", @"B", @"C", @"D", @"E", @"F", @"G", @"H", @"I", @"J", @"K", @"L", @"M",
                                @"N", @"O", @"P", @"Q", @"R", @"S", @"T", @"U", @"V", @"W", @"X", @"Y", @"Z"];
@@ -67,7 +67,7 @@
 - (void)dealCellSelectionActionWithItem:(TestUIItem *)item {
     NSLog(@"%@",item.model.userName);
     item.model.selected = !item.model.selected;
-    [item reloadRowWithAnimation:UITableViewRowAnimationNone];
+    [item reloadRowWithAnimation:UITableViewRowAnimationFade];
 }
 
 

@@ -1,6 +1,6 @@
 //
-//  PFTableViewItem.h
-//  PFTableViewManagerDemo
+//  TFTableViewItem.h
+//  TFTableViewManagerDemo
 //
 //  Created by Summer on 16/8/24.
 //  Copyright © 2016年 Summer. All rights reserved.
@@ -14,7 +14,7 @@
 @interface TFTableViewItem : NSObject
 
 ///-----------------------------
-/// @name PFTableViewItem Properties.
+/// @name TFTableViewItem Properties.
 ///-----------------------------
 
 /**
@@ -99,7 +99,7 @@
 @property (copy, nonatomic) void (^moveCompletionHandler)(id item, NSIndexPath *sourceIndexPath, NSIndexPath *destinationIndexPath);
 
 ///-----------------------------
-/// @name Creating and Initializing a PFTableViewItem.
+/// @name Creating and Initializing a TFTableViewItem.
 ///-----------------------------
 
 /**

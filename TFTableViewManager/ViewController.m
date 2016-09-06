@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "TFUITableViewManager.h"
+#import "TFTableViewManager.h"
 #import "TFUIBaseTableViewItem.h"
 #import "TFUIBaseTableViewItemCell.h"
 #import "TestUITableVIewManagerViewController.h"
@@ -17,7 +17,7 @@
 
 @property (nonatomic, strong) UITableView *tableView;
 
-@property (nonatomic, strong) TFUITableViewManager *manager;
+@property (nonatomic, strong) TFTableViewManager *manager;
 
 
 @end
@@ -28,7 +28,7 @@
     [super viewDidLoad];
     [self.view addSubview:self.tableView];
     
-    self.manager = [[TFUITableViewManager alloc] initWithTableView:self.tableView];
+    self.manager = [[TFTableViewManager alloc] initWithTableView:self.tableView];
     
     self.manager[@"TFUIBaseTableViewItem"] = @"TFUIBaseTableViewItemCell";
     NSArray *contentArr = @[@"TFUITableViewManager",@"TFASTableViewManager"];

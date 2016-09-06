@@ -1,6 +1,6 @@
 //
-//  PFTableViewSection.h
-//  PFTableViewManagerDemo
+//  TFTableViewSection.h
+//  TFTableViewManagerDemo
 //
 //  Created by Summer on 16/8/24.
 //  Copyright © 2016年 Summer. All rights reserved.
@@ -14,7 +14,7 @@
 @interface TFTableViewSection : NSObject
 
 ///-----------------------------
-/// @name PFTableViewSection Properties.
+/// @name TFTableViewSection Properties.
 ///-----------------------------
 
 /**
@@ -86,7 +86,7 @@
 
 
 ///-----------------------------
-/// @name Creating and Initializing a PFTableViewSection.
+/// @name Creating and Initializing a TFTableViewSection.
 ///-----------------------------
 
 /**

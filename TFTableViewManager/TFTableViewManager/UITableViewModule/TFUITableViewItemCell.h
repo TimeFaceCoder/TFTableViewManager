@@ -1,6 +1,6 @@
 //
 //  PFUITableViewItemCell.h
-//  PFTableViewManagerDemo
+//  TFTableViewManagerDemo
 //
 //  Created by Summer on 16/8/26.
 //  Copyright © 2016年 Summer. All rights reserved.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@class TFUITableViewManager;
+@class TFTableViewManager;
 @class TFTableViewItem;
 
 @interface TFUITableViewItemCell : UITableViewCell
@@ -18,9 +18,9 @@
 ///-----------------------------
 
 /**
- *  @brief The `PFUITableViewManager` that needs to be managed using this `PFUITableViewItemCell`.
+ *  @brief The `TFUITableViewManager` that needs to be managed using this `PFUITableViewItemCell`.
  */
-@property (weak, nonatomic) TFUITableViewManager *tableViewManager;
+@property (weak, nonatomic) TFTableViewManager *tableViewManager;
 
 /**
  *  @brief the item of the cell.
@@ -34,12 +34,12 @@
 /**
  *  height for the item
  *
- *  @param item             a PFTableViewItem.
+ *  @param item             a TFTableViewItem.
  *  @param tableViewManager handle items.
  *
  *  @return a CGFloat value of cell height.
  */
-+ (CGFloat)heightWithItem:(TFTableViewItem *)item tableViewManager:(TFUITableViewManager *)tableViewManager;
++ (CGFloat)heightWithItem:(TFTableViewItem *)item tableViewManager:(TFTableViewManager *)tableViewManager;
 
 ///-----------------------------
 /// @name Cell life cycle.

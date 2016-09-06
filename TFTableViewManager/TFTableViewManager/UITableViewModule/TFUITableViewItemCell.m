@@ -1,6 +1,6 @@
 //
 //  PFUITableViewItemCell.m
-//  PFTableViewManagerDemo
+//  TFTableViewManagerDemo
 //
 //  Created by Summer on 16/8/26.
 //  Copyright © 2016年 Summer. All rights reserved.
@@ -23,7 +23,7 @@
 
 #pragma mark - Handling Cell Events.
 
-+ (CGFloat)heightWithItem:(TFTableViewItem *)item tableViewManager:(TFUITableViewManager *)tableViewManager
++ (CGFloat)heightWithItem:(TFTableViewItem *)item tableViewManager:(TFTableViewManager *)tableViewManager
 {
     return UITableViewAutomaticDimension;
 }

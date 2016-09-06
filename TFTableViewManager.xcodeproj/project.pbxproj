@@ -21,14 +21,12 @@
 		C495E6CC1D7E4A4300BD8285 /* TestUIItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C495E6AF1D7E4A4300BD8285 /* TestUIItemCell.m */; };
 		C495E6CD1D7E4A4300BD8285 /* TestUITableVIewManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C495E6B11D7E4A4300BD8285 /* TestUITableVIewManagerViewController.m */; };
 		C495E6CE1D7E4A4300BD8285 /* TFASTableViewItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C495E6B51D7E4A4300BD8285 /* TFASTableViewItemCell.m */; };
-		C495E6CF1D7E4A4300BD8285 /* TFASTableViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C495E6B71D7E4A4300BD8285 /* TFASTableViewManager.m */; };
 		C495E6D01D7E4A4300BD8285 /* TFTableViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C495E6B91D7E4A4300BD8285 /* TFTableViewItem.m */; };
 		C495E6D11D7E4A4300BD8285 /* TFTableViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C495E6BB1D7E4A4300BD8285 /* TFTableViewManager.m */; };
 		C495E6D21D7E4A4300BD8285 /* TFTableViewSection.m in Sources */ = {isa = PBXBuildFile; fileRef = C495E6BD1D7E4A4300BD8285 /* TFTableViewSection.m */; };
 		C495E6D31D7E4A4300BD8285 /* TFUIBaseTableViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C495E6C11D7E4A4300BD8285 /* TFUIBaseTableViewItem.m */; };
 		C495E6D41D7E4A4300BD8285 /* TFUIBaseTableViewItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C495E6C31D7E4A4300BD8285 /* TFUIBaseTableViewItemCell.m */; };
 		C495E6D51D7E4A4300BD8285 /* TFUITableViewItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C495E6C51D7E4A4300BD8285 /* TFUITableViewItemCell.m */; };
-		C495E6D61D7E4A4300BD8285 /* TFUITableViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C495E6C71D7E4A4300BD8285 /* TFUITableViewManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,8 +56,6 @@
 		C495E6B11D7E4A4300BD8285 /* TestUITableVIewManagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestUITableVIewManagerViewController.m; sourceTree = "<group>"; };
 		C495E6B41D7E4A4300BD8285 /* TFASTableViewItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFASTableViewItemCell.h; sourceTree = "<group>"; };
 		C495E6B51D7E4A4300BD8285 /* TFASTableViewItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFASTableViewItemCell.m; sourceTree = "<group>"; };
-		C495E6B61D7E4A4300BD8285 /* TFASTableViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFASTableViewManager.h; sourceTree = "<group>"; };
-		C495E6B71D7E4A4300BD8285 /* TFASTableViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFASTableViewManager.m; sourceTree = "<group>"; };
 		C495E6B81D7E4A4300BD8285 /* TFTableViewItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFTableViewItem.h; sourceTree = "<group>"; };
 		C495E6B91D7E4A4300BD8285 /* TFTableViewItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFTableViewItem.m; sourceTree = "<group>"; };
 		C495E6BA1D7E4A4300BD8285 /* TFTableViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFTableViewManager.h; sourceTree = "<group>"; };
@@ -72,8 +68,6 @@
 		C495E6C31D7E4A4300BD8285 /* TFUIBaseTableViewItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFUIBaseTableViewItemCell.m; sourceTree = "<group>"; };
 		C495E6C41D7E4A4300BD8285 /* TFUITableViewItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFUITableViewItemCell.h; sourceTree = "<group>"; };
 		C495E6C51D7E4A4300BD8285 /* TFUITableViewItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFUITableViewItemCell.m; sourceTree = "<group>"; };
-		C495E6C61D7E4A4300BD8285 /* TFUITableViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFUITableViewManager.h; sourceTree = "<group>"; };
-		C495E6C71D7E4A4300BD8285 /* TFUITableViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFUITableViewManager.m; sourceTree = "<group>"; };
 		FE53AA0066AB1083EDE350F0 /* Pods-TFTableViewManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TFTableViewManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TFTableViewManager/Pods-TFTableViewManager.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -197,8 +191,6 @@
 			children = (
 				C495E6B41D7E4A4300BD8285 /* TFASTableViewItemCell.h */,
 				C495E6B51D7E4A4300BD8285 /* TFASTableViewItemCell.m */,
-				C495E6B61D7E4A4300BD8285 /* TFASTableViewManager.h */,
-				C495E6B71D7E4A4300BD8285 /* TFASTableViewManager.m */,
 			);
 			path = ASTableViewModule;
 			sourceTree = "<group>";
@@ -209,8 +201,6 @@
 				C495E6BF1D7E4A4300BD8285 /* Base */,
 				C495E6C41D7E4A4300BD8285 /* TFUITableViewItemCell.h */,
 				C495E6C51D7E4A4300BD8285 /* TFUITableViewItemCell.m */,
-				C495E6C61D7E4A4300BD8285 /* TFUITableViewManager.h */,
-				C495E6C71D7E4A4300BD8285 /* TFUITableViewManager.m */,
 			);
 			path = UITableViewModule;
 			sourceTree = "<group>";
@@ -350,7 +340,6 @@
 				C495E6D01D7E4A4300BD8285 /* TFTableViewItem.m in Sources */,
 				C495E6D31D7E4A4300BD8285 /* TFUIBaseTableViewItem.m in Sources */,
 				C495E6CC1D7E4A4300BD8285 /* TestUIItemCell.m in Sources */,
-				C495E6D61D7E4A4300BD8285 /* TFUITableViewManager.m in Sources */,
 				C495E6CA1D7E4A4300BD8285 /* TestASItemCell.m in Sources */,
 				C495E6951D7E499F00BD8285 /* ViewController.m in Sources */,
 				C495E6921D7E499F00BD8285 /* AppDelegate.m in Sources */,
@@ -363,7 +352,6 @@
 				C495E6CB1D7E4A4300BD8285 /* TestUIItem.m in Sources */,
 				C495E6C81D7E4A4300BD8285 /* TestUIModel.m in Sources */,
 				C495E6D11D7E4A4300BD8285 /* TFTableViewManager.m in Sources */,
-				C495E6CF1D7E4A4300BD8285 /* TFASTableViewManager.m in Sources */,
 				C495E6C91D7E4A4300BD8285 /* TestASTableVIewManagerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

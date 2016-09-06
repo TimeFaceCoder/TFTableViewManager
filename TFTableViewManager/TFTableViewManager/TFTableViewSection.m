@@ -1,6 +1,6 @@
 //
-//  PFTableViewSection.m
-//  PFTableViewManagerDemo
+//  TFTableViewSection.m
+//  TFTableViewManagerDemo
 //
 //  Created by Summer on 16/8/24.
 //  Copyright © 2016年 Summer. All rights reserved.
@@ -8,8 +8,7 @@
 
 #import "TFTableViewSection.h"
 #import "TFTableViewItem.h"
-#import "TFUITableViewManager.h"
-#import "TFASTableViewManager.h"
+#import "TFTableViewManager.h"
 
 @interface TFTableViewSection ()
 
@@ -30,7 +29,7 @@
     return [tableViewManager.sections indexOfObject:self];
 }
 
-#pragma mark - Creating and Initializing a PFTableViewSection.
+#pragma mark - Creating and Initializing a TFTableViewSection.
 
 - (instancetype)init
 {
@@ -193,12 +192,11 @@
 #pragma mark - reload table view section
 
 - (void)reloadSectionWithAnimation:(UITableViewRowAnimation)animation {
-    if ([self.tableViewManager isKindOfClass:[TFUITableViewManager class]]) {
-        [((TFUITableViewManager *)self.tableViewManager).tableView reloadSections:[NSIndexSet indexSetWithIndex:self.index] withRowAnimation:animation];
-
+    if (self.tableViewManager.tableView) {
+        [self.tableViewManager.tableView reloadSections:[NSIndexSet indexSetWithIndex:self.index] withRowAnimation:animation];
     }
-    else if ([self.tableViewManager isKindOfClass:[TFASTableViewManager class]]) {
-        [((TFASTableViewManager *)self.tableViewManager).tableNode.view reloadSections:[NSIndexSet indexSetWithIndex:self.index] withRowAnimation:animation];
+    else if (self.tableViewManager.tableNode) {
+        [self.tableViewManager.tableNode.view reloadSections:[NSIndexSet indexSetWithIndex:self.index] withRowAnimation:animation];
     }
 }
 
