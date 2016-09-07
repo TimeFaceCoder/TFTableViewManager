@@ -21,6 +21,16 @@
     
 }
 
+- (instancetype)initWithTableViewItem:(TFTableViewItem *)tableViewItem reuseIdentifier:(NSString *)reuseIdentifier {
+    self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
+    if (self) {
+        self.tableViewItem = tableViewItem;
+    }
+    [self cellLoadSubViews];
+    return self;
+}
+
+
 #pragma mark - Handling Cell Events.
 
 + (CGFloat)heightWithItem:(TFTableViewItem *)item tableViewManager:(TFTableViewManager *)tableViewManager

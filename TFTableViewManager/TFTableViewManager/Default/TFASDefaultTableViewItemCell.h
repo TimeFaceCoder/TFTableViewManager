@@ -7,7 +7,10 @@
 //
 
 #import "TFASTableViewItemCell.h"
+#import "TFDefaultTableViewItem.h"
 
 @interface TFASDefaultTableViewItemCell : TFASTableViewItemCell
+
+@property (nonatomic, strong) TFDefaultTableViewItem *tableViewItem;
 
 @end

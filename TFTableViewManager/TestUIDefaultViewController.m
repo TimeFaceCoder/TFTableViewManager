@@ -7,8 +7,17 @@
 //
 
 #import "TestUIDefaultViewController.h"
+#import "TFTableViewManager.h"
+#import "TFDefaultTableViewItem.h"
+#import "TFUIDefaultTableViewItemCell.h"
 
 @interface TestUIDefaultViewController ()
+
+
+@property (nonatomic, strong) UITableView *tableView;
+
+@property (nonatomic, strong) TFTableViewManager *manager;
+
 
 @end
 
@@ -16,8 +25,63 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self.view addSubview:self.tableView];
+    self.manager = [[TFTableViewManager alloc]initWithTableView:self.tableView];
+    self.manager[@"TFDefaultTableViewItem"] = @"TFUIDefaultTableViewItemCell";
+    NSArray *sections = @[@{@"title":@"UITableViewCellStyleDefault",@"contents":@[@{@"text":@"shortText",@"style":@(UITableViewCellStyleDefault)},
+                                                                                  @{@"text":@"shortTextWithImage",@"style":@(UITableViewCellStyleDefault),@"image":@"userpic1"},
+                                                                                  @{@"text":@"longText:的玩家爱豆我我就掉网的骄傲为大家我ID阿瓦的骄傲文件",@"style":@(UITableViewCellStyleDefault)},
+                                                                                  @{@"text":@"longTextWithImage:的玩家爱豆我我就掉网的骄傲为大家我ID阿瓦的骄傲文件",@"style":@(UITableViewCellStyleDefault),@"image":@"contactSelected"}]},
+                          @{@"title":@"UITableViewCellStyleValue1",@"contents":@[  @{@"text":@"shortText",@"style":@(UITableViewCellStyleValue1),@"detail":@"shortDetail"},
+                                                                                   @{@"text":@"shortTextWithImage",@"style":@(UITableViewCellStyleValue1),@"detail":@"shortDetail",@"image":@"userpic1"},
+                                                                                   @{@"text":@"shortText",@"style":@(UITableViewCellStyleValue1),@"detail":@"longDetail:文件迪欧挖掘鲷玩文件迪欧挖掘鲷玩文件迪欧挖掘鲷玩文件迪欧挖掘鲷玩文件迪欧挖掘鲷玩"},
+                                                                                   @{@"text":@"shortTextWithImage",@"style":@(UITableViewCellStyleValue1),@"detail":@"longDetail:文件迪欧挖掘鲷玩家胸襟带我Joi阿吉豆我爱Joi大Joi我的骄傲IDJoi爱我多久我我安静的哦啊及等级哦",@"image":@"contactSelected"},
+                                                                                   @{@"text":@"longText:的玩家爱豆我我就掉网的骄傲为大家我ID阿瓦的骄傲文件",@"style":@(UITableViewCellStyleValue1),@"detail":@"shortDetail"},
+                                                                                   @{@"text":@"longTextWithImage:的玩家爱豆我我就掉网的骄傲为大家我ID阿瓦的骄傲文件",@"style":@(UITableViewCellStyleValue1),@"detail":@"shortDetail",@"image":@"contactSelected"}]},
+                          @{@"title":@"UITableViewCellStyleSubtitle",@"contents":@[ @{@"text":@"shortText",@"style":@(UITableViewCellStyleSubtitle),@"detail":@"longDetail:文件迪欧挖掘鲷玩家胸襟带我Joi阿吉豆我爱Joi大Joi我的骄傲IDJoi爱我多久我我安静的哦啊及等级哦"},
+                                                                                    @{@"text":@"shortTextWithImage",@"style":@(UITableViewCellStyleSubtitle),@"detail":@"longDetail:文件迪欧挖掘鲷玩家胸襟带我Joi阿吉豆我爱Joi大Joi我的骄傲IDJoi爱我多久我我安静的哦啊及等级哦",@"image":@"userpic2"},
+                                                                                    @{@"text":@"longText:的玩家爱豆我我就掉网的骄傲为大家我ID阿瓦的骄傲文件",@"style":@(UITableViewCellStyleSubtitle),@"detail":@"shortDetail"},
+                                                                                    @{@"text":@"longTextWithImage:的玩家爱豆我我就掉网的骄傲为大家我ID阿瓦的骄傲文件",@"style":@(UITableViewCellStyleSubtitle),@"detail":@"shortDetail",@"image":@"contactSelected"}
+                                                                                    
+                                                                                    ]}];
+    
+    for (NSDictionary *sectionDic in sections) {
+        TFTableViewSection *section = [TFTableViewSection sectionWithHeaderTitle:sectionDic[@"title"]];
+        NSArray *contentArr = sectionDic[@"contents"];
+        
+        for (NSDictionary *contentDic in contentArr) {
+            TFDefaultTableViewItem *item = [TFDefaultTableViewItem item];
+            item.text = contentDic[@"text"];
+            item.cellStyle = [contentDic[@"style"] integerValue];
+            item.image = [UIImage imageNamed:contentDic[@"image"]];
+            item.detail = contentDic[@"detail"];
+            item.selectionStyle = UITableViewCellSelectionStyleDefault;
+            item.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            item.cellHeight = 60.0;
+            [section addItem:item];
+        }
+        [self.manager addSection:section];
+        
+    }
+
 }
+
+- (UITableView *)tableView {
+    if (!_tableView) {
+        CGSize screenSize = [UIScreen mainScreen].bounds.size;
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, screenSize.width, screenSize.height) style:UITableViewStylePlain];
+        _tableView.rowHeight = UITableViewAutomaticDimension;
+        _tableView.estimatedRowHeight = 44.0;
+        _tableView.tableFooterView = [UIView new];
+    }
+    return _tableView;
+}
+
+- (void)dealloc {
+    NSLog(@"dealloc:%@",NSStringFromClass([self class]));
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

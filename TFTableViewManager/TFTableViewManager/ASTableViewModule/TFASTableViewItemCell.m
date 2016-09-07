@@ -22,6 +22,7 @@
 
 - (void)cellLoadSubNodes {
     self.selectionStyle = self.tableViewItem.selectionStyle;
+    self.accessoryType = self.tableViewItem.accessoryType;
 }
 
 @end

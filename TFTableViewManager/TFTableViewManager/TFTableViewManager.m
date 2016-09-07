@@ -9,12 +9,15 @@
 #import "TFTableViewManager.h"
 #import "TFUITableViewItemCell.h"
 #import "TFASTableViewItemCell.h"
+#import "TFDefaultTableViewItem.h"
 
 @interface TFTableViewManager ()<UITableViewDataSource,UITableViewDelegate,ASTableDataSource,ASTableDelegate>
+{
+    CGSize _nodeMinSize;
+    CGSize _nodeMaxSize;
+}
 
 @property (nonatomic, strong) NSMutableArray *mutableSections;
-
-@property (strong, nonatomic) NSMutableDictionary *registeredXIBs;// The array of pairs of items / cell classes.
 
 @end
 
@@ -45,7 +48,6 @@
         tableView.dataSource   = self;
         self.tableView         = tableView;
         self.registeredClasses = [[NSMutableDictionary alloc] init];
-        self.registeredXIBs    = [[NSMutableDictionary alloc] init];
     }
     return self;
 }
@@ -53,6 +55,10 @@
 - (instancetype)initWithTableNode:(ASTableNode *)tableNode {
     self = [super init];
     if (self) {
+        CGFloat tableNodeWidth = CGRectGetWidth(tableNode.frame);
+        CGFloat tableNodeHeight = CGRectGetHeight(tableNode.frame);
+        _nodeMinSize = CGSizeMake(tableNodeWidth, 0.0);
+        _nodeMaxSize = CGSizeMake(tableNodeWidth, tableNodeHeight);
         tableNode.delegate     = self;
         tableNode.dataSource   = self;
         self.tableNode         = tableNode;
@@ -67,16 +73,17 @@
 
 #pragma mark - Register Custom Cells
 
-- (void)registerClass:(NSString *)objectClass forCellWithReuseIdentifier:(NSString *)identifier
+- (void)registerWithItemClass:(NSString *)itemClass cellClass:(NSString *)cellClass
 {
-    NSAssert(NSClassFromString(objectClass), ([NSString stringWithFormat:@"Item class '%@' does not exist.", objectClass]));
-    NSAssert(NSClassFromString(identifier), ([NSString stringWithFormat:@"Cell class '%@' does not exist.", identifier]));
-    self.registeredClasses[(id <NSCopying>)NSClassFromString(objectClass)] = NSClassFromString(identifier);
-    if ([[NSBundle mainBundle] pathForResource:identifier ofType:@"nib"]) {
+    NSAssert(NSClassFromString(itemClass), ([NSString stringWithFormat:@"Item class '%@' does not exist.", itemClass]));
+    NSAssert(NSClassFromString(itemClass), ([NSString stringWithFormat:@"Cell class '%@' does not exist.", cellClass]));
+    self.registeredClasses[(id <NSCopying>)NSClassFromString(itemClass)] = NSClassFromString(cellClass);
+    
+    if ([[NSBundle mainBundle] pathForResource:itemClass ofType:@"nib"]) {
         //XIB exists with the same name as the cell class
-        self.registeredXIBs[identifier] = objectClass;
-        [self.tableView registerNib:[UINib nibWithNibName:identifier bundle:[NSBundle mainBundle]] forCellReuseIdentifier:objectClass];
+        [self.tableView registerNib:[UINib nibWithNibName:cellClass bundle:[NSBundle mainBundle]] forCellReuseIdentifier:cellClass];
     }
+    
 }
 
 - (id)objectAtKeyedSubscript:(id <NSCopying>)key
@@ -86,7 +93,7 @@
 
 - (void)setObject:(id)obj forKeyedSubscript:(id <NSCopying>)key
 {
-    [self registerClass:(NSString *)key forCellWithReuseIdentifier:obj];
+    [self registerWithItemClass:(NSString *)key cellClass:obj];
 }
 
 - (Class)classForCellAtIndexPath:(NSIndexPath *)indexPath
@@ -206,14 +213,17 @@
     TFTableViewItem *item = [self itemAtIndexPath:indexPath];
     Class cellClass = [self classForCellAtIndexPath:indexPath];
     NSString *identifier = NSStringFromClass(cellClass);
+    if ([item isKindOfClass:[TFDefaultTableViewItem class]]) {
+        identifier = [identifier stringByAppendingFormat:@"%ld",(long)((TFDefaultTableViewItem *)item).cellStyle];
+    }
     TFUITableViewItemCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    
     if (!cell) {
-        cell = [[cellClass alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        cell = [[cellClass alloc] initWithTableViewItem:item reuseIdentifier:identifier];
         // TFUITableViewManagerDelegate
         if ([self.delegate respondsToSelector:@selector(tableView:didLoadCellSubViews:forRowAtIndexPath:)]) {
             [self.delegate tableView:tableView didLoadCellSubViews:cell forRowAtIndexPath:indexPath];
         }
-        cell.tableViewItem = item;
         [cell cellLoadSubViews];
     }
     cell.tableViewManager = self;
@@ -369,6 +379,15 @@
     if ([self.delegate respondsToSelector:@selector(tableView:willBeginBatchFetchWithContext:)]) {
         [self.delegate tableView:tableView willBeginBatchFetchWithContext:context];
     }
+}
+
+- (ASSizeRange)tableView:(ASTableView *)tableView constrainedSizeForRowAtIndexPath:(NSIndexPath *)indexPath {
+    TFTableViewItem *item = [self itemAtIndexPath:indexPath];
+    if ([item isKindOfClass:[TFDefaultTableViewItem class]]) {
+        CGFloat cellHeight = ((TFDefaultTableViewItem *)item).cellHeight ? :44.0;
+        return ASSizeRangeMake(CGSizeMake(_nodeMinSize.width, cellHeight), CGSizeMake(_nodeMaxSize.width, cellHeight));
+    }
+    return ASSizeRangeMake(_nodeMinSize, _nodeMaxSize);
 }
 
 #pragma mark same methods for UITableViewDelegate and ASTableViewDelegate.
@@ -558,7 +577,6 @@
     }
     return proposedDestinationIndexPath;
 }
-
 
 
 

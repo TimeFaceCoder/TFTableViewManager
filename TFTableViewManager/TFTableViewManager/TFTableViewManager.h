@@ -85,10 +85,11 @@
 /**
  *  For each custom item class that the manager will use, register a cell class.
  *
- *  @param objectClass The object class to be associated with a cell class.
- *  @param identifier  The cell class identifier.
+ *  @param itemClass The item class to be associated with a cell class.
+ *  @param cellClass The cell class.
+ *  @warning the cell class string must be the same with cell reuseIdentifier.
  */
-- (void)registerClass:(NSString *)objectClass forCellWithReuseIdentifier:(NSString *)identifier;
+- (void)registerWithItemClass:(NSString *)itemClass cellClass:(NSString *)cellClass;
 
 /**
  *  Returns cell class at the keyed subscript.

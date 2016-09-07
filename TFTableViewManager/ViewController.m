@@ -8,10 +8,12 @@
 
 #import "ViewController.h"
 #import "TFTableViewManager.h"
-#import "TFUIBaseTableViewItem.h"
-#import "TFUIBaseTableViewItemCell.h"
+#import "TFDefaultTableViewItem.h"
+#import "TFUIDefaultTableViewItemCell.h"
 #import "TestUITableVIewManagerViewController.h"
 #import "TestASTableVIewManagerViewController.h"
+#import "TestASDefaultItemViewController.h"
+#import "TestUIDefaultViewController.h"
 
 @interface ViewController ()
 
@@ -30,18 +32,18 @@
     
     self.manager = [[TFTableViewManager alloc] initWithTableView:self.tableView];
     
-    self.manager[@"TFUIBaseTableViewItem"] = @"TFUIBaseTableViewItemCell";
-    NSArray *contentArr = @[@"TFUITableViewManager",@"TFASTableViewManager"];
+    self.manager[@"TFDefaultTableViewItem"] = @"TFUIDefaultTableViewItemCell";
+    NSArray *contentArr = @[@"TFUITableViewManager",@"TFASTableViewManager",@"ASDefaultItem",@"UIDefaultItem"];
     TFTableViewSection *section = [TFTableViewSection section];
     typeof(self) __weak weakVC = self;
     for (NSString *content in contentArr) {
-        TFUIBaseTableViewItem *item = [TFUIBaseTableViewItem item];
+        TFDefaultTableViewItem *item = [TFDefaultTableViewItem item];
         item.text = content;
+        item.cellStyle = UITableViewCellStyleValue1;
         item.selectionStyle = UITableViewCellSelectionStyleDefault;
         item.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        item.cellHeight = 60.0;
-        
-        item.selectionHandler = ^(TFUIBaseTableViewItem *item, NSIndexPath *indexPath){
+        item.cellHeight = 44.0;
+        item.selectionHandler = ^(TFDefaultTableViewItem *item, NSIndexPath *indexPath){
             [weakVC dealCellSelectionActionWithItem:item indexPath:indexPath];
             
         };
@@ -51,7 +53,7 @@
     
 }
 
-- (void)dealCellSelectionActionWithItem:(TFUIBaseTableViewItem *)item indexPath:(NSIndexPath *)indexPath {
+- (void)dealCellSelectionActionWithItem:(TFDefaultTableViewItem *)item indexPath:(NSIndexPath *)indexPath {
     if (indexPath.row==0) {
         TestUITableVIewManagerViewController *nextVC = [[TestUITableVIewManagerViewController alloc] init];
         nextVC.title = @"TestUI";
@@ -61,6 +63,16 @@
     else if (indexPath.row==1) {
         TestASTableVIewManagerViewController *nextVC = [[TestASTableVIewManagerViewController alloc] init];
         nextVC.title = @"TestAS";
+        [self.navigationController pushViewController:nextVC animated:YES];
+    }
+    else if (indexPath.row==2) {
+        TestASDefaultItemViewController *nextVC = [[TestASDefaultItemViewController alloc] init];
+        nextVC.title = @"TestASDefault";
+        [self.navigationController pushViewController:nextVC animated:YES];
+    }
+    else if (indexPath.row==3) {
+        TestUIDefaultViewController *nextVC = [[TestUIDefaultViewController alloc] init];
+        nextVC.title =@"TestUIDefault";
         [self.navigationController pushViewController:nextVC animated:YES];
     }
 }

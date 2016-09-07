@@ -81,6 +81,11 @@ typedef NS_ENUM(NSUInteger, ASCellNodeVisibilityEvent) {
 @property (nonatomic) UITableViewCellSelectionStyle selectionStyle;
 
 /**
+ *  ASTableView uses these properties when configuring UITableViewCells that host ASCellNodes.
+ */
+@property (nonatomic,assign) UITableViewCellAccessoryType accessoryType;
+
+/**
  * A Boolean value that is synchronized with the underlying collection or tableView cell property.
  * Setting this value is equivalent to calling selectItem / deselectItem on the collection or table.
  */

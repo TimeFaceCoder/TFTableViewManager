@@ -27,6 +27,15 @@
  */
 @property (strong, nonatomic) TFTableViewItem *tableViewItem;
 
+/**
+ *  the item of the cell.
+ *
+ *  @param tableViewItem item.
+ *
+ *  @return PFASTableViewItemCell.
+ */
+- (instancetype)initWithTableViewItem:(TFTableViewItem *)tableViewItem reuseIdentifier:(NSString *)reuseIdentifier;
+
 ///-----------------------------
 /// @name Handling Cell Events.
 ///-----------------------------
