@@ -22,18 +22,22 @@
 #pragma mark - Creating and Initializing a TFTableViewItem.
 
 + (instancetype)item {
-    return [[self alloc] init];
+    TFTableViewItem *item = [[self alloc] init];
+    item.separatorSunk = YES;
+    return item;
 }
 
 + (instancetype)itemWithModel:(id)model {
     TFTableViewItem *item = [[self alloc] init];
     item.model = model;
+    item.separatorSunk = YES;
     return item;
 }
 
 + (instancetype)itemWithModel:(id)model selectionHandler:(void (^)(id, NSIndexPath *))selectionHandler {
     TFTableViewItem *item = [[self alloc] init];
     item.model = model;
+    item.separatorSunk = YES;
     item.selectionHandler = selectionHandler;
     return item;
 }

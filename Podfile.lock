@@ -14,22 +14,22 @@ PODS:
     - PINRemoteImage/Core
 
 DEPENDENCIES:
-  - AsyncDisplayKit (from `https://github.com/facebook/AsyncDisplayKit.git`)
+  - AsyncDisplayKit (from `https://github.com/TimeFaceCoder/AsyncDisplayKit.git`)
 
 EXTERNAL SOURCES:
   AsyncDisplayKit:
-    :git: https://github.com/facebook/AsyncDisplayKit.git
+    :git: https://github.com/TimeFaceCoder/AsyncDisplayKit.git
 
 CHECKOUT OPTIONS:
   AsyncDisplayKit:
-    :commit: e233a1cccc49588389c3a29ff23aab70b6c93278
-    :git: https://github.com/facebook/AsyncDisplayKit.git
+    :commit: 161e6951a7b0174c324ed3649ffbef0364797717
+    :git: https://github.com/TimeFaceCoder/AsyncDisplayKit.git
 
 SPEC CHECKSUMS:
   AsyncDisplayKit: 0bc09eccc8627e05983b89b9b01daf749c552eeb
   PINCache: 6911fe422a633e18b3d3ddf2bd4f0e55e36e2892
   PINRemoteImage: 308731aa6534500e58fc211b9cc2bb7252df25ba
 
-PODFILE CHECKSUM: 63017681d5e46f8384db953630b59dfc27f089b0
+PODFILE CHECKSUM: 1edc0e325a6250266c08b78b8cdeec2d27648f9e
 
 COCOAPODS: 1.0.1

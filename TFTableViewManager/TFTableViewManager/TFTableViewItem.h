@@ -33,9 +33,9 @@
 @property (nonatomic, assign) UITableViewCellSelectionStyle selectionStyle;
 
 /**
- *  @brief the separator line left space, default is zero.
+ *  @brief the separator line is sunk, default is YES.
  */
-@property (nonatomic, assign) CGFloat separatorLineLeftSpace;
+@property (nonatomic, assign) BOOL separatorSunk;
 
 /**
  *  @brief cell accessory type.

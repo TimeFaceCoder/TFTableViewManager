@@ -635,7 +635,15 @@ static NSString * const kCellReuseIdentifier = @"_ASTableViewCell";
     cell.backgroundColor = node.backgroundColor;
     cell.selectionStyle = node.selectionStyle;
     cell.accessoryType = node.accessoryType;
-
+    if (node.accessoryView) {
+          cell.accessoryView = node.accessoryView;
+    }
+      if (!node.separatorSunk) {
+          self.preservesSuperviewLayoutMargins = NO;
+          UIEdgeInsets lineInsets =  UIEdgeInsetsZero;
+          self.separatorInset = lineInsets;
+          self.layoutMargins = lineInsets;
+      }
     // the following ensures that we clip the entire cell to it's bounds if node.clipsToBounds is set (the default)
     // This is actually a workaround for a bug we are seeing in some rare cases (selected background view
     // overlaps other cells if size of ASCellNode has changed.)

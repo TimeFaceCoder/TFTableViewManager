@@ -44,6 +44,7 @@
 
   // Use UITableViewCell defaults
   _selectionStyle = UITableViewCellSelectionStyleDefault;
+    _separatorSunk = YES;
   self.clipsToBounds = YES;
   return self;
 }

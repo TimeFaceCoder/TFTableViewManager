@@ -47,10 +47,13 @@
     if (self.tableViewItem.accessoryView) {
         self.accessoryView = self.tableViewItem.accessoryView;
     }
-    self.preservesSuperviewLayoutMargins = NO;
-    UIEdgeInsets lineInsets =  UIEdgeInsetsMake(0, self.tableViewItem.separatorLineLeftSpace, 0.0, 0.0);
-    self.separatorInset = lineInsets;
-    self.layoutMargins = lineInsets;
+    if (!self.tableViewItem.separatorSunk) {
+        self.preservesSuperviewLayoutMargins = NO;
+        UIEdgeInsets lineInsets =  UIEdgeInsetsZero;
+        self.separatorInset = lineInsets;
+        self.layoutMargins = lineInsets;
+    }
+   
 }
 
 - (void)cellWillAppear {

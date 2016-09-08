@@ -80,11 +80,12 @@ typedef NS_ENUM(NSUInteger, ASCellNodeVisibilityEvent) {
 //@property (nonatomic, retain) UIColor *backgroundColor;
 @property (nonatomic) UITableViewCellSelectionStyle selectionStyle;
 
-/**
- *  ASTableView uses these properties when configuring UITableViewCells that host ASCellNodes.
- */
 @property (nonatomic,assign) UITableViewCellAccessoryType accessoryType;
 
+@property (nonatomic, strong, nullable) UIView       *accessoryView;// if set, use custom view. ignore accessoryType. tracks if enabled can calls accessory action
+
+//the separator line is sunk, default is YES.
+@property (nonatomic, assign) BOOL separatorSunk;
 /**
  * A Boolean value that is synchronized with the underlying collection or tableView cell property.
  * Setting this value is equivalent to calling selectItem / deselectItem on the collection or table.

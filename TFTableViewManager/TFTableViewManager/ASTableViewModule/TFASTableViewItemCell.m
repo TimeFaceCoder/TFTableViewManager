@@ -23,6 +23,11 @@
 - (void)cellLoadSubNodes {
     self.selectionStyle = self.tableViewItem.selectionStyle;
     self.accessoryType = self.tableViewItem.accessoryType;
+    if (self.tableViewItem.accessoryView) {
+        self.accessoryView = self.tableViewItem.accessoryView;
+    }
+    self.separatorSunk = self.tableViewItem.separatorSunk;
 }
+
 
 @end
