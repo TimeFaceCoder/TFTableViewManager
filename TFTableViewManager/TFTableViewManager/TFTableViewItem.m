@@ -76,7 +76,9 @@
 
 - (void)reloadRowWithAnimation:(UITableViewRowAnimation)animation
 {
+    [self.section.tableViewManager.tableView beginUpdates];
     [self.section.tableViewManager.tableView reloadRowsAtIndexPaths:@[self.indexPath] withRowAnimation:animation];
+    [self.section.tableViewManager.tableView endUpdates];
 }
 
 - (void)deleteRowWithAnimation:(UITableViewRowAnimation)animation
@@ -86,7 +88,9 @@
     //remove the item in section.
     [section removeItemAtIndex:currentIndexPath.row];
     //remove the cell in tableView.
+    [self.section.tableViewManager.tableView beginUpdates];
     [self.section.tableViewManager.tableView deleteRowsAtIndexPaths:@[currentIndexPath] withRowAnimation:animation];
+    [self.section.tableViewManager.tableView endUpdates];
 }
 
 

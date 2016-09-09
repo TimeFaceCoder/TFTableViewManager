@@ -192,26 +192,37 @@
 #pragma mark - TFTableViewSection handle tableView section actions.
 
 - (void)reloadSectionWithAnimation:(UITableViewRowAnimation)animation {
+    [self.tableViewManager.tableView beginUpdates];
     [self.tableViewManager.tableView reloadSections:[NSIndexSet indexSetWithIndex:self.index] withRowAnimation:animation];
+    [self.tableViewManager.tableView endUpdates];
 }
 
 - (void)deleteSectionWithAnimation:(UITableViewRowAnimation)animation {
-    [self.tableViewManager removeSection:self];
-    [self.tableViewManager.tableView deleteSections:[NSIndexSet indexSetWithIndex:self.index] withRowAnimation:animation];
+    NSInteger index = self.index;
+    [self.tableViewManager removeSectionAtIndex:index];
+    [self.tableViewManager.tableView beginUpdates];
+    [self.tableViewManager.tableView deleteSections:[NSIndexSet indexSetWithIndex:index] withRowAnimation:animation];
+    [self.tableViewManager.tableView endUpdates];
 }
 
 - (void)reloadRowsAtIndexes:(NSIndexSet *)indexSet withAnimation:(UITableViewRowAnimation)animation{
+    [self.tableViewManager.tableView beginUpdates];
     [self.tableViewManager.tableView reloadRowsAtIndexPaths:[self indexPathsWithIndexSet:indexSet] withRowAnimation:animation];
+    [self.tableViewManager.tableView endUpdates];
 }
 
 - (void)insertRows:(NSArray<TFTableViewItem *> *)rows atIndexes:(NSIndexSet *)indexSet withRowAnimation:(UITableViewRowAnimation)animation {
     [self insertItems:rows atIndexes:indexSet];
+    [self.tableViewManager.tableView beginUpdates];
     [self.tableViewManager.tableView insertRowsAtIndexPaths:[self indexPathsWithIndexSet:indexSet] withRowAnimation:animation];
+    [self.tableViewManager.tableView endUpdates];
 }
 
 - (void)deleteRowsAtIndexes:(NSIndexSet *)indexSet withAnimation:(UITableViewRowAnimation)animation {
     [self removeItemsAtIndexes:indexSet];
+    [self.tableViewManager.tableView beginUpdates];
     [self.tableViewManager.tableView deleteRowsAtIndexPaths:[self indexPathsWithIndexSet:indexSet] withRowAnimation:animation];
+    [self.tableViewManager.tableView endUpdates];
 }
 
 - (NSArray *)indexPathsWithIndexSet:(NSIndexSet *)indexSet {

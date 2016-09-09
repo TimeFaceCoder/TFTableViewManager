@@ -210,25 +210,35 @@
 
 - (void)insertSections:(NSArray<TFTableViewSection *> *)sections atIndexes:(NSIndexSet *)indexSet withRowAnimation:(UITableViewRowAnimation)animation {
     [self insertSections:sections atIndexes:indexSet];
+    [self.tableView beginUpdates];
     [self.tableView insertSections:indexSet withRowAnimation:animation];
+    [self.tableView endUpdates];
 }
 
 - (void)deleteSections:(NSIndexSet *)sections withRowAnimation:(UITableViewRowAnimation)animation {
     [self removeSectionsAtIndexes:sections];
+    [self.tableView beginUpdates];
     [self.tableView deleteSections:sections withRowAnimation:animation];
+    [self.tableView endUpdates];
 }
 
 - (void)reloadSections:(NSIndexSet *)sections withRowAnimation:(UITableViewRowAnimation)animation {
+    [self.tableView beginUpdates];
     [self.tableView reloadSections:sections withRowAnimation:animation];
+    [self.tableView endUpdates];
 }
 
 - (void)moveSection:(NSInteger)section toSection:(NSInteger)newSection {
     [self exchangeSectionAtIndex:section withSectionAtIndex:newSection];
+    [self.tableView beginUpdates];
     [self.tableView moveSection:section toSection:newSection];
+    [self.tableView endUpdates];
 }
 
 - (void)reloadRowsAtIndexPaths:(NSArray<NSIndexPath *> *)indexPaths withRowAnimation:(UITableViewRowAnimation)animation {
+    [self.tableView beginUpdates];
     [self.tableView reloadRowsAtIndexPaths:indexPaths withRowAnimation:animation];
+    [self.tableView endUpdates];
 }
 
 - (void)insertRows:(NSArray<TFTableViewItem *> *)rows atIndexPaths:(NSArray<NSIndexPath *> *)indexPaths withRowAnimation:(UITableViewRowAnimation)animation {
@@ -240,7 +250,9 @@
         [section insertItem:item atIndex:indexPath.row];
         count ++;
     }
+    [self.tableView beginUpdates];
     [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:animation];
+    [self.tableView endUpdates];
 }
 
 - (void)deleteRowsAtIndexPaths:(NSArray<NSIndexPath *> *)indexPaths withRowAnimation:(UITableViewRowAnimation)animation {
@@ -248,7 +260,9 @@
         TFTableViewSection *section = self.mutableSections[indexPath.section];
         [section removeItemAtIndex:indexPath.row];
     }
+    [self.tableView beginUpdates];
     [self.tableView deleteRowsAtIndexPaths:indexPaths withRowAnimation:animation];
+    [self.tableView endUpdates];
 }
 
 - (void)moveRowAtIndexPath:(NSIndexPath *)indexPath toIndexPath:(NSIndexPath *)newIndexPath {
@@ -258,7 +272,9 @@
     
     TFTableViewSection *newSection = self.mutableSections[newIndexPath.section];
     [newSection insertItem:oldItem atIndex:newIndexPath.row];
+    [self.tableView beginUpdates];
     [self.tableView moveRowAtIndexPath:indexPath toIndexPath:newIndexPath];
+    [self.tableView endUpdates];
 }
 
 - (void)selectRowAtIndexPath:(NSIndexPath *)indexPath animated:(BOOL)animated scrollPosition:(UITableViewScrollPosition)scrollPosition {
