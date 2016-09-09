@@ -34,11 +34,28 @@
     return item;
 }
 
-+ (instancetype)itemWithModel:(id)model selectionHandler:(void (^)(id, NSIndexPath *))selectionHandler {
++ (instancetype)itemWithModel:(id)model selectionHandler:(SelectionHandler)selectionHandler {
     TFTableViewItem *item = [[self alloc] init];
     item.model = model;
     item.separatorSunk = YES;
     item.selectionHandler = selectionHandler;
+    return item;
+}
+
++ (instancetype)itemWithModel:(id)model cellClickHandler:(CellClickHandler)cellClickHandler {
+    TFTableViewItem *item = [[self alloc] init];
+    item.model = model;
+    item.separatorSunk = YES;
+    item.cellClickHandler = cellClickHandler;
+    return item;
+}
+
++ (instancetype)itemWithModel:(id)model selectionHandler:(SelectionHandler)selectionHandler cellClickHandler:(CellClickHandler)cellClickHandler {
+    TFTableViewItem *item = [[self alloc] init];
+    item.model = model;
+    item.separatorSunk = YES;
+    item.selectionHandler = selectionHandler;
+    item.cellClickHandler = cellClickHandler;
     return item;
 }
 
