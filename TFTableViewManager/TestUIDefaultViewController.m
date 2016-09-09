@@ -9,7 +9,7 @@
 #import "TestUIDefaultViewController.h"
 #import "TFTableViewManager.h"
 #import "TFDefaultTableViewItem.h"
-#import "TFUIDefaultTableViewItemCell.h"
+#import "TFDefaultTableViewItemCell.h"
 
 @interface TestUIDefaultViewController ()
 
@@ -27,7 +27,7 @@
     [super viewDidLoad];
     [self.view addSubview:self.tableView];
     self.manager = [[TFTableViewManager alloc]initWithTableView:self.tableView];
-    self.manager[@"TFDefaultTableViewItem"] = @"TFUIDefaultTableViewItemCell";
+    self.manager[@"TFDefaultTableViewItem"] = @"TFDefaultTableViewItemCell";
     NSArray *sections = @[@{@"title":@"UITableViewCellStyleDefault",@"contents":@[@{@"text":@"shortText",@"style":@(UITableViewCellStyleDefault)},
                                                                                   @{@"text":@"shortTextWithImage",@"style":@(UITableViewCellStyleDefault),@"image":@"userpic1"},
                                                                                   @{@"text":@"longText:的玩家爱豆我我就掉网的骄傲为大家我ID阿瓦的骄傲文件",@"style":@(UITableViewCellStyleDefault)},

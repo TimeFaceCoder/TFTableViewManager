@@ -8,7 +8,7 @@
 
 #import "TestASTableVIewManagerViewController.h"
 #import "TFTableViewManager.h"
-#import "TFASTableViewItemCell.h"
+#import "TFTableViewItemCellNode.h"
 #import "TestASItemCell.h"
 
 @interface TestASTableVIewManagerViewController ()

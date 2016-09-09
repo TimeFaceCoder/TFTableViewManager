@@ -9,7 +9,7 @@
 #import "TestASDefaultItemViewController.h"
 #import "TFTableViewManager.h"
 #import "TFDefaultTableViewItem.h"
-#import "TFASDefaultTableViewItemCell.h"
+#import "TFDefaultTableViewItemCellNode.h"
 @interface TestASDefaultItemViewController ()
 
 @property (nonatomic, strong) ASTableNode *tableNode;
@@ -24,7 +24,7 @@
     [super viewDidLoad];
     [self.view addSubnode:self.tableNode];
     self.manager = [[TFTableViewManager alloc] initWithTableNode:self.tableNode];
-    self.manager[@"TFDefaultTableViewItem"] = @"TFASDefaultTableViewItemCell";
+    self.manager[@"TFDefaultTableViewItem"] = @"TFDefaultTableViewItemCellNode";
     
     NSArray *sections = @[@{@"title":@"UITableViewCellStyleDefault",@"contents":@[@{@"text":@"shortText",@"style":@(UITableViewCellStyleDefault)},
                                                                                   @{@"text":@"shortTextWithImage",@"style":@(UITableViewCellStyleDefault),@"image":@"contactSelected"},
