@@ -16,6 +16,9 @@ typedef void (^InsertionHandler)(__kindof TFTableViewItem *item, NSIndexPath *in
 typedef void (^DeletionHandler)(__kindof TFTableViewItem *item, NSIndexPath *indexPath);
 typedef void (^SelectionHandler)(__kindof TFTableViewItem *item, NSIndexPath *indexPath);
 typedef void (^CellClickHandler)(__kindof TFTableViewItem *item ,NSInteger actionType);
+typedef BOOL (^MoveHandler)(__kindof TFTableViewItem *item, NSIndexPath *sourceIndexPath, NSIndexPath *destinationIndexPath);
+typedef void(^MoveCompletionHandler)(__kindof TFTableViewItem *item, NSIndexPath *sourceIndexPath, NSIndexPath *destinationIndexPath);
+
 
 @interface TFTableViewItem : NSObject
 
@@ -103,11 +106,11 @@ typedef void (^CellClickHandler)(__kindof TFTableViewItem *item ,NSInteger actio
  *  @brief handle item move action.
  *  @return move the item YES or NO.
  */
-@property (copy, nonatomic) BOOL (^moveHandler)(id item, NSIndexPath *sourceIndexPath, NSIndexPath *destinationIndexPath);
+@property (copy, nonatomic) MoveHandler moveHandler;
 /**
  *  @brief handle move completion action
  */
-@property (copy, nonatomic) void (^moveCompletionHandler)(id item, NSIndexPath *sourceIndexPath, NSIndexPath *destinationIndexPath);
+@property (copy, nonatomic) MoveCompletionHandler moveCompletionHandler;
 
 ///-----------------------------
 /// @name Creating and Initializing a TFTableViewItem.
