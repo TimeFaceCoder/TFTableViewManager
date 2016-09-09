@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6CD055341D824EA0002BB505 /* ToDoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD055331D824EA0002BB505 /* ToDoListViewController.m */; };
+		6CD055371D824EFA002BB505 /* TodoHeaderNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD055361D824EFA002BB505 /* TodoHeaderNode.m */; };
 		9315C8DC9F355B8457BD985A /* libPods-TFTableViewManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B19A5CE263A237EB40D6B4AD /* libPods-TFTableViewManager.a */; };
 		C46F0FFA1D7EC7CD00070EEB /* TestASDefaultItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C46F0FF91D7EC7CD00070EEB /* TestASDefaultItemViewController.m */; };
 		C495E68F1D7E499F00BD8285 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C495E68E1D7E499F00BD8285 /* main.m */; };
@@ -33,6 +35,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6CD055321D824EA0002BB505 /* ToDoListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToDoListViewController.h; sourceTree = "<group>"; };
+		6CD055331D824EA0002BB505 /* ToDoListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoListViewController.m; sourceTree = "<group>"; };
+		6CD055351D824EFA002BB505 /* TodoHeaderNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodoHeaderNode.h; sourceTree = "<group>"; };
+		6CD055361D824EFA002BB505 /* TodoHeaderNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodoHeaderNode.m; sourceTree = "<group>"; };
 		B19A5CE263A237EB40D6B4AD /* libPods-TFTableViewManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TFTableViewManager.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B69C56E3ECE604CCA7169401 /* Pods-TFTableViewManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TFTableViewManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-TFTableViewManager/Pods-TFTableViewManager.release.xcconfig"; sourceTree = "<group>"; };
 		C46F0FF81D7EC7CD00070EEB /* TestASDefaultItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestASDefaultItemViewController.h; sourceTree = "<group>"; };
@@ -150,6 +156,8 @@
 				C495E69B1D7E499F00BD8285 /* LaunchScreen.storyboard */,
 				C495E69E1D7E499F00BD8285 /* Info.plist */,
 				C495E68D1D7E499F00BD8285 /* Supporting Files */,
+				6CD055321D824EA0002BB505 /* ToDoListViewController.h */,
+				6CD055331D824EA0002BB505 /* ToDoListViewController.m */,
 			);
 			path = TFTableViewManager;
 			sourceTree = "<group>";
@@ -180,6 +188,8 @@
 				C495E6AD1D7E4A4300BD8285 /* TestUIItem.m */,
 				C495E6AE1D7E4A4300BD8285 /* TestUIItemCell.h */,
 				C495E6AF1D7E4A4300BD8285 /* TestUIItemCell.m */,
+				6CD055351D824EFA002BB505 /* TodoHeaderNode.h */,
+				6CD055361D824EFA002BB505 /* TodoHeaderNode.m */,
 			);
 			path = TestItems;
 			sourceTree = "<group>";
@@ -352,6 +362,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CD055371D824EFA002BB505 /* TodoHeaderNode.m in Sources */,
 				C495E6D01D7E4A4300BD8285 /* TFTableViewItem.m in Sources */,
 				C495E6EA1D7E73A400BD8285 /* TFASDefaultTableViewItemCell.m in Sources */,
 				C495E6CC1D7E4A4300BD8285 /* TestUIItemCell.m in Sources */,
@@ -368,6 +379,7 @@
 				C495E6CD1D7E4A4300BD8285 /* TestUITableVIewManagerViewController.m in Sources */,
 				C46F0FFA1D7EC7CD00070EEB /* TestASDefaultItemViewController.m in Sources */,
 				C495E6CB1D7E4A4300BD8285 /* TestUIItem.m in Sources */,
+				6CD055341D824EA0002BB505 /* ToDoListViewController.m in Sources */,
 				C495E6C81D7E4A4300BD8285 /* TestUIModel.m in Sources */,
 				C495E6D11D7E4A4300BD8285 /* TFTableViewManager.m in Sources */,
 				C495E6C91D7E4A4300BD8285 /* TestASTableVIewManagerViewController.m in Sources */,
