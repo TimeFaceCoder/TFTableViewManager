@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "TFTableViewManager.h"
 #import "TFDefaultTableViewItem.h"
-#import "TFUIDefaultTableViewItemCell.h"
+#import "TFDefaultTableViewItemCell.h"
 #import "TestUITableVIewManagerViewController.h"
 #import "TestASTableVIewManagerViewController.h"
 #import "TestASDefaultItemViewController.h"
@@ -32,7 +32,7 @@
     
     self.manager = [[TFTableViewManager alloc] initWithTableView:self.tableView];
     
-    self.manager[@"TFDefaultTableViewItem"] = @"TFUIDefaultTableViewItemCell";
+    self.manager[@"TFDefaultTableViewItem"] = @"TFDefaultTableViewItemCell";
     NSArray *contentArr = @[@"TFUITableViewManager",@"TFASTableViewManager",@"ASDefaultItem",@"UIDefaultItem"];
     TFTableViewSection *section = [TFTableViewSection section];
     typeof(self) __weak weakVC = self;

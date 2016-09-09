@@ -33,7 +33,7 @@
     [self.view addSubnode:self.tableNode];
     self.manager = [[TFTableViewManager alloc] initWithTableNode:self.tableNode];
     
-    self.manager[@"TestUIItem"] = @"TodoItemCell";
+    self.manager[@"TestUIItem"] = @"TodoItemCellNode";
     
     
     

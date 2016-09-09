@@ -7,7 +7,7 @@
 //
 
 #import <AsyncDisplayKit/AsyncDisplayKit.h>
-#import "TFASTableViewItemCell.h"
-@interface TodoItemCell : TFASTableViewItemCell
+#import "TFTableViewItemCellNode.h"
+@interface TodoItemCellNode : TFTableViewItemCellNode
 
 @end

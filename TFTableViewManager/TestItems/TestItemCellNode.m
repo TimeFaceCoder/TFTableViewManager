@@ -6,9 +6,9 @@
 //  Copyright © 2016年 Summer. All rights reserved.
 //
 
-#import "TestASItemCell.h"
+#import "TestItemCellNode.h"
 
-@interface TestASItemCell ()
+@interface TestItemCellNode ()
 
 @property (nonatomic, strong) ASButtonNode *selectNode;
 
@@ -20,7 +20,7 @@
 
 @end
 
-@implementation TestASItemCell
+@implementation TestItemCellNode
 
 @dynamic tableViewItem;
 

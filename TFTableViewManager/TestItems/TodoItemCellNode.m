@@ -6,10 +6,10 @@
 //  Copyright © 2016年 Summer. All rights reserved.
 //
 
-#import "TodoItemCell.h"
+#import "TodoItemCellNode.h"
 #import "TestUIItem.h"
 #import "TestUIModel.h"
-@interface TodoItemCell ()
+@interface TodoItemCellNode ()
 @property (nonatomic, strong)ASImageNode* imageNode;
 @property (nonatomic, strong)ASTextNode* titleNode;
 @property (nonatomic, strong)ASTextNode* startDateNode;
@@ -17,7 +17,7 @@
 @property (nonatomic, strong)ASButtonNode* selectButton;
 @end
 
-@implementation TodoItemCell
+@implementation TodoItemCellNode
 
 - (ASImageNode *)imageNode {
     if (!_imageNode) {

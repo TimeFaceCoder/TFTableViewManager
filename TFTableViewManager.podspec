@@ -10,6 +10,5 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/TimeFaceCoder/TFTableViewManager.git"}
   s.source_files  = "TFTableViewManager/TFTableViewManager/**/*.{h,m,c}"
   s.requires_arc = true
-  s.dependency 'pop'
   s.dependency 'AsyncDisplayKit'
 end

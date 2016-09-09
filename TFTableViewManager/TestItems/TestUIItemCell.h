@@ -6,10 +6,10 @@
 //  Copyright © 2016年 Summer. All rights reserved.
 //
 
-#import "TFUITableViewItemCell.h"
+#import "TFTableViewItemCell.h"
 #import "TestUIItem.h"
 
-@interface TestUIItemCell : TFUITableViewItemCell
+@interface TestUIItemCell : TFTableViewItemCell
 
 /** @brief TestUIItem */
 @property (nonatomic, strong) TestUIItem *tableViewItem;

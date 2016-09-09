@@ -7,8 +7,8 @@
 //
 
 #import "TFTableViewManager.h"
-#import "TFUITableViewItemCell.h"
-#import "TFASTableViewItemCell.h"
+#import "TFTableViewItemCell.h"
+#import "TFTableViewItemCellNode.h"
 #import "TFDefaultTableViewItem.h"
 
 @interface TFTableViewManager ()<UITableViewDataSource,UITableViewDelegate,ASTableDataSource,ASTableDelegate>
@@ -123,7 +123,7 @@
     [self.mutableSections insertObject:section atIndex:index];
 }
 
-- (void)insertSections:(NSArray *)sections atIndexes:(NSIndexSet *)indexes {
+- (void)insertSections:(NSArray<TFTableViewSection *> *)sections atIndexes:(NSIndexSet *)indexes {
     for (TFTableViewSection *section in sections) {
         section.tableViewManager = self;
     }
@@ -148,7 +148,7 @@
     [self.mutableSections removeAllObjects];
 }
 
-- (void)removeSectionsInArray:(NSArray *)array {
+- (void)removeSectionsInArray:(NSArray<TFTableViewSection *> *)array {
     [self.mutableSections removeObjectsInArray:array];
 }
 
@@ -171,7 +171,7 @@
     [self.mutableSections replaceObjectAtIndex:index withObject:section];
 }
 
-- (void)replaceSectionsWithSectionsFromArray:(NSArray *)array {
+- (void)replaceSectionsWithSectionsFromArray:(NSArray<TFTableViewSection *> *)array {
     [self removeAllSections];
     [self addSectionsFromArray:array];
 }
@@ -322,7 +322,7 @@
     if ([item isKindOfClass:[TFDefaultTableViewItem class]]) {
         identifier = [identifier stringByAppendingFormat:@"%ld",(long)((TFDefaultTableViewItem *)item).cellStyle];
     }
-    TFUITableViewItemCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    TFTableViewItemCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     
     if (!cell) {
         cell = [[cellClass alloc] initWithTableViewItem:item reuseIdentifier:identifier];
@@ -346,7 +346,7 @@
     Class cellClass = [self classForCellAtIndexPath:indexPath];
     typeof(self) __weak weakSelf = self;
     return ^{
-        TFASTableViewItemCell *cell = [[cellClass alloc] initWithTableViewItem:item];
+        TFTableViewItemCellNode *cell = [[cellClass alloc] initWithTableViewItem:item];
         cell.tableViewManager = weakSelf;
         return cell;
     };
@@ -455,7 +455,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didEndDisplayingCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    [(TFUITableViewItemCell *)cell cellDidDisappear];
+    [(TFTableViewItemCell *)cell cellDidDisappear];
     if ([self.delegate respondsToSelector:@selector(tableView:didEndDisplayingCell:forRowAtIndexPath:)]) {
         [self.delegate tableView:tableView didEndDisplayingCell:cell forRowAtIndexPath:indexPath];
     }
