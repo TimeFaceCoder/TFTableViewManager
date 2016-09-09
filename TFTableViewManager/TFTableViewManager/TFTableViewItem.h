@@ -141,7 +141,31 @@ typedef void(^MoveCompletionHandler)(__kindof TFTableViewItem *item, NSIndexPath
  *  @return A new item.
  */
 + (instancetype)itemWithModel:(id)model
-             selectionHandler:(void(^)(id item, NSIndexPath *indexPath))selectionHandler;
+             selectionHandler:(SelectionHandler)selectionHandler;
+
+/**
+ *   Creates and returns a new item with model and CellClickHandler handler.
+ *
+ *  @param model            the model of the item.
+ *  @param cellClickHandler the item cell click handler.
+ *
+ *  @return A new item.
+ */
++ (instancetype)itemWithModel:(id)model
+             cellClickHandler:(CellClickHandler)cellClickHandler;
+
+/**
+ *  Creates and returns a new item with model,SelectionHandler and CellClickHandler handler.
+ *
+ *  @param model            the model of the item.
+ *  @param selectionHandler the item selection handler.
+ *  @param cellClickHandler the item cell click handler.
+ *
+ *  @return A new item.
+ */
++ (instancetype)itemWithModel:(id)model
+             selectionHandler:(SelectionHandler)selectionHandler
+             cellClickHandler:(CellClickHandler)cellClickHandler;
 
 ///-----------------------------
 /// @name reload and select table view item
