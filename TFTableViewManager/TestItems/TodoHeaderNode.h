@@ -7,7 +7,14 @@
 //
 
 #import <AsyncDisplayKit/AsyncDisplayKit.h>
+@class TodoHeaderNode;
+@protocol TodoHeaderNodeDelegate <NSObject>
+
+- (void)todoHeaderNode:(TodoHeaderNode*)node didClickButtonIndex:(NSInteger)index;
+
+@end
 
 @interface TodoHeaderNode : ASDisplayNode
-
+@property (nonatomic, weak)id<TodoHeaderNodeDelegate> delegate;
+@property (nonatomic, assign)BOOL editing;
 @end

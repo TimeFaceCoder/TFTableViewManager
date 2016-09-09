@@ -14,7 +14,7 @@
 #import "TestASTableVIewManagerViewController.h"
 #import "TestASDefaultItemViewController.h"
 #import "TestUIDefaultViewController.h"
-
+#import "ToDoListViewController.h"
 @interface ViewController ()
 
 @property (nonatomic, strong) UITableView *tableView;
@@ -71,7 +71,7 @@
         [self.navigationController pushViewController:nextVC animated:YES];
     }
     else if (indexPath.row==3) {
-        TestUIDefaultViewController *nextVC = [[TestUIDefaultViewController alloc] init];
+        ToDoListViewController *nextVC = [[ToDoListViewController alloc] init];
         nextVC.title =@"TestUIDefault";
         [self.navigationController pushViewController:nextVC animated:YES];
     }

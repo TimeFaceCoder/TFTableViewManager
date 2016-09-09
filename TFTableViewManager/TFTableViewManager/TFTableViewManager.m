@@ -25,7 +25,7 @@
 
 #pragma mark - Properties.
 
-- (NSArray *)sections
+- (NSArray<TFTableViewSection *> *)sections
 {
     return self.mutableSections;
 }
@@ -432,6 +432,13 @@
     if (tableViewSection.headerHeight!=0.0) {
         return tableViewSection.headerHeight;
     }
+    if (tableViewSection.headerNode) {
+        if (CGSizeEqualToSize(tableViewSection.headerNode.calculatedSize, CGSizeZero) ) {
+            [tableViewSection.headerNode measureWithSizeRange:ASSizeRangeMake(CGSizeMake(tableView.bounds.size.width, 0), CGSizeMake(tableView.bounds.size.width, CGFLOAT_MAX))];
+            tableViewSection.headerNode.frame = CGRectMake(0, 0, tableViewSection.headerNode.calculatedSize.width, tableViewSection.headerNode.calculatedSize.height);
+        }
+        return CGRectGetHeight(tableViewSection.headerNode.frame);
+    }
     if (tableViewSection.headerView) {
         return CGRectGetHeight(tableViewSection.headerView.frame);
     }
@@ -462,6 +469,13 @@
     if (tableViewSection.footerHeight!=0.0) {
         return tableViewSection.footerHeight;
     }
+    if (tableViewSection.footerNode) {
+        if (CGSizeEqualToSize(tableViewSection.footerNode.calculatedSize, CGSizeZero) ) {
+            [tableViewSection.footerNode measureWithSizeRange:ASSizeRangeMake(CGSizeMake(tableView.bounds.size.width, 0), CGSizeMake(tableView.bounds.size.width, CGFLOAT_MAX))];
+            tableViewSection.footerNode.frame = CGRectMake(0, 0, tableViewSection.footerNode.calculatedSize.width, tableViewSection.footerNode.calculatedSize.height);
+        }
+        return CGRectGetHeight(tableViewSection.footerNode.frame);
+    }
     if (tableViewSection.footerView) {
         return CGRectGetHeight(tableViewSection.footerView.frame);
     }
@@ -489,7 +503,17 @@
     }
     TFTableViewSection *tableViewSection = self.mutableSections[section];
     if (!tableViewSection.headerReuseIdentifier.length) {
-        return tableViewSection.headerView;
+        if (tableViewSection.headerNode) {
+            if (CGSizeEqualToSize(tableViewSection.headerNode.calculatedSize, CGSizeZero) ) {
+                [tableViewSection.headerNode measureWithSizeRange:ASSizeRangeMake(CGSizeMake(tableView.bounds.size.width, 0), CGSizeMake(tableView.bounds.size.width, CGFLOAT_MAX))];
+                tableViewSection.headerNode.frame = CGRectMake(0, 0, tableViewSection.headerNode.calculatedSize.width, tableViewSection.headerNode.calculatedSize.height);
+            }
+            return tableViewSection.headerNode.view;
+        }
+        else {
+            return tableViewSection.headerView;
+        }
+        
     }
     else {
         UITableViewHeaderFooterView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:tableViewSection.headerReuseIdentifier];
@@ -512,7 +536,17 @@
     }
     TFTableViewSection *tableViewSection = self.mutableSections[section];
     if (!tableViewSection.footerReuseIdentifier.length) {
-        return tableViewSection.footerView;
+        if (tableViewSection.footerNode) {
+            if (CGSizeEqualToSize(tableViewSection.footerNode.calculatedSize, CGSizeZero) ) {
+                [tableViewSection.footerNode measureWithSizeRange:ASSizeRangeMake(CGSizeMake(tableView.bounds.size.width, 0), CGSizeMake(tableView.bounds.size.width, CGFLOAT_MAX))];
+                tableViewSection.footerNode.frame = CGRectMake(0, 0, tableViewSection.footerNode.calculatedSize.width, tableViewSection.footerNode.calculatedSize.height);
+            }
+            return tableViewSection.footerNode.view;
+        }
+        else {
+            return tableViewSection.footerView;
+        }
+        
     }
     else {
         UITableViewHeaderFooterView *footerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:tableViewSection.footerReuseIdentifier];

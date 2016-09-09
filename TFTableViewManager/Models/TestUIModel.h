@@ -17,5 +17,5 @@
 @property (nonatomic,strong) NSString *userPhone;///<用户电话
 
 @property (nonatomic,assign) BOOL selected;///<是否选中
-
+@property (nonatomic,assign) BOOL editing;//<是否可选
 @end

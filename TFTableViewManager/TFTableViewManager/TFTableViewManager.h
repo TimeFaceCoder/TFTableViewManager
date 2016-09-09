@@ -42,7 +42,7 @@
 /**
  *  @brief The array of sections. See TFTableViewSection reference for details.
  */
-@property (strong, readonly, nonatomic) NSArray *sections;
+@property (strong, readonly, nonatomic) NSArray<TFTableViewSection *> *sections;
 
 /**
  *  @brief The array of pairs of items / cell classes.

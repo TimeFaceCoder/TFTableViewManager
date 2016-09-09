@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 
 @class TFTableViewManager;
-
+@class ASDisplayNode;
 @interface TFTableViewSection : NSObject
 
 ///-----------------------------
@@ -48,6 +48,11 @@
 @property (strong, nonatomic) UIView *headerView;
 
 /**
+ *  @brief A node object to display in the header of the specified section of the table view.
+ */
+@property (strong, nonatomic) ASDisplayNode *headerNode;
+
+/**
  *  @brief The reuse identifier when you use UITableViewHeaderFooterView to create a headerView.
  */
 @property (strong, nonatomic) NSString *headerReuseIdentifier;
@@ -57,7 +62,10 @@
  */
 @property (strong, nonatomic) UIView *footerView;
 
-
+/**
+ *  @brief A node object to display in the footer of the specified section of the table view.
+ */
+@property (strong, nonatomic) ASDisplayNode *footerNode;
 /**
  *  @brief The reuse identifier when you use UITableViewHeaderFooterView to create a footerView.
  */
