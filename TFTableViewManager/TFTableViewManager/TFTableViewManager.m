@@ -112,7 +112,7 @@
     [self.mutableSections addObject:section];
 }
 
-- (void)addSectionsFromArray:(NSArray *)array {
+- (void)addSectionsFromArray:(NSArray<TFTableViewSection *> *)array {
     for (TFTableViewSection *section in array) {
         [self addSection:section];
     }
@@ -176,14 +176,14 @@
     [self addSectionsFromArray:array];
 }
 
-- (void)replaceSectionsAtIndexes:(NSIndexSet *)indexes withSections:(NSArray *)sections {
+- (void)replaceSectionsAtIndexes:(NSIndexSet *)indexes withSections:(NSArray<TFTableViewSection *> *)sections {
     for (TFTableViewSection *section in sections) {
         section.tableViewManager = self;
     }
     [self.mutableSections replaceObjectsAtIndexes:indexes withObjects:sections];
 }
 
-- (void)replaceSectionsInRange:(NSRange)range withSectionsFromArray:(NSArray *)array {
+- (void)replaceSectionsInRange:(NSRange)range withSectionsFromArray:(NSArray<TFTableViewSection *> *)array {
     for (TFTableViewSection *section in array) {
         section.tableViewManager = self;
     }

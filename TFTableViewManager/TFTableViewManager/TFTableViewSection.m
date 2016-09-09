@@ -19,7 +19,7 @@
 @implementation TFTableViewSection
 
 #pragma mark - Properties.
-- (NSArray *)items {
+- (NSArray<TFTableViewItem*> *)items {
     return self.mutableItems;
 }
 
@@ -100,7 +100,7 @@
     [self.mutableItems addObject:item];
 }
 
-- (void)addItemsFromArray:(NSArray *)array {
+- (void)addItemsFromArray:(NSArray<TFTableViewItem*> *)array {
     for (TFTableViewItem *item in array) {
         [self addItem:item];
     }
@@ -158,19 +158,19 @@
     [self.mutableItems replaceObjectAtIndex:index withObject:item];
 }
 
-- (void)replaceItemsWithItemsFromArray:(NSArray *)array {
+- (void)replaceItemsWithItemsFromArray:(NSArray<TFTableViewItem*> *)array {
     [self removeAllItems];
     [self addItemsFromArray:array];
 }
 
-- (void)replaceItemsAtIndexes:(NSIndexSet *)indexes withItems:(NSArray *)items {
+- (void)replaceItemsAtIndexes:(NSIndexSet *)indexes withItems:(NSArray<TFTableViewItem*> *)items {
     for (TFTableViewItem *item in items) {
         ((TFTableViewItem *)item).section = self;
     }
     [self.mutableItems replaceObjectsAtIndexes:indexes withObjects:items];
 }
 
-- (void)replaceItemsInRange:(NSRange)range withItemsFromArray:(NSArray *)array {
+- (void)replaceItemsInRange:(NSRange)range withItemsFromArray:(NSArray<TFTableViewItem*> *)array {
     for (TFTableViewItem *item in array) {
         ((TFTableViewItem *)item).section = self;
     }
