@@ -57,6 +57,9 @@
                                     item.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
                                     item.cellHeight = 60.0;
                                     [section addItem:item];
+                                    item.selectionHandler = ^(TFDefaultTableViewItem *item, NSIndexPath *indexPath) {
+                                        [self.manager reloadAllSectionsWithRowAnimation:UITableViewRowAnimationFade];
+                                    };
                                 }
                                 [self.manager addSection:section];
 

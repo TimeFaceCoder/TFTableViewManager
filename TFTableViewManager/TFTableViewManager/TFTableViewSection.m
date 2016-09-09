@@ -189,17 +189,65 @@
     [self.mutableItems sortUsingSelector:comparator];
 }
 
-#pragma mark - reload table view section
+#pragma mark - TFTableViewSection handle tableView section actions.
 
 - (void)reloadSectionWithAnimation:(UITableViewRowAnimation)animation {
-    if (self.tableViewManager.tableView) {
-        [self.tableViewManager.tableView reloadSections:[NSIndexSet indexSetWithIndex:self.index] withRowAnimation:animation];
-    }
-    else if (self.tableViewManager.tableNode) {
-        [self.tableViewManager.tableNode.view reloadSections:[NSIndexSet indexSetWithIndex:self.index] withRowAnimation:animation];
-    }
+    [self.tableViewManager.tableView beginUpdates];
+    [self.tableViewManager.tableView reloadSections:[NSIndexSet indexSetWithIndex:self.index] withRowAnimation:animation];
+    [self.tableViewManager.tableView endUpdates];
 }
 
+- (void)deleteSectionWithAnimation:(UITableViewRowAnimation)animation {
+    NSInteger index = self.index;
+    [self.tableViewManager removeSectionAtIndex:index];
+    [self.tableViewManager.tableView beginUpdates];
+    [self.tableViewManager.tableView deleteSections:[NSIndexSet indexSetWithIndex:index] withRowAnimation:animation];
+    [self.tableViewManager.tableView endUpdates];
+}
 
+- (void)reloadRowsAtIndexes:(NSIndexSet *)indexSet withAnimation:(UITableViewRowAnimation)animation{
+    [self.tableViewManager.tableView beginUpdates];
+    [self.tableViewManager.tableView reloadRowsAtIndexPaths:[self indexPathsWithIndexSet:indexSet] withRowAnimation:animation];
+    [self.tableViewManager.tableView endUpdates];
+}
+
+- (void)insertRows:(NSArray<TFTableViewItem *> *)rows atIndexes:(NSIndexSet *)indexSet withRowAnimation:(UITableViewRowAnimation)animation {
+    [self insertItems:rows atIndexes:indexSet];
+    [self.tableViewManager.tableView beginUpdates];
+    [self.tableViewManager.tableView insertRowsAtIndexPaths:[self indexPathsWithIndexSet:indexSet] withRowAnimation:animation];
+    [self.tableViewManager.tableView endUpdates];
+}
+
+- (void)addRows:(NSArray<TFTableViewItem *> *)rows withRowAnimation:(UITableViewRowAnimation)animation {
+    NSIndexSet* indexSet = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(self.items.count, rows.count)];
+    [self insertRows:rows atIndexes:indexSet withRowAnimation:animation];
+}
+
+- (void)deleteRowsAtIndexes:(NSIndexSet *)indexSet withAnimation:(UITableViewRowAnimation)animation {
+    [self removeItemsAtIndexes:indexSet];
+    [self.tableViewManager.tableView beginUpdates];
+    [self.tableViewManager.tableView deleteRowsAtIndexPaths:[self indexPathsWithIndexSet:indexSet] withRowAnimation:animation];
+    [self.tableViewManager.tableView endUpdates];
+}
+
+- (void)deleteRows:(NSArray *)items withAnimation:(UITableViewRowAnimation)animation {
+    NSMutableArray* indexPaths = [NSMutableArray arrayWithCapacity:items.count];
+    for (TFTableViewItem *item in items) {
+        [indexPaths addObject:item.indexPath];
+    }
+    [self.tableViewManager.tableView beginUpdates];
+    [self removeItemsInArray:items];
+    [self.tableViewManager.tableView deleteRowsAtIndexPaths:indexPaths withRowAnimation:animation];
+    [self.tableViewManager.tableView endUpdates];
+}
+
+- (NSArray *)indexPathsWithIndexSet:(NSIndexSet *)indexSet {
+    NSMutableArray *indexPaths = [NSMutableArray array];
+    NSInteger section = self.index;
+    [indexSet enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL * _Nonnull stop) {
+        [indexPaths addObject:[NSIndexPath indexPathForRow:idx inSection:section]];
+    }];
+    return [NSArray arrayWithArray:indexPaths];
+}
 
 @end

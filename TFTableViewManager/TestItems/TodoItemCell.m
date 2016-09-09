@@ -75,10 +75,13 @@
 -(void)cellLoadSubNodes {
     [super cellLoadSubNodes];
     [self addSubnode:self.selectButton];
+    self.selectButton.hidden = YES;
     [self addSubnode:self.imageNode];
     [self addSubnode:self.titleNode];
     [self addSubnode:self.startDateNode];
     [self addSubnode:self.endDateNode];
+    
+    self.titleNode.attributedText = [[NSAttributedString alloc] initWithString:[self.tableViewItem.model userName] attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15],NSForegroundColorAttributeName:[UIColor blackColor]}];
 }
 
 - (ASLayoutSpec *)layoutSpecThatFits:(ASSizeRange)constrainedSize {
@@ -93,9 +96,11 @@
     infoSpec.alignItems = ASStackLayoutAlignItemsStart;
     ASStackLayoutSpec *contentSpec = [ASStackLayoutSpec horizontalStackLayoutSpec];
     if ([self.tableViewItem.model editing]) {
+        self.selectButton.hidden = NO;
         contentSpec.children = @[self.selectButton,self.imageNode,infoSpec];
     }
     else {
+        self.selectButton.hidden = YES;
         contentSpec.children = @[self.imageNode,infoSpec];
     }
     contentSpec.spacing = 8.0;
