@@ -111,7 +111,7 @@
     [self.mutableItems insertObject:item atIndex:index];
 }
 
-- (void)insertItems:(NSArray *)items atIndexes:(NSIndexSet *)indexes {
+- (void)insertItems:(NSArray<TFTableViewItem *> *)items atIndexes:(NSIndexSet *)indexes {
     for (TFTableViewItem *item in items) {
         ((TFTableViewItem *)item).section = self;
     }
@@ -136,7 +136,7 @@
     [self.mutableItems removeObjectsAtIndexes:indexes];
 }
 
-- (void)removeItemsInArray:(NSArray *)array {
+- (void)removeItemsInArray:(NSArray<TFTableViewItem *> *)array {
     [self.mutableItems removeObjectsInArray:array];
 }
 
@@ -230,7 +230,7 @@
     [self.tableViewManager.tableView endUpdates];
 }
 
-- (void)deleteRows:(NSArray *)items withAnimation:(UITableViewRowAnimation)animation {
+- (void)deleteRows:(NSArray<TFTableViewItem *> *)items withAnimation:(UITableViewRowAnimation)animation {
     NSMutableArray* indexPaths = [NSMutableArray arrayWithCapacity:items.count];
     for (TFTableViewItem *item in items) {
         [indexPaths addObject:item.indexPath];
