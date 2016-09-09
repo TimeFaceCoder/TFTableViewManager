@@ -10,6 +10,12 @@
 #import <UIKit/UIKit.h>
 
 @class TFTableViewSection;
+@class TFTableViewItem;
+
+typedef void (^InsertionHandler)(__kindof TFTableViewItem *item, NSIndexPath *indexPath);
+typedef void (^DeletionHandler)(__kindof TFTableViewItem *item, NSIndexPath *indexPath);
+typedef void (^SelectionHandler)(__kindof TFTableViewItem *item, NSIndexPath *indexPath);
+typedef void (^CellClickHandler)(__kindof TFTableViewItem *item ,NSInteger actionType);
 
 @interface TFTableViewItem : NSObject
 
@@ -65,17 +71,22 @@
 /**
  *  @brief handle item inset action.
  */
-@property (copy, nonatomic) void (^insertionHandler)(id item, NSIndexPath *indexPath);
+@property (copy, nonatomic) InsertionHandler insertionHandler;
 
 /**
  *  @brief handle item delete action.you need delete the cell by yourself.
  */
-@property (copy, nonatomic) void (^deletionHandler)(id item , NSIndexPath *indexPath);
+@property (copy, nonatomic) DeletionHandler deletionHandler;
 
 /**
  *  @brief handle item when selected.
  */
-@property (copy, nonatomic) void (^selectionHandler)(id item, NSIndexPath *indexPath);
+@property (copy, nonatomic) SelectionHandler selectionHandler;
+
+/**
+ *  @brief handle item when cell subview click.
+ */
+@property (copy, nonatomic) CellClickHandler cellClickHandler;
 
 
 /** 
