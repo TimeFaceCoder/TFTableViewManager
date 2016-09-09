@@ -100,7 +100,7 @@ typedef void(^MoveCompletionHandler)(__kindof TFTableViewItem *item, NSIndexPath
 /**
  *  @brief edit actions for row.
  */
-@property (nonatomic, strong) NSArray *editActions;
+@property (nonatomic, strong) NSArray<UITableViewRowAction *> *editActions;
 
 /**
  *  @brief handle item move action.
@@ -168,7 +168,7 @@ typedef void(^MoveCompletionHandler)(__kindof TFTableViewItem *item, NSIndexPath
              cellClickHandler:(CellClickHandler)cellClickHandler;
 
 ///-----------------------------
-/// @name reload and select table view item
+/// @name TFTableViewItem handle tableView row actions.
 ///-----------------------------
 
 /**

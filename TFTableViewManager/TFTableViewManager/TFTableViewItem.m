@@ -66,32 +66,17 @@
 }
 
 - (void)selectRowAnimated:(BOOL)animated scrollPosition:(UITableViewScrollPosition)scrollPosition {
-    if (self.section.tableViewManager.tableView) {
-        [self.section.tableViewManager.tableView selectRowAtIndexPath:self.indexPath animated:animated scrollPosition:scrollPosition];
-    }
-    else if (self.section.tableViewManager.tableNode) {
-        [self.section.tableViewManager.tableNode.view selectRowAtIndexPath:self.indexPath animated:animated scrollPosition:scrollPosition];
-    }
+    [self.section.tableViewManager.tableView selectRowAtIndexPath:self.indexPath animated:animated scrollPosition:scrollPosition];
 }
 
 - (void)deselectRowAnimated:(BOOL)animated
 {
-    if (self.section.tableViewManager.tableView) {
-        [self.section.tableViewManager.tableView deselectRowAtIndexPath:self.indexPath animated:animated];
-    }
-    else if (self.section.tableViewManager.tableNode) {
-        [self.section.tableViewManager.tableNode.view deselectRowAtIndexPath:self.indexPath animated:animated];
-    }
+    [self.section.tableViewManager.tableView deselectRowAtIndexPath:self.indexPath animated:animated];
 }
 
 - (void)reloadRowWithAnimation:(UITableViewRowAnimation)animation
 {
-    if (self.section.tableViewManager.tableView) {
-        [self.section.tableViewManager.tableView reloadRowsAtIndexPaths:@[self.indexPath] withRowAnimation:animation];
-    }
-    else if (self.section.tableViewManager.tableNode) {
-        [self.section.tableViewManager.tableNode.view reloadRowsAtIndexPaths:@[self.indexPath] withRowAnimation:animation];
-    }
+    [self.section.tableViewManager.tableView reloadRowsAtIndexPaths:@[self.indexPath] withRowAnimation:animation];
 }
 
 - (void)deleteRowWithAnimation:(UITableViewRowAnimation)animation
@@ -101,12 +86,7 @@
     //remove the item in section.
     [section removeItemAtIndex:currentIndexPath.row];
     //remove the cell in tableView.
-    if (self.section.tableViewManager.tableView) {
-        [self.section.tableViewManager.tableView deleteRowsAtIndexPaths:@[currentIndexPath] withRowAnimation:animation];
-    }
-    else if (self.section.tableViewManager.tableNode) {
-        [self.section.tableViewManager.tableNode.view deleteRowsAtIndexPaths:@[currentIndexPath] withRowAnimation:animation];
-    }
+    [self.section.tableViewManager.tableView deleteRowsAtIndexPaths:@[currentIndexPath] withRowAnimation:animation];
 }
 
 

@@ -62,6 +62,7 @@
         tableNode.delegate     = self;
         tableNode.dataSource   = self;
         self.tableNode         = tableNode;
+        self.tableView         = tableNode.view;
         self.registeredClasses = [[NSMutableDictionary alloc] init];
     }
     return self;
@@ -203,6 +204,69 @@
 - (void)sortSectionsUsingSelector:(SEL)comparator
 {
     [self.mutableSections sortUsingSelector:comparator];
+}
+
+#pragma mark - Row and section insertion/deletion/reloading.
+
+- (void)insertSections:(NSArray<TFTableViewSection *> *)sections atIndexes:(NSIndexSet *)indexSet withRowAnimation:(UITableViewRowAnimation)animation {
+    [self insertSections:sections atIndexes:indexSet];
+    [self.tableView insertSections:indexSet withRowAnimation:animation];
+}
+
+- (void)deleteSections:(NSIndexSet *)sections withRowAnimation:(UITableViewRowAnimation)animation {
+    [self removeSectionsAtIndexes:sections];
+    [self.tableView deleteSections:sections withRowAnimation:animation];
+}
+
+- (void)reloadSections:(NSIndexSet *)sections withRowAnimation:(UITableViewRowAnimation)animation {
+    [self.tableView reloadSections:sections withRowAnimation:animation];
+}
+
+- (void)moveSection:(NSInteger)section toSection:(NSInteger)newSection {
+    [self exchangeSectionAtIndex:section withSectionAtIndex:newSection];
+    [self.tableView moveSection:section toSection:newSection];
+}
+
+- (void)reloadRowsAtIndexPaths:(NSArray<NSIndexPath *> *)indexPaths withRowAnimation:(UITableViewRowAnimation)animation {
+    [self.tableView reloadRowsAtIndexPaths:indexPaths withRowAnimation:animation];
+}
+
+- (void)insertRows:(NSArray<TFTableViewItem *> *)rows atIndexPaths:(NSArray<NSIndexPath *> *)indexPaths withRowAnimation:(UITableViewRowAnimation)animation {
+    NSInteger count = 0;
+    for (NSIndexPath *indexPath in indexPaths) {
+        TFTableViewSection *section = self.mutableSections[indexPath.section];
+        TFTableViewItem *item = rows[count];
+        item.section = section;
+        [section insertItem:item atIndex:indexPath.row];
+        count ++;
+    }
+    [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:animation];
+}
+
+- (void)deleteRowsAtIndexPaths:(NSArray<NSIndexPath *> *)indexPaths withRowAnimation:(UITableViewRowAnimation)animation {
+    for (NSIndexPath *indexPath in indexPaths) {
+        TFTableViewSection *section = self.mutableSections[indexPath.section];
+        [section removeItemAtIndex:indexPath.row];
+    }
+    [self.tableView deleteRowsAtIndexPaths:indexPaths withRowAnimation:animation];
+}
+
+- (void)moveRowAtIndexPath:(NSIndexPath *)indexPath toIndexPath:(NSIndexPath *)newIndexPath {
+    TFTableViewItem *oldItem = [self itemAtIndexPath:indexPath];
+    TFTableViewSection *oldSection = self.mutableSections[indexPath.section];
+    [oldSection removeItem:oldItem];
+    
+    TFTableViewSection *newSection = self.mutableSections[newIndexPath.section];
+    [newSection insertItem:oldItem atIndex:newIndexPath.row];
+    [self.tableView moveRowAtIndexPath:indexPath toIndexPath:newIndexPath];
+}
+
+- (void)selectRowAtIndexPath:(NSIndexPath *)indexPath animated:(BOOL)animated scrollPosition:(UITableViewScrollPosition)scrollPosition {
+    [self.tableView selectRowAtIndexPath:indexPath animated:animated scrollPosition:scrollPosition];
+}
+
+- (void)deselectRowAtIndexPath:(NSIndexPath *)indexPath animated:(BOOL)animated {
+    [self.tableView deselectRowAtIndexPath:indexPath animated:animated];
 }
 
 #pragma mark - UITableViewDataSource & ASTableDataSource
@@ -560,7 +624,7 @@
         return [self.delegate tableView:tableView titleForDeleteConfirmationButtonForRowAtIndexPath:indexPath];
     }
     TFTableViewItem *item = [self itemAtIndexPath:indexPath];
-    return item.titleForDelete;
+    return item.titleForDelete ? :@"Delete";
 }
 
 - (NSArray<UITableViewRowAction *> *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {

@@ -10,6 +10,7 @@
 #import <UIKit/UIKit.h>
 
 @class TFTableViewManager;
+@class TFTableViewItem;
 
 @interface TFTableViewSection : NSObject
 
@@ -20,7 +21,7 @@
 /**
  *  @brief An array of section items (rows).
  */
-@property (strong, readonly, nonatomic) NSArray *items;
+@property (strong, readonly, nonatomic) NSArray<TFTableViewItem *> *items;
 
 /**
  *  @brief The title of the header of the specified section of the table view.
@@ -188,7 +189,7 @@
  *
  *  @param array An array of items to add to the end of the section.
  */
-- (void)addItemsFromArray:(NSArray *)array;
+- (void)addItemsFromArray:(NSArray<TFTableViewItem *> *)array;
 
 /**
  *  Inserts a given item into the section at a given index.
@@ -204,7 +205,7 @@
  *  @param items   An array of items to insert into the section.
  *  @param indexes The indexes at which the items should be inserted.
  */
-- (void)insertItems:(NSArray *)items atIndexes:(NSIndexSet *)indexes;
+- (void)insertItems:(NSArray<TFTableViewItem *> *)items atIndexes:(NSIndexSet *)indexes;
 
 ///-----------------------------
 /// @name Removing Items.
@@ -241,7 +242,7 @@
  *
  *  @param array An array containing the items to be removed from the section.
  */
-- (void)removeItemsInArray:(NSArray *)array;
+- (void)removeItemsInArray:(NSArray<TFTableViewItem *> *)array;
 
 /**
  *  Removes from the section each of the items within a given range.
@@ -280,7 +281,7 @@
  *
  *  @param array The array of items from which to select replacements for the items.
  */
-- (void)replaceItemsWithItemsFromArray:(NSArray *)array;
+- (void)replaceItemsWithItemsFromArray:(NSArray<TFTableViewItem *> *)array;
 
 /**
  *  Replaces the items in the section at specified locations specified with the items from a given array.
@@ -288,7 +289,7 @@
  *  @param indexes The indexes of the items to be replaced.
  *  @param items   The items with which to replace the items in the section at the indexes specified by `indexes`. The count of locations in indexes must equal the count of items.
  */
-- (void)replaceItemsAtIndexes:(NSIndexSet *)indexes withItems:(NSArray *)items;
+- (void)replaceItemsAtIndexes:(NSIndexSet *)indexes withItems:(NSArray<TFTableViewItem *> *)items;
 
 /**
  *  Replaces the items in the section specified by a given range with all of the items from a given array.
@@ -296,7 +297,7 @@
  *  @param range The range of items to replace in (or remove from) the section.
  *  @param array The array of items from which to select replacements for the items in range.
  */
-- (void)replaceItemsInRange:(NSRange)range withItemsFromArray:(NSArray *)array;
+- (void)replaceItemsInRange:(NSRange)range withItemsFromArray:(NSArray<TFTableViewItem *> *)array;
 
 ///-----------------------------
 /// @name Rearranging Items
@@ -321,7 +322,7 @@
 
 
 ///-----------------------------
-/// @name reload table view section
+/// @name TFTableViewSection handle tableView section actions.
 ///-----------------------------
 
 /**
@@ -331,10 +332,35 @@
  */
 - (void)reloadSectionWithAnimation:(UITableViewRowAnimation)animation;
 
+/**
+ *  Delete the `section` using a given animation effect.
+ *
+ *  @param animation A constant that indicates how the reloading is to be animated.
+ */
+- (void)deleteSectionWithAnimation:(UITableViewRowAnimation)animation;
 
+/**
+ *  Reload rows at index set.
+ *
+ *  @param indexSet the index set of reload rows.
+ */
+- (void)reloadRowsAtIndexes:(NSIndexSet *)indexSet withAnimation:(UITableViewRowAnimation)animation;
 
+/**
+ *  Insert rows with items array and indexes.
+ *
+ *  @param rows      an array of items
+ *  @param indexSet  index set.
+ *  @param animation A constant that indicates how the delete is to be animated.
+ */
+- (void)insertRows:(NSArray<TFTableViewItem *> *)rows atIndexes:(NSIndexSet *)indexSet withRowAnimation:(UITableViewRowAnimation)animation;
 
-
-
+/**
+ *  Delete rows with the indexes of rows and a given animation effect.
+ *
+ *  @param indexSet  the index set.
+ *  @param animation A constant that indicates how the delete is to be animated.
+ */
+- (void)deleteRowsAtIndexes:(NSIndexSet *)indexSet withAnimation:(UITableViewRowAnimation)animation;
 
 @end

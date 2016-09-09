@@ -189,17 +189,38 @@
     [self.mutableItems sortUsingSelector:comparator];
 }
 
-#pragma mark - reload table view section
+#pragma mark - TFTableViewSection handle tableView section actions.
 
 - (void)reloadSectionWithAnimation:(UITableViewRowAnimation)animation {
-    if (self.tableViewManager.tableView) {
-        [self.tableViewManager.tableView reloadSections:[NSIndexSet indexSetWithIndex:self.index] withRowAnimation:animation];
-    }
-    else if (self.tableViewManager.tableNode) {
-        [self.tableViewManager.tableNode.view reloadSections:[NSIndexSet indexSetWithIndex:self.index] withRowAnimation:animation];
-    }
+    [self.tableViewManager.tableView reloadSections:[NSIndexSet indexSetWithIndex:self.index] withRowAnimation:animation];
 }
 
+- (void)deleteSectionWithAnimation:(UITableViewRowAnimation)animation {
+    [self.tableViewManager removeSection:self];
+    [self.tableViewManager.tableView deleteSections:[NSIndexSet indexSetWithIndex:self.index] withRowAnimation:animation];
+}
 
+- (void)reloadRowsAtIndexes:(NSIndexSet *)indexSet withAnimation:(UITableViewRowAnimation)animation{
+    [self.tableViewManager.tableView reloadRowsAtIndexPaths:[self indexPathsWithIndexSet:indexSet] withRowAnimation:animation];
+}
+
+- (void)insertRows:(NSArray<TFTableViewItem *> *)rows atIndexes:(NSIndexSet *)indexSet withRowAnimation:(UITableViewRowAnimation)animation {
+    [self insertItems:rows atIndexes:indexSet];
+    [self.tableViewManager.tableView insertRowsAtIndexPaths:[self indexPathsWithIndexSet:indexSet] withRowAnimation:animation];
+}
+
+- (void)deleteRowsAtIndexes:(NSIndexSet *)indexSet withAnimation:(UITableViewRowAnimation)animation {
+    [self removeItemsAtIndexes:indexSet];
+    [self.tableViewManager.tableView deleteRowsAtIndexPaths:[self indexPathsWithIndexSet:indexSet] withRowAnimation:animation];
+}
+
+- (NSArray *)indexPathsWithIndexSet:(NSIndexSet *)indexSet {
+    NSMutableArray *indexPaths = [NSMutableArray array];
+    NSInteger section = self.index;
+    [indexSet enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL * _Nonnull stop) {
+        [indexPaths addObject:[NSIndexPath indexPathForRow:idx inSection:section]];
+    }];
+    return [NSArray arrayWithArray:indexPaths];
+}
 
 @end
