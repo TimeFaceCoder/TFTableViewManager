@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface TestUIModel : NSObject
+@interface TestModel : NSObject
 
 @property (nonatomic,strong) NSString *userPhoto;///<用户头像
 

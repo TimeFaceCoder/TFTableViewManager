@@ -394,6 +394,9 @@
 
 @end
 
+/**
+ *  the table view manager delegate. support UITableViewDelegate and ASTableDelegate.
+ */
 @protocol TFTableViewManagerDelegate <UITableViewDelegate,ASTableDelegate>
 
 @optional;

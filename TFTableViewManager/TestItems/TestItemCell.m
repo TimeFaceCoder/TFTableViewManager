@@ -6,9 +6,9 @@
 //  Copyright © 2016年 Summer. All rights reserved.
 //
 
-#import "TestUIItemCell.h"
+#import "TestItemCell.h"
 
-@interface TestUIItemCell ()
+@interface TestItemCell ()
 
 @property (nonatomic,strong) UIImageView *userPhotoImageView;
 
@@ -20,7 +20,7 @@
 
 @end
 
-@implementation TestUIItemCell
+@implementation TestItemCell
 
 @dynamic tableViewItem;
 

@@ -13,6 +13,9 @@
 @class ASDisplayNode;
 @class TFTableViewItem;
 
+/**
+ *  the table view section handler.
+ */
 @interface TFTableViewSection : NSObject
 
 ///-----------------------------

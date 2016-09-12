@@ -9,8 +9,8 @@
 #import "ToDoListViewController.h"
 #import "TodoHeaderNode.h"
 #import "TFTableViewManager.h"
-#import "TestUIModel.h"
-#import "TestUIItem.h"
+#import "TestModel.h"
+#import "TestItem.h"
 #import "TodoFooterNode.h"
 @interface ToDoListViewController ()<TodoHeaderNodeDelegate, TodoFooterNodeeDelegate>
 @property (nonatomic, strong)TodoHeaderNode* headerNode;
@@ -33,20 +33,20 @@
     [self.view addSubnode:self.tableNode];
     self.manager = [[TFTableViewManager alloc] initWithTableNode:self.tableNode];
     
-    self.manager[@"TestUIItem"] = @"TodoItemCellNode";
+    self.manager[@"TestItem"] = @"TodoItemCellNode";
     
     
     
     for (NSInteger i = 1; i <= 15; i++)
     {
         TFTableViewSection *section = [TFTableViewSection section];
-        TestUIModel *model = [[TestUIModel alloc] init];
+        TestModel *model = [[TestModel alloc] init];
         model.userName = [NSString stringWithFormat:@"王田%ld",(long)i-1];
         model.userPhoto = [NSString stringWithFormat:@"userpic%ld.jpg",(long)i];
         model.userPhone = [NSString stringWithFormat:@"15665414141"];
         model.selected = NO;
         
-        TestUIItem *item = [TestUIItem itemWithModel:model selectionHandler:^(TestUIItem *item, NSIndexPath *indexPath) {
+        TestItem *item = [TestItem itemWithModel:model selectionHandler:^(TestItem *item, NSIndexPath *indexPath) {
             if (item.model.editing) {
                 item.model.selected = !item.model.selected;
                 [item reloadRowWithAnimation:UITableViewRowAnimationFade];
@@ -68,13 +68,13 @@
         for (NSInteger i = 1; i <= 15; i++)
         {
             TFTableViewSection *section = [TFTableViewSection section];
-            TestUIModel *model = [[TestUIModel alloc] init];
+            TestModel *model = [[TestModel alloc] init];
             model.userName = [NSString stringWithFormat:@"王田%ld",(long)i-1];
             model.userPhoto = [NSString stringWithFormat:@"userpic%ld.jpg",(long)i];
             model.userPhone = [NSString stringWithFormat:@"15665414141"];
             model.selected = NO;
             
-            TestUIItem *item = [TestUIItem itemWithModel:model selectionHandler:^(TestUIItem *item, NSIndexPath *indexPath) {
+            TestItem *item = [TestItem itemWithModel:model selectionHandler:^(TestItem *item, NSIndexPath *indexPath) {
                 if (item.model.editing) {
                     item.model.selected = !item.model.selected;
                     [item reloadRowWithAnimation:UITableViewRowAnimationFade];
@@ -91,14 +91,14 @@
     else {
         if (node.editing) {
             for (TFTableViewSection* section in self.manager.sections) {
-                TestUIItem* item = (TestUIItem*)section.items.firstObject;
+                TestItem* item = (TestItem*)section.items.firstObject;
                 item.model.selected = YES;
             }
             [self.manager reloadAllSectionsWithRowAnimation:UITableViewRowAnimationFade];
         }
         else {
             for (TFTableViewSection* section in self.manager.sections) {
-                TestUIItem* item = (TestUIItem*)section.items.firstObject;
+                TestItem* item = (TestItem*)section.items.firstObject;
                 item.model.editing = YES;
             }
             [self.manager reloadAllSectionsWithRowAnimation:UITableViewRowAnimationFade];
@@ -144,7 +144,7 @@
             self.tableNode.frame = CGRectMake(0, CGRectGetHeight(self.headerNode.frame), CGRectGetWidth(self.tableNode.frame), CGRectGetHeight(self.view.bounds) - CGRectGetHeight(self.headerNode.frame));
         }];
         for (TFTableViewSection* section in self.manager.sections) {
-            TestUIItem* item = (TestUIItem*)section.items.firstObject;
+            TestItem* item = (TestItem*)section.items.firstObject;
             item.model.editing = NO;
         }
         self.headerNode.editing = NO;
@@ -155,7 +155,7 @@
     else {
         NSMutableArray* itemsToDelete = [NSMutableArray array];
         for (TFTableViewSection* section in self.manager.sections) {
-            TestUIItem* item = (TestUIItem*)section.items.firstObject;
+            TestItem* item = (TestItem*)section.items.firstObject;
             if (item.model.selected) {
                 [itemsToDelete addObject:section];
             }
@@ -174,7 +174,7 @@
                 [self.manager deleteSections:itemsToDelete withRowAnimation:UITableViewRowAnimationFade];
                 
                 for (TFTableViewSection* section in self.manager.sections) {
-                    TestUIItem* item = (TestUIItem*)section.items.firstObject;
+                    TestItem* item = (TestItem*)section.items.firstObject;
                     item.model.editing = NO;
                 }
                 [self.manager reloadAllSectionsWithRowAnimation:UITableViewRowAnimationFade];

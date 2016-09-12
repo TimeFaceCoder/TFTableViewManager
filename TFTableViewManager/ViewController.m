@@ -33,7 +33,7 @@
     self.manager = [[TFTableViewManager alloc] initWithTableView:self.tableView];
     
     self.manager[@"TFDefaultTableViewItem"] = @"TFDefaultTableViewItemCell";
-    NSArray *contentArr = @[@"TFUITableViewManager",@"TFASTableViewManager",@"ASDefaultItem",@"UIDefaultItem"];
+    NSArray *contentArr = @[@"TFUITableViewManager",@"TFASTableViewManager",@"ASDefaultItem",@"UIDefaultItem",@"ToDoList"];
     TFTableViewSection *section = [TFTableViewSection section];
     typeof(self) __weak weakVC = self;
     for (NSString *content in contentArr) {
@@ -71,8 +71,13 @@
         [self.navigationController pushViewController:nextVC animated:YES];
     }
     else if (indexPath.row==3) {
-        ToDoListViewController *nextVC = [[ToDoListViewController alloc] init];
+        TestUITableVIewManagerViewController *nextVC = [[TestUITableVIewManagerViewController alloc] init];
         nextVC.title =@"TestUIDefault";
+        [self.navigationController pushViewController:nextVC animated:YES];
+    }
+    else if (indexPath.row==4) {
+        ToDoListViewController *nextVC = [[ToDoListViewController alloc] init];
+        nextVC.title =@"ToDoList";
         [self.navigationController pushViewController:nextVC animated:YES];
     }
 }

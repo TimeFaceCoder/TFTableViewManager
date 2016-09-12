@@ -25,7 +25,7 @@
     [super viewDidLoad];
     [self.view addSubnode:self.tableNode];
     self.manager = [[TFTableViewManager alloc] initWithTableNode:self.tableNode];
-    self.manager[@"TestUIItem"] = @"TestASItemCell";
+    self.manager[@"TestItem"] = @"TestItemCellNode";
     NSArray *sectionTitles = @[@"A", @"B", @"C", @"D", @"E", @"F", @"G", @"H", @"I", @"J", @"K", @"L", @"M",
                                @"N", @"O", @"P", @"Q", @"R", @"S", @"T", @"U", @"V", @"W", @"X", @"Y", @"Z"];
     
@@ -39,17 +39,17 @@
         //
         for (NSInteger i = 1; i <= 5; i++)
         {
-            TestUIModel *model = [[TestUIModel alloc] init];
+            TestModel *model = [[TestModel alloc] init];
             model.userName = [NSString stringWithFormat:@"王田%@%ld",sectionTitle,(long)i-1];
             model.userPhoto = [NSString stringWithFormat:@"userpic%ld.jpg",(long)i];
             model.userPhone = [NSString stringWithFormat:@"15665414141"];
             model.selected = NO;
-            TestUIItem *item = [TestUIItem itemWithModel:model selectionHandler:^(TestUIItem *item, NSIndexPath *indexPath) {
+            TestItem *item = [TestItem itemWithModel:model selectionHandler:^(TestItem *item, NSIndexPath *indexPath) {
                 //处理cell点击动作
                 [weakVC dealCellSelectionActionWithItem:item];
             }];
             item.editingStyle = UITableViewCellEditingStyleDelete;
-            item.deletionHandler = ^(TestUIItem *item,NSIndexPath *indexPath) {
+            item.deletionHandler = ^(TestItem *item,NSIndexPath *indexPath) {
                 [item deleteRowWithAnimation:UITableViewRowAnimationAutomatic];
             };
             item.titleForDelete = @"取消";
@@ -64,7 +64,7 @@
 }
 
 #pragma mark 处理cell点击动作
-- (void)dealCellSelectionActionWithItem:(TestUIItem *)item {
+- (void)dealCellSelectionActionWithItem:(TestItem *)item {
     NSLog(@"%@",item.model.userName);
     item.model.selected = !item.model.selected;
     [item reloadRowWithAnimation:UITableViewRowAnimationFade];

@@ -7,10 +7,10 @@
 //
 
 #import "TFTableViewItem.h"
-#import "TestUIModel.h"
+#import "TestModel.h"
 
-@interface TestUIItem : TFTableViewItem
+@interface TestItem : TFTableViewItem
 
-@property (nonatomic, strong) TestUIModel *model;
+@property (nonatomic, strong) TestModel *model;
 
 @end

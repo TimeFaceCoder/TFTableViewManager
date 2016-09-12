@@ -326,7 +326,7 @@
     
     if (!cell) {
         cell = [[cellClass alloc] initWithTableViewItem:item reuseIdentifier:identifier];
-        // TFUITableViewManagerDelegate
+        // TFTableViewManagerDelegate
         if ([self.delegate respondsToSelector:@selector(tableView:didLoadCellSubViews:forRowAtIndexPath:)]) {
             [self.delegate tableView:tableView didLoadCellSubViews:cell forRowAtIndexPath:indexPath];
         }
@@ -382,7 +382,7 @@
 
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
     TFTableViewItem *item = [self itemAtIndexPath:indexPath];
-    return item.moveHandler != nil;
+    return (item.moveHandler != nil);
 }
 
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
@@ -489,9 +489,8 @@
 
 - (ASSizeRange)tableView:(ASTableView *)tableView constrainedSizeForRowAtIndexPath:(NSIndexPath *)indexPath {
     TFTableViewItem *item = [self itemAtIndexPath:indexPath];
-    if ([item isKindOfClass:[TFDefaultTableViewItem class]]) {
-        CGFloat cellHeight = ((TFDefaultTableViewItem *)item).cellHeight ? :44.0;
-        return ASSizeRangeMake(CGSizeMake(_nodeMinSize.width, cellHeight), CGSizeMake(_nodeMaxSize.width, cellHeight));
+    if (item.cellHeight) {
+        return ASSizeRangeMake(CGSizeMake(_nodeMinSize.width, item.cellHeight), CGSizeMake(_nodeMaxSize.width, item.cellHeight));
     }
     return ASSizeRangeMake(_nodeMinSize, _nodeMaxSize);
 }

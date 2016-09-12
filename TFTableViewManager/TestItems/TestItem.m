@@ -6,9 +6,9 @@
 //  Copyright © 2016年 Summer. All rights reserved.
 //
 
-#import "TestUIItem.h"
+#import "TestItem.h"
 
-@implementation TestUIItem
+@implementation TestItem
 
 @dynamic model;
 

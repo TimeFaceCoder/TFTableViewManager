@@ -7,10 +7,10 @@
 //
 
 #import "TFTableViewItemCellNode.h"
-#import "TestUIItem.h"
+#import "TestItem.h"
 
 @interface TestItemCellNode : TFTableViewItemCellNode
 
-@property (nonatomic, strong) TestUIItem *tableViewItem;
+@property (nonatomic, strong) TestItem *tableViewItem;
 
 @end

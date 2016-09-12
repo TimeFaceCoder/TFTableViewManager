@@ -6,8 +6,8 @@
 //  Copyright © 2016年 Summer. All rights reserved.
 //
 
-#import "TestUIModel.h"
+#import "TestModel.h"
 
-@implementation TestUIModel
+@implementation TestModel
 
 @end

@@ -22,11 +22,11 @@
 		C495E6981D7E499F00BD8285 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C495E6961D7E499F00BD8285 /* Main.storyboard */; };
 		C495E69A1D7E499F00BD8285 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C495E6991D7E499F00BD8285 /* Assets.xcassets */; };
 		C495E69D1D7E499F00BD8285 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C495E69B1D7E499F00BD8285 /* LaunchScreen.storyboard */; };
-		C495E6C81D7E4A4300BD8285 /* TestUIModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C495E6A61D7E4A4300BD8285 /* TestUIModel.m */; };
+		C495E6C81D7E4A4300BD8285 /* TestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C495E6A61D7E4A4300BD8285 /* TestModel.m */; };
 		C495E6C91D7E4A4300BD8285 /* TestASTableVIewManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C495E6A81D7E4A4300BD8285 /* TestASTableVIewManagerViewController.m */; };
 		C495E6CA1D7E4A4300BD8285 /* TestItemCellNode.m in Sources */ = {isa = PBXBuildFile; fileRef = C495E6AB1D7E4A4300BD8285 /* TestItemCellNode.m */; };
-		C495E6CB1D7E4A4300BD8285 /* TestUIItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C495E6AD1D7E4A4300BD8285 /* TestUIItem.m */; };
-		C495E6CC1D7E4A4300BD8285 /* TestUIItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C495E6AF1D7E4A4300BD8285 /* TestUIItemCell.m */; };
+		C495E6CB1D7E4A4300BD8285 /* TestItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C495E6AD1D7E4A4300BD8285 /* TestItem.m */; };
+		C495E6CC1D7E4A4300BD8285 /* TestItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C495E6AF1D7E4A4300BD8285 /* TestItemCell.m */; };
 		C495E6CD1D7E4A4300BD8285 /* TestUITableVIewManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C495E6B11D7E4A4300BD8285 /* TestUITableVIewManagerViewController.m */; };
 		C495E6CE1D7E4A4300BD8285 /* TFTableViewItemCellNode.m in Sources */ = {isa = PBXBuildFile; fileRef = C495E6B51D7E4A4300BD8285 /* TFTableViewItemCellNode.m */; };
 		C495E6D01D7E4A4300BD8285 /* TFTableViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C495E6B91D7E4A4300BD8285 /* TFTableViewItem.m */; };
@@ -65,16 +65,16 @@
 		C495E6991D7E499F00BD8285 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C495E69C1D7E499F00BD8285 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C495E69E1D7E499F00BD8285 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C495E6A51D7E4A4300BD8285 /* TestUIModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestUIModel.h; sourceTree = "<group>"; };
-		C495E6A61D7E4A4300BD8285 /* TestUIModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestUIModel.m; sourceTree = "<group>"; };
+		C495E6A51D7E4A4300BD8285 /* TestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestModel.h; sourceTree = "<group>"; };
+		C495E6A61D7E4A4300BD8285 /* TestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestModel.m; sourceTree = "<group>"; };
 		C495E6A71D7E4A4300BD8285 /* TestASTableVIewManagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestASTableVIewManagerViewController.h; sourceTree = "<group>"; };
 		C495E6A81D7E4A4300BD8285 /* TestASTableVIewManagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestASTableVIewManagerViewController.m; sourceTree = "<group>"; };
 		C495E6AA1D7E4A4300BD8285 /* TestItemCellNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestItemCellNode.h; sourceTree = "<group>"; };
 		C495E6AB1D7E4A4300BD8285 /* TestItemCellNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestItemCellNode.m; sourceTree = "<group>"; };
-		C495E6AC1D7E4A4300BD8285 /* TestUIItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestUIItem.h; sourceTree = "<group>"; };
-		C495E6AD1D7E4A4300BD8285 /* TestUIItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestUIItem.m; sourceTree = "<group>"; };
-		C495E6AE1D7E4A4300BD8285 /* TestUIItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestUIItemCell.h; sourceTree = "<group>"; };
-		C495E6AF1D7E4A4300BD8285 /* TestUIItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestUIItemCell.m; sourceTree = "<group>"; };
+		C495E6AC1D7E4A4300BD8285 /* TestItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestItem.h; sourceTree = "<group>"; };
+		C495E6AD1D7E4A4300BD8285 /* TestItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestItem.m; sourceTree = "<group>"; };
+		C495E6AE1D7E4A4300BD8285 /* TestItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestItemCell.h; sourceTree = "<group>"; };
+		C495E6AF1D7E4A4300BD8285 /* TestItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestItemCell.m; sourceTree = "<group>"; };
 		C495E6B01D7E4A4300BD8285 /* TestUITableVIewManagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestUITableVIewManagerViewController.h; sourceTree = "<group>"; };
 		C495E6B11D7E4A4300BD8285 /* TestUITableVIewManagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestUITableVIewManagerViewController.m; sourceTree = "<group>"; };
 		C495E6B41D7E4A4300BD8285 /* TFTableViewItemCellNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFTableViewItemCellNode.h; sourceTree = "<group>"; };
@@ -170,13 +170,13 @@
 				C46F0FF91D7EC7CD00070EEB /* TestASDefaultItemViewController.m */,
 				C497DA0C1D7F9E5700746268 /* TestUIDefaultViewController.h */,
 				C497DA0D1D7F9E5700746268 /* TestUIDefaultViewController.m */,
+				6CD055321D824EA0002BB505 /* ToDoListViewController.h */,
+				6CD055331D824EA0002BB505 /* ToDoListViewController.m */,
 				C495E6961D7E499F00BD8285 /* Main.storyboard */,
 				C495E6991D7E499F00BD8285 /* Assets.xcassets */,
 				C495E69B1D7E499F00BD8285 /* LaunchScreen.storyboard */,
 				C495E69E1D7E499F00BD8285 /* Info.plist */,
 				C495E68D1D7E499F00BD8285 /* Supporting Files */,
-				6CD055321D824EA0002BB505 /* ToDoListViewController.h */,
-				6CD055331D824EA0002BB505 /* ToDoListViewController.m */,
 			);
 			path = TFTableViewManager;
 			sourceTree = "<group>";
@@ -192,8 +192,8 @@
 		C495E6A41D7E4A4300BD8285 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				C495E6A51D7E4A4300BD8285 /* TestUIModel.h */,
-				C495E6A61D7E4A4300BD8285 /* TestUIModel.m */,
+				C495E6A51D7E4A4300BD8285 /* TestModel.h */,
+				C495E6A61D7E4A4300BD8285 /* TestModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -203,10 +203,10 @@
 			children = (
 				C495E6AA1D7E4A4300BD8285 /* TestItemCellNode.h */,
 				C495E6AB1D7E4A4300BD8285 /* TestItemCellNode.m */,
-				C495E6AC1D7E4A4300BD8285 /* TestUIItem.h */,
-				C495E6AD1D7E4A4300BD8285 /* TestUIItem.m */,
-				C495E6AE1D7E4A4300BD8285 /* TestUIItemCell.h */,
-				C495E6AF1D7E4A4300BD8285 /* TestUIItemCell.m */,
+				C495E6AC1D7E4A4300BD8285 /* TestItem.h */,
+				C495E6AD1D7E4A4300BD8285 /* TestItem.m */,
+				C495E6AE1D7E4A4300BD8285 /* TestItemCell.h */,
+				C495E6AF1D7E4A4300BD8285 /* TestItemCell.m */,
 				6CD055351D824EFA002BB505 /* TodoHeaderNode.h */,
 				6CD055361D824EFA002BB505 /* TodoHeaderNode.m */,
 				6CD0553B1D828BB1002BB505 /* TodoFooterNode.h */,
@@ -376,7 +376,7 @@
 				C495E6D01D7E4A4300BD8285 /* TFTableViewItem.m in Sources */,
 				6CD0553A1D8259C7002BB505 /* TodoItemCellNode.m in Sources */,
 				6CD0553D1D828BB1002BB505 /* TodoFooterNode.m in Sources */,
-				C495E6CC1D7E4A4300BD8285 /* TestUIItemCell.m in Sources */,
+				C495E6CC1D7E4A4300BD8285 /* TestItemCell.m in Sources */,
 				C495E6CA1D7E4A4300BD8285 /* TestItemCellNode.m in Sources */,
 				6CD055461D82BE8E002BB505 /* TFDefaultTableViewItemCell.m in Sources */,
 				C495E6951D7E499F00BD8285 /* ViewController.m in Sources */,
@@ -389,9 +389,9 @@
 				C495E68F1D7E499F00BD8285 /* main.m in Sources */,
 				C495E6CD1D7E4A4300BD8285 /* TestUITableVIewManagerViewController.m in Sources */,
 				C46F0FFA1D7EC7CD00070EEB /* TestASDefaultItemViewController.m in Sources */,
-				C495E6CB1D7E4A4300BD8285 /* TestUIItem.m in Sources */,
+				C495E6CB1D7E4A4300BD8285 /* TestItem.m in Sources */,
 				6CD055341D824EA0002BB505 /* ToDoListViewController.m in Sources */,
-				C495E6C81D7E4A4300BD8285 /* TestUIModel.m in Sources */,
+				C495E6C81D7E4A4300BD8285 /* TestModel.m in Sources */,
 				C495E6D11D7E4A4300BD8285 /* TFTableViewManager.m in Sources */,
 				6CD055451D82BE8E002BB505 /* TFDefaultTableViewItem.m in Sources */,
 				C495E6C91D7E4A4300BD8285 /* TestASTableVIewManagerViewController.m in Sources */,

@@ -7,8 +7,8 @@
 //
 
 #import "TodoItemCellNode.h"
-#import "TestUIItem.h"
-#import "TestUIModel.h"
+#import "TestItem.h"
+#import "TestModel.h"
 @interface TodoItemCellNode ()
 @property (nonatomic, strong)ASImageNode* imageNode;
 @property (nonatomic, strong)ASTextNode* titleNode;
