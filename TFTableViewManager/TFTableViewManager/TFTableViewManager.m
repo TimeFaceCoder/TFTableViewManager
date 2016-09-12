@@ -488,6 +488,9 @@
 }
 
 - (ASSizeRange)tableView:(ASTableView *)tableView constrainedSizeForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if ([self.delegate respondsToSelector:@selector(tableView:constrainedSizeForRowAtIndexPath:)]) {
+        return [self.delegate tableView:tableView constrainedSizeForRowAtIndexPath:indexPath];
+    }
     TFTableViewItem *item = [self itemAtIndexPath:indexPath];
     if (item.cellHeight) {
         return ASSizeRangeMake(CGSizeMake(_nodeMinSize.width, item.cellHeight), CGSizeMake(_nodeMaxSize.width, item.cellHeight));
