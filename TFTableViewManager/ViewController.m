@@ -71,7 +71,7 @@
         [self.navigationController pushViewController:nextVC animated:YES];
     }
     else if (indexPath.row==3) {
-        TestUITableVIewManagerViewController *nextVC = [[TestUITableVIewManagerViewController alloc] init];
+        TestUIDefaultViewController *nextVC = [[TestUIDefaultViewController alloc] init];
         nextVC.title =@"TestUIDefault";
         [self.navigationController pushViewController:nextVC animated:YES];
     }
@@ -87,6 +87,7 @@
         CGSize screenSize = [UIScreen mainScreen].bounds.size;
         _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, screenSize.width, screenSize.height) style:UITableViewStylePlain];
         _tableView.tableFooterView = [UIView new];
+        _tableView.separatorColor = [UIColor cyanColor];
     }
     return _tableView;
 }
