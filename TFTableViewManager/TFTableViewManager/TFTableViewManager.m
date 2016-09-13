@@ -74,8 +74,16 @@
     self.registeredClasses[(id <NSCopying>)NSClassFromString(itemClass)] = NSClassFromString(cellClass);
     NSString *nibPath = [[NSBundle mainBundle] pathForResource:cellClass ofType:@"nib"];
     if (nibPath) {
-        //XIB exists with the same name as the cell class
-        [self.tableView registerNib:[UINib nibWithNibName:cellClass bundle:[NSBundle mainBundle]] forCellReuseIdentifier:cellClass];
+        UITableViewCell *cell = [[[NSBundle mainBundle] loadNibNamed:cellClass owner:nil options:nil] lastObject];
+        BOOL isEqual = [cell.reuseIdentifier isEqualToString:cellClass];
+        if (isEqual) {
+            //XIB exists with the same name as the cell class
+            [self.tableView registerNib:[UINib nibWithNibName:cellClass bundle:[NSBundle mainBundle]] forCellReuseIdentifier:cellClass];
+        }
+        else {
+            NSAssert(isEqual, @"cell reuse identifier must be equal to cell class name.");
+        }
+       
     }
     
 }
@@ -620,11 +628,12 @@
     else {
         UITableViewHeaderFooterView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:tableViewSection.headerReuseIdentifier];
         if (!headerView) {
-            if ([tableViewSection.headerView isKindOfClass:[UITableViewHeaderFooterView class]]) {
+            BOOL isClass = [tableViewSection.headerView isKindOfClass:[UITableViewHeaderFooterView class]];
+            if (isClass) {
                 headerView = (UITableViewHeaderFooterView *)tableViewSection.headerView;
             }
             else {
-                NSAssert(headerView, @"headerView is not a UITableViewHeaderFooterView class, can not use as reuse view.");
+                NSAssert(isClass, @"headerView is not a UITableViewHeaderFooterView class, can not use as reuse view.");
             }
             headerView = (UITableViewHeaderFooterView *)tableViewSection.headerView;
         }
@@ -653,11 +662,13 @@
     else {
         UITableViewHeaderFooterView *footerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:tableViewSection.footerReuseIdentifier];
         if (!footerView) {
-            if ([tableViewSection.footerView isKindOfClass:[UITableViewHeaderFooterView class]]) {
+            BOOL isClass = [tableViewSection.footerView isKindOfClass:[UITableViewHeaderFooterView class]];
+
+            if (isClass) {
                 footerView = (UITableViewHeaderFooterView *)tableViewSection.footerView;
             }
             else {
-                NSAssert(footerView, @"footView is not a UITableViewHeaderFooterView class, can not use as reuse view.");
+                NSAssert(isClass, @"footView is not a UITableViewHeaderFooterView class, can not use as reuse view.");
             }
         }
         return footerView;
