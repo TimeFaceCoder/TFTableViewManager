@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		6C41484D1D879517004D7BD4 /* NameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C41484C1D879517004D7BD4 /* NameViewController.m */; };
-		6C4148531D8795CC004D7BD4 /* NameItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C4148521D8795CC004D7BD4 /* NameItem.m */; };
 		6C4148561D8795FD004D7BD4 /* NameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C4148551D8795FD004D7BD4 /* NameModel.m */; };
 		6C41485B1D879AC9004D7BD4 /* NameItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C41485A1D879AC9004D7BD4 /* NameItemCell.m */; };
 		6C41485D1D879ADE004D7BD4 /* NameItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C41485C1D879ADE004D7BD4 /* NameItemCell.xib */; };
+		6C4148601D87A3D7004D7BD4 /* NameItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C41485F1D87A3D7004D7BD4 /* NameItem.m */; };
 		6CD055341D824EA0002BB505 /* ToDoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD055331D824EA0002BB505 /* ToDoListViewController.m */; };
 		6CD055371D824EFA002BB505 /* TodoHeaderNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD055361D824EFA002BB505 /* TodoHeaderNode.m */; };
 		6CD0553A1D8259C7002BB505 /* TodoItemCellNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD055391D8259C7002BB505 /* TodoItemCellNode.m */; };
@@ -44,13 +44,13 @@
 /* Begin PBXFileReference section */
 		6C41484B1D879517004D7BD4 /* NameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NameViewController.h; path = TFTableViewManager/NameViewController.h; sourceTree = "<group>"; };
 		6C41484C1D879517004D7BD4 /* NameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NameViewController.m; path = TFTableViewManager/NameViewController.m; sourceTree = "<group>"; };
-		6C4148511D8795CC004D7BD4 /* NameItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NameItem.h; path = ../TFTableViewManager/NameItem.h; sourceTree = "<group>"; };
-		6C4148521D8795CC004D7BD4 /* NameItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NameItem.m; path = ../TFTableViewManager/NameItem.m; sourceTree = "<group>"; };
 		6C4148541D8795FD004D7BD4 /* NameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NameModel.h; sourceTree = "<group>"; };
 		6C4148551D8795FD004D7BD4 /* NameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NameModel.m; sourceTree = "<group>"; };
 		6C4148591D879AC9004D7BD4 /* NameItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NameItemCell.h; sourceTree = "<group>"; };
 		6C41485A1D879AC9004D7BD4 /* NameItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NameItemCell.m; sourceTree = "<group>"; };
 		6C41485C1D879ADE004D7BD4 /* NameItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NameItemCell.xib; sourceTree = "<group>"; };
+		6C41485E1D87A3D7004D7BD4 /* NameItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NameItem.h; sourceTree = "<group>"; };
+		6C41485F1D87A3D7004D7BD4 /* NameItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NameItem.m; sourceTree = "<group>"; };
 		6CD055321D824EA0002BB505 /* ToDoListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToDoListViewController.h; sourceTree = "<group>"; };
 		6CD055331D824EA0002BB505 /* ToDoListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoListViewController.m; sourceTree = "<group>"; };
 		6CD055351D824EFA002BB505 /* TodoHeaderNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodoHeaderNode.h; sourceTree = "<group>"; };
@@ -220,8 +220,8 @@
 		C495E6A91D7E4A4300BD8285 /* TestItems */ = {
 			isa = PBXGroup;
 			children = (
-				6C4148511D8795CC004D7BD4 /* NameItem.h */,
-				6C4148521D8795CC004D7BD4 /* NameItem.m */,
+				6C41485E1D87A3D7004D7BD4 /* NameItem.h */,
+				6C41485F1D87A3D7004D7BD4 /* NameItem.m */,
 				C495E6AA1D7E4A4300BD8285 /* TestItemCellNode.h */,
 				C495E6AB1D7E4A4300BD8285 /* TestItemCellNode.m */,
 				C495E6AC1D7E4A4300BD8285 /* TestItem.h */,
@@ -416,13 +416,13 @@
 				C495E6CD1D7E4A4300BD8285 /* TestUITableVIewManagerViewController.m in Sources */,
 				C46F0FFA1D7EC7CD00070EEB /* TestASDefaultItemViewController.m in Sources */,
 				C495E6CB1D7E4A4300BD8285 /* TestItem.m in Sources */,
+				6C4148601D87A3D7004D7BD4 /* NameItem.m in Sources */,
 				6C4148561D8795FD004D7BD4 /* NameModel.m in Sources */,
 				6CD055341D824EA0002BB505 /* ToDoListViewController.m in Sources */,
 				6C41485B1D879AC9004D7BD4 /* NameItemCell.m in Sources */,
 				C495E6C81D7E4A4300BD8285 /* TestModel.m in Sources */,
 				C495E6D11D7E4A4300BD8285 /* TFTableViewManager.m in Sources */,
 				6CD055451D82BE8E002BB505 /* TFDefaultTableViewItem.m in Sources */,
-				6C4148531D8795CC004D7BD4 /* NameItem.m in Sources */,
 				C495E6C91D7E4A4300BD8285 /* TestASTableVIewManagerViewController.m in Sources */,
 				6C41484D1D879517004D7BD4 /* NameViewController.m in Sources */,
 			);
