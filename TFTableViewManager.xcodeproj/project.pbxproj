@@ -55,6 +55,7 @@
 		B69C56E3ECE604CCA7169401 /* Pods-TFTableViewManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TFTableViewManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-TFTableViewManager/Pods-TFTableViewManager.release.xcconfig"; sourceTree = "<group>"; };
 		C46F0FF81D7EC7CD00070EEB /* TestASDefaultItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestASDefaultItemViewController.h; sourceTree = "<group>"; };
 		C46F0FF91D7EC7CD00070EEB /* TestASDefaultItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestASDefaultItemViewController.m; sourceTree = "<group>"; };
+		C488EAD61D8791FD009186E1 /* TFTableViewManagerKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFTableViewManagerKit.h; sourceTree = "<group>"; };
 		C495E68A1D7E499E00BD8285 /* TFTableViewManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TFTableViewManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C495E68E1D7E499F00BD8285 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C495E6901D7E499F00BD8285 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -220,6 +221,7 @@
 		C495E6B21D7E4A4300BD8285 /* TFTableViewManager */ = {
 			isa = PBXGroup;
 			children = (
+				C488EAD61D8791FD009186E1 /* TFTableViewManagerKit.h */,
 				6CD0553E1D82BE8E002BB505 /* DefaultItem */,
 				C495E6B31D7E4A4300BD8285 /* ASTableViewModule */,
 				C495E6B81D7E4A4300BD8285 /* TFTableViewItem.h */,
@@ -507,6 +509,7 @@
 			baseConfigurationReference = FE53AA0066AB1083EDE350F0 /* Pods-TFTableViewManager.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				INFOPLIST_FILE = TFTableViewManager/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xzx.TFTableViewManager;
@@ -519,6 +522,7 @@
 			baseConfigurationReference = B69C56E3ECE604CCA7169401 /* Pods-TFTableViewManager.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				INFOPLIST_FILE = TFTableViewManager/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xzx.TFTableViewManager;
