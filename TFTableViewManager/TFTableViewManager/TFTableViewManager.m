@@ -77,10 +77,10 @@
 - (void)registerWithItemClass:(NSString *)itemClass cellClass:(NSString *)cellClass
 {
     NSAssert(NSClassFromString(itemClass), ([NSString stringWithFormat:@"Item class '%@' does not exist.", itemClass]));
-    NSAssert(NSClassFromString(itemClass), ([NSString stringWithFormat:@"Cell class '%@' does not exist.", cellClass]));
+    NSAssert(NSClassFromString(cellClass), ([NSString stringWithFormat:@"Cell class '%@' does not exist.", cellClass]));
     self.registeredClasses[(id <NSCopying>)NSClassFromString(itemClass)] = NSClassFromString(cellClass);
-    
-    if ([[NSBundle mainBundle] pathForResource:itemClass ofType:@"nib"]) {
+    NSString *nibPath = [[NSBundle mainBundle] pathForResource:cellClass ofType:@"nib"];
+    if (nibPath) {
         //XIB exists with the same name as the cell class
         [self.tableView registerNib:[UINib nibWithNibName:cellClass bundle:[NSBundle mainBundle]] forCellReuseIdentifier:cellClass];
     }
