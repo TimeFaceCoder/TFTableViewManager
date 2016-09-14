@@ -19,6 +19,11 @@
 		6CD055461D82BE8E002BB505 /* TFDefaultTableViewItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD055421D82BE8E002BB505 /* TFDefaultTableViewItemCell.m */; };
 		6CD055471D82BE8E002BB505 /* TFDefaultTableViewItemCellNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD055441D82BE8E002BB505 /* TFDefaultTableViewItemCellNode.m */; };
 		6CD4C1181D87A53B004CD93E /* NameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD4C1171D87A53B004CD93E /* NameViewController.m */; };
+		6CD6A3371D88FCF800AF2FEE /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD6A3361D88FCF800AF2FEE /* ContactsViewController.m */; };
+		6CD6A33B1D88FE9B00AF2FEE /* BMChineseSort.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD6A33A1D88FE9B00AF2FEE /* BMChineseSort.m */; };
+		6CD6A33E1D88FEAB00AF2FEE /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD6A33D1D88FEAB00AF2FEE /* Person.m */; };
+		6CD6A3411D89005600AF2FEE /* PersonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD6A3401D89005600AF2FEE /* PersonItem.m */; };
+		6CD6A3441D89008300AF2FEE /* PersonItemCellNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD6A3431D89008300AF2FEE /* PersonItemCellNode.m */; };
 		9315C8DC9F355B8457BD985A /* libPods-TFTableViewManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B19A5CE263A237EB40D6B4AD /* libPods-TFTableViewManager.a */; };
 		C46F0FFA1D7EC7CD00070EEB /* TestASDefaultItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C46F0FF91D7EC7CD00070EEB /* TestASDefaultItemViewController.m */; };
 		C495E68F1D7E499F00BD8285 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C495E68E1D7E499F00BD8285 /* main.m */; };
@@ -65,6 +70,16 @@
 		6CD055441D82BE8E002BB505 /* TFDefaultTableViewItemCellNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFDefaultTableViewItemCellNode.m; sourceTree = "<group>"; };
 		6CD4C1161D87A53B004CD93E /* NameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NameViewController.h; sourceTree = "<group>"; };
 		6CD4C1171D87A53B004CD93E /* NameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NameViewController.m; sourceTree = "<group>"; };
+		6CD6A3351D88FCF800AF2FEE /* ContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsViewController.h; sourceTree = "<group>"; };
+		6CD6A3361D88FCF800AF2FEE /* ContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsViewController.m; sourceTree = "<group>"; };
+		6CD6A3391D88FE9B00AF2FEE /* BMChineseSort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMChineseSort.h; sourceTree = "<group>"; };
+		6CD6A33A1D88FE9B00AF2FEE /* BMChineseSort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMChineseSort.m; sourceTree = "<group>"; };
+		6CD6A33C1D88FEAB00AF2FEE /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		6CD6A33D1D88FEAB00AF2FEE /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		6CD6A33F1D89005600AF2FEE /* PersonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonItem.h; sourceTree = "<group>"; };
+		6CD6A3401D89005600AF2FEE /* PersonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonItem.m; sourceTree = "<group>"; };
+		6CD6A3421D89008300AF2FEE /* PersonItemCellNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonItemCellNode.h; sourceTree = "<group>"; };
+		6CD6A3431D89008300AF2FEE /* PersonItemCellNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonItemCellNode.m; sourceTree = "<group>"; };
 		B19A5CE263A237EB40D6B4AD /* libPods-TFTableViewManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TFTableViewManager.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B69C56E3ECE604CCA7169401 /* Pods-TFTableViewManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TFTableViewManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-TFTableViewManager/Pods-TFTableViewManager.release.xcconfig"; sourceTree = "<group>"; };
 		C46F0FF81D7EC7CD00070EEB /* TestASDefaultItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestASDefaultItemViewController.h; sourceTree = "<group>"; };
@@ -149,6 +164,15 @@
 			path = DefaultItem;
 			sourceTree = "<group>";
 		};
+		6CD6A3381D88FE9B00AF2FEE /* BMChineseStringSort */ = {
+			isa = PBXGroup;
+			children = (
+				6CD6A3391D88FE9B00AF2FEE /* BMChineseSort.h */,
+				6CD6A33A1D88FE9B00AF2FEE /* BMChineseSort.m */,
+			);
+			path = BMChineseStringSort;
+			sourceTree = "<group>";
+		};
 		C495E6811D7E499E00BD8285 = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +194,7 @@
 		C495E68C1D7E499F00BD8285 /* TFTableViewManager */ = {
 			isa = PBXGroup;
 			children = (
+				6CD6A3381D88FE9B00AF2FEE /* BMChineseStringSort */,
 				6CD4C1161D87A53B004CD93E /* NameViewController.h */,
 				6CD4C1171D87A53B004CD93E /* NameViewController.m */,
 				C495E6A41D7E4A4300BD8285 /* Models */,
@@ -194,6 +219,8 @@
 				C495E69B1D7E499F00BD8285 /* LaunchScreen.storyboard */,
 				C495E69E1D7E499F00BD8285 /* Info.plist */,
 				C495E68D1D7E499F00BD8285 /* Supporting Files */,
+				6CD6A3351D88FCF800AF2FEE /* ContactsViewController.h */,
+				6CD6A3361D88FCF800AF2FEE /* ContactsViewController.m */,
 			);
 			path = TFTableViewManager;
 			sourceTree = "<group>";
@@ -209,6 +236,8 @@
 		C495E6A41D7E4A4300BD8285 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				6CD6A33C1D88FEAB00AF2FEE /* Person.h */,
+				6CD6A33D1D88FEAB00AF2FEE /* Person.m */,
 				C495E6A51D7E4A4300BD8285 /* TestModel.h */,
 				C495E6A61D7E4A4300BD8285 /* TestModel.m */,
 				6C4148541D8795FD004D7BD4 /* NameModel.h */,
@@ -237,6 +266,10 @@
 				6C4148591D879AC9004D7BD4 /* NameItemCell.h */,
 				6C41485A1D879AC9004D7BD4 /* NameItemCell.m */,
 				6C41485C1D879ADE004D7BD4 /* NameItemCell.xib */,
+				6CD6A33F1D89005600AF2FEE /* PersonItem.h */,
+				6CD6A3401D89005600AF2FEE /* PersonItem.m */,
+				6CD6A3421D89008300AF2FEE /* PersonItemCellNode.h */,
+				6CD6A3431D89008300AF2FEE /* PersonItemCellNode.m */,
 			);
 			path = TestItems;
 			sourceTree = "<group>";
@@ -410,11 +443,14 @@
 				C495E6921D7E499F00BD8285 /* AppDelegate.m in Sources */,
 				C495E6D21D7E4A4300BD8285 /* TFTableViewSection.m in Sources */,
 				C495E6D51D7E4A4300BD8285 /* TFTableViewItemCell.m in Sources */,
+				6CD6A33E1D88FEAB00AF2FEE /* Person.m in Sources */,
+				6CD6A3411D89005600AF2FEE /* PersonItem.m in Sources */,
 				C495E6CE1D7E4A4300BD8285 /* TFTableViewItemCellNode.m in Sources */,
 				6CD055471D82BE8E002BB505 /* TFDefaultTableViewItemCellNode.m in Sources */,
 				C497DA0E1D7F9E5700746268 /* TestUIDefaultViewController.m in Sources */,
 				C495E68F1D7E499F00BD8285 /* main.m in Sources */,
 				C495E6CD1D7E4A4300BD8285 /* TestUITableVIewManagerViewController.m in Sources */,
+				6CD6A3371D88FCF800AF2FEE /* ContactsViewController.m in Sources */,
 				C46F0FFA1D7EC7CD00070EEB /* TestASDefaultItemViewController.m in Sources */,
 				C495E6CB1D7E4A4300BD8285 /* TestItem.m in Sources */,
 				6C4148601D87A3D7004D7BD4 /* NameItem.m in Sources */,
@@ -422,6 +458,8 @@
 				6CD055341D824EA0002BB505 /* ToDoListViewController.m in Sources */,
 				6C41485B1D879AC9004D7BD4 /* NameItemCell.m in Sources */,
 				C495E6C81D7E4A4300BD8285 /* TestModel.m in Sources */,
+				6CD6A3441D89008300AF2FEE /* PersonItemCellNode.m in Sources */,
+				6CD6A33B1D88FE9B00AF2FEE /* BMChineseSort.m in Sources */,
 				C495E6D11D7E4A4300BD8285 /* TFTableViewManager.m in Sources */,
 				6CD055451D82BE8E002BB505 /* TFDefaultTableViewItem.m in Sources */,
 				C495E6C91D7E4A4300BD8285 /* TestASTableVIewManagerViewController.m in Sources */,

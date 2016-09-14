@@ -16,6 +16,7 @@
 #import "TestUIDefaultViewController.h"
 #import "ToDoListViewController.h"
 #import "NameViewController.h"
+#import "ContactsViewController.h"
 @interface ViewController ()
 
 @property (nonatomic, strong) UITableView *tableView;
@@ -34,7 +35,7 @@
     self.manager = [[TFTableViewManager alloc] initWithTableView:self.tableView];
     
     self.manager[@"TFDefaultTableViewItem"] = @"TFDefaultTableViewItemCell";
-    NSArray *contentArr = @[@"TFUITableViewManager",@"TFASTableViewManager",@"ASDefaultItem",@"UIDefaultItem",@"ToDoList", @"NIB"];
+    NSArray *contentArr = @[@"TFUITableViewManager",@"TFASTableViewManager",@"ASDefaultItem",@"UIDefaultItem",@"ToDoList", @"NIB",@"ContactsViewController"];
     TFTableViewSection *section = [TFTableViewSection section];
     typeof(self) __weak weakVC = self;
     for (NSString *content in contentArr) {
@@ -84,6 +85,11 @@
     else if (indexPath.row == 5){
         NameViewController* vc = [[NameViewController alloc]init];
         vc.title = @"nib";
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    else if (indexPath.row == 6) {
+        ContactsViewController* vc = [[ContactsViewController alloc]init];
+        vc.title = @"ContactsViewController";
         [self.navigationController pushViewController:vc animated:YES];
     }
 }
