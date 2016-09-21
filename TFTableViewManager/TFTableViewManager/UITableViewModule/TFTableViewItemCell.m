@@ -43,6 +43,13 @@
 - (void)cellLoadSubViews {
     
     //add subviews at here.
+    
+   
+}
+
+- (void)cellWillAppear {
+    //set subviews property values at here.
+    
     self.selectionStyle = self.tableViewItem.selectionStyle;
     self.accessoryType = self.tableViewItem.accessoryType;
     if (self.tableViewItem.accessoryView) {
@@ -54,12 +61,6 @@
         self.separatorInset = lineInsets;
         self.layoutMargins = lineInsets;
     }
-   
-}
-
-- (void)cellWillAppear {
-    //set subviews property values at here.
-    
 }
 
 - (void)cellDidDisappear {
