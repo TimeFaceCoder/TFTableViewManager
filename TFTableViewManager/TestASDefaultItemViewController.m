@@ -55,12 +55,14 @@
                                     item.detail = contentDic[@"detail"];
                                     item.selectionStyle = UITableViewCellSelectionStyleDefault;
                                     item.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-                                    item.cellHeight = 60.0;
+                                    item.cellHeight = 70.0;
                                     [section addItem:item];
                                     item.selectionHandler = ^(TFDefaultTableViewItem *item, NSIndexPath *indexPath) {
                                         [self.manager reloadAllSectionsWithRowAnimation:UITableViewRowAnimationFade];
                                     };
+                                    
                                 }
+                                section.footerHeight = 0.1f;
                                 [self.manager addSection:section];
 
                             }
@@ -72,9 +74,9 @@
 - (ASTableNode *)tableNode {
     if (!_tableNode) {
         CGSize screenSize = [UIScreen mainScreen].bounds.size;
-        _tableNode = [[ASTableNode alloc] initWithStyle:UITableViewStylePlain];
+        _tableNode = [[ASTableNode alloc] initWithStyle:UITableViewStyleGrouped];
         _tableNode.frame = CGRectMake(0, 0, screenSize.width, screenSize.height);
-        _tableNode.view.tableFooterView = [UIView new];
+//        _tableNode.view.tableFooterView = [UIView new];
     }
     return _tableNode;
 }

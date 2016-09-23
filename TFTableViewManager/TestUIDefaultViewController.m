@@ -25,6 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     [self.view addSubview:self.tableView];
     self.manager = [[TFTableViewManager alloc]initWithTableView:self.tableView];
     self.manager[@"TFDefaultTableViewItem"] = @"TFDefaultTableViewItemCell";
@@ -59,7 +60,9 @@
             item.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             item.cellHeight = 60.0;
             [section addItem:item];
+            
         }
+        section.footerHeight = 0.1f;
         [self.manager addSection:section];
         
     }
@@ -69,10 +72,8 @@
 - (UITableView *)tableView {
     if (!_tableView) {
         CGSize screenSize = [UIScreen mainScreen].bounds.size;
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, screenSize.width, screenSize.height) style:UITableViewStylePlain];
-        _tableView.rowHeight = UITableViewAutomaticDimension;
-        _tableView.estimatedRowHeight = 44.0;
-        _tableView.tableFooterView = [UIView new];
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, screenSize.width, screenSize.height) style:UITableViewStyleGrouped];
+        _tableView.backgroundColor = [UIColor cyanColor];
     }
     return _tableView;
 }
