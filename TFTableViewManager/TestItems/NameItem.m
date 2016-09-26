@@ -9,5 +9,7 @@
 #import "NameItem.h"
 
 @implementation NameItem
+
 @dynamic model;
+
 @end

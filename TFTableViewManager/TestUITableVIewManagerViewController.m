@@ -35,7 +35,6 @@
         TFTableViewSection *section = [TFTableViewSection sectionWithHeaderTitle:sectionTitle];
         section.headerHeight = 25.0;
         section.indexTitle = sectionTitle; // assign index title
-        
         // Add 5 items with name `section title + item index`
         //
         for (NSInteger i = 1; i <= 5; i++)
@@ -49,6 +48,13 @@
                 //处理cell点击动作
                 [weakVC dealCellSelectionActionWithItem:item];
             }];
+            item.editingStyle = UITableViewCellEditingStyleDelete;
+            item.titleForDelete = @"取消";
+            item.deletionHandler = ^(TestItem *item, NSIndexPath *indexPath) {
+                [item deleteRowWithAnimation:UITableViewRowAnimationAutomatic];
+                
+            };
+
             [section addItem:item];
         }
         

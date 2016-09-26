@@ -511,7 +511,7 @@
     if ([self.delegate respondsToSelector:@selector(tableView:willDisplayHeaderView:forSection:)]) {
         [self.delegate tableView:tableView willDisplayHeaderView:view forSection:section];
     }
-    view.backgroundColor = [UIColor clearColor];
+    view.tintColor = [UIColor clearColor];
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayFooterView:(UIView *)view forSection:(NSInteger)section {

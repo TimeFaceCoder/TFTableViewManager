@@ -9,5 +9,7 @@
 #import "TFTableViewItem.h"
 #import "NameModel.h"
 @interface NameItem : TFTableViewItem
-@property (nonatomic, strong)NameModel* model;
+
+@property (nonatomic, strong)NameModel *model;
+
 @end
