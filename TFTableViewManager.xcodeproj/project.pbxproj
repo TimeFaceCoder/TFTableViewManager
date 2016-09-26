@@ -583,7 +583,7 @@
 				INFOPLIST_FILE = TFTableViewManager/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.xzx.TFTableViewManager;
+				PRODUCT_BUNDLE_IDENTIFIER = com.timeface.TFTableViewManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -597,7 +597,7 @@
 				INFOPLIST_FILE = TFTableViewManager/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.xzx.TFTableViewManager;
+				PRODUCT_BUNDLE_IDENTIFIER = com.timeface.TFTableViewManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

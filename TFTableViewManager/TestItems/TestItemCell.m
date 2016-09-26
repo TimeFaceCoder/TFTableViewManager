@@ -24,9 +24,11 @@
 
 @dynamic tableViewItem;
 
-+ (CGFloat)heightWithItem:(TFTableViewItem *)item tableViewManager:(TFTableViewManager *)tableViewManager {
-    return 60.0;
-}
+//+ (CGFloat)heightWithItem:(TFTableViewItem *)item tableViewManager:(TFTableViewManager *)tableViewManager {
+//    return 60.0;
+//}
+
+
 
 - (void)cellLoadSubViews {
     [super cellLoadSubViews];
@@ -42,8 +44,6 @@
     self.userPhotoImageView.image = [UIImage imageNamed:self.tableViewItem.model.userPhoto];
     self.userNameLabel.text = self.tableViewItem.model.userName;
     self.userPhoneLabel.text = self.tableViewItem.model.userPhone;
-    
-    
 }
 
 #pragma mark selectedBtn
