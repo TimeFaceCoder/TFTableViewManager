@@ -689,6 +689,9 @@
     if (item.selectionHandler) {
         item.selectionHandler (item,indexPath);
     }
+    if (item.cellClickHandler) {
+        item.cellClickHandler (item, -1);
+    }
 }
 
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
