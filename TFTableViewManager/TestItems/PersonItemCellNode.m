@@ -7,13 +7,15 @@
 //
 
 #import "PersonItemCellNode.h"
-
+#import "HCSStarRatingView.h"
 @interface PersonItemCellNode ()
 @property (nonatomic, strong) ASImageNode *avatarNode;
 
 @property (nonatomic, strong) ASTextNode *nameNode;
 
 @property (nonatomic, strong) ASTextNode *phoneNode;
+
+@property (nonatomic, strong) ASDisplayNode* starRatingNode;
 
 @property (nonatomic, strong) ASButtonNode* phoneButtonNode;
 @property (nonatomic, strong) ASButtonNode* messageButtonNode;
@@ -26,7 +28,7 @@
     [self addSubnode:self.avatarNode];
     [self addSubnode:self.nameNode];
     [self addSubnode:self.phoneNode];
-    
+    [self addSubnode:self.starRatingNode];
     [self addSubnode:self.phoneButtonNode];
     [self addSubnode:self.messageButtonNode];
     
@@ -38,8 +40,14 @@
 
 - (ASLayoutSpec *)layoutSpecThatFits:(ASSizeRange)constrainedSize {
     
+    ASStackLayoutSpec* nameSpec = [ASStackLayoutSpec horizontalStackLayoutSpec];
+    nameSpec.children = @[self.nameNode, self.starRatingNode    ];
+    nameSpec.alignItems = ASStackLayoutAlignItemsCenter;
+    nameSpec.spacing = 8.0f;
+    
+    
     ASStackLayoutSpec *infoSpec = [ASStackLayoutSpec verticalStackLayoutSpec];
-    infoSpec.children = @[_nameNode,_phoneNode];
+    infoSpec.children = @[nameSpec,_phoneNode];
     infoSpec.spacing = 8.0;
     ASStackLayoutSpec *contentSpec = [ASStackLayoutSpec horizontalStackLayoutSpec];
     contentSpec.children = @[_avatarNode,infoSpec];
@@ -48,9 +56,9 @@
     ASInsetLayoutSpec *insetSpec = [ASInsetLayoutSpec insetLayoutSpecWithInsets:UIEdgeInsetsMake(10.0, 15.0, 10.0, 15.0) child:contentSpec];
     
     ASStackLayoutSpec *buttonsSpec = [ASStackLayoutSpec horizontalStackLayoutSpec];
-    buttonsSpec.children = @[self.phoneButtonNode, self.messageButtonNode];
-    buttonsSpec.spacing = 15.0f;
-    buttonsSpec.alignItems = ASStackLayoutAlignItemsCenter;
+    buttonsSpec.children = @[self.phoneButtonNode];
+//    buttonsSpec.spacing = 15.0f;
+//    buttonsSpec.alignItems = ASStackLayoutAlignItemsCenter;
     buttonsSpec.flexGrow = NO;
     ASStackLayoutSpec* allSpec = [ASStackLayoutSpec horizontalStackLayoutSpec];
     allSpec.children = @[insetSpec, [ASInsetLayoutSpec insetLayoutSpecWithInsets:UIEdgeInsetsMake(0, 0, 0, 20) child:buttonsSpec]];
@@ -107,5 +115,22 @@
     }
     return _messageButtonNode;
 }
+- (ASDisplayNode *)starRatingNode {
+    if (!_starRatingNode) {
+        _starRatingNode = [[ASDisplayNode alloc]initWithViewBlock:^UIView * _Nonnull{
+            HCSStarRatingView *starRatingView = [[HCSStarRatingView alloc] initWithFrame:CGRectMake(0, 0, 100, 30)];
+            starRatingView.maximumValue = 5;
+            starRatingView.minimumValue = 0;
+            starRatingView.value = 3;
+            starRatingView.tintColor = [UIColor redColor];
+
+            starRatingView.enabled = NO;
+            return starRatingView;
+        }];
+        _starRatingNode.preferredFrameSize = CGSizeMake(100, 30);
+    }
+    return _starRatingNode;
+}
+
 
 @end

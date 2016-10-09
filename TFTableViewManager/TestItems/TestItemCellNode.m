@@ -29,6 +29,7 @@
     [self addSubnode:self.selectNode];
     [self addSubnode:self.avatarNode];
     [self addSubnode:self.nameNode];
+    
     [self addSubnode:self.phoneNode];
     
     _nameNode.attributedText = [[NSAttributedString alloc] initWithString:self.tableViewItem.model.userName attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15],NSForegroundColorAttributeName:[UIColor blackColor]}];

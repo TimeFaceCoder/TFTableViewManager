@@ -11,6 +11,8 @@
 		6C41485B1D879AC9004D7BD4 /* NameItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C41485A1D879AC9004D7BD4 /* NameItemCell.m */; };
 		6C41485D1D879ADE004D7BD4 /* NameItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C41485C1D879ADE004D7BD4 /* NameItemCell.xib */; };
 		6C4148601D87A3D7004D7BD4 /* NameItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C41485F1D87A3D7004D7BD4 /* NameItem.m */; };
+		6C93A4931D98F41F00020B7E /* HCSStarRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C93A4911D98F41F00020B7E /* HCSStarRatingView.m */; };
+		6C93A49A1D9902C400020B7E /* UIItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C93A4991D9902C400020B7E /* UIItemCell.m */; };
 		6CD055341D824EA0002BB505 /* ToDoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD055331D824EA0002BB505 /* ToDoListViewController.m */; };
 		6CD055371D824EFA002BB505 /* TodoHeaderNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD055361D824EFA002BB505 /* TodoHeaderNode.m */; };
 		6CD0553A1D8259C7002BB505 /* TodoItemCellNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD055391D8259C7002BB505 /* TodoItemCellNode.m */; };
@@ -54,6 +56,10 @@
 		6C41485C1D879ADE004D7BD4 /* NameItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NameItemCell.xib; sourceTree = "<group>"; };
 		6C41485E1D87A3D7004D7BD4 /* NameItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NameItem.h; sourceTree = "<group>"; };
 		6C41485F1D87A3D7004D7BD4 /* NameItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NameItem.m; sourceTree = "<group>"; };
+		6C93A4901D98F41F00020B7E /* HCSStarRatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCSStarRatingView.h; sourceTree = "<group>"; };
+		6C93A4911D98F41F00020B7E /* HCSStarRatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCSStarRatingView.m; sourceTree = "<group>"; };
+		6C93A4981D9902C400020B7E /* UIItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIItemCell.h; sourceTree = "<group>"; };
+		6C93A4991D9902C400020B7E /* UIItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIItemCell.m; sourceTree = "<group>"; };
 		6CD055321D824EA0002BB505 /* ToDoListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToDoListViewController.h; sourceTree = "<group>"; };
 		6CD055331D824EA0002BB505 /* ToDoListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoListViewController.m; sourceTree = "<group>"; };
 		6CD055351D824EFA002BB505 /* TodoHeaderNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodoHeaderNode.h; sourceTree = "<group>"; };
@@ -151,6 +157,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		6C93A48F1D98F41F00020B7E /* HCSStarRatingView */ = {
+			isa = PBXGroup;
+			children = (
+				6C93A4901D98F41F00020B7E /* HCSStarRatingView.h */,
+				6C93A4911D98F41F00020B7E /* HCSStarRatingView.m */,
+			);
+			path = HCSStarRatingView;
+			sourceTree = "<group>";
+		};
 		6CD0553E1D82BE8E002BB505 /* DefaultItem */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +209,7 @@
 		C495E68C1D7E499F00BD8285 /* TFTableViewManager */ = {
 			isa = PBXGroup;
 			children = (
+				6C93A48F1D98F41F00020B7E /* HCSStarRatingView */,
 				6CD6A3381D88FE9B00AF2FEE /* BMChineseStringSort */,
 				6CD4C1161D87A53B004CD93E /* NameViewController.h */,
 				6CD4C1171D87A53B004CD93E /* NameViewController.m */,
@@ -270,6 +286,8 @@
 				6CD6A3401D89005600AF2FEE /* PersonItem.m */,
 				6CD6A3421D89008300AF2FEE /* PersonItemCellNode.h */,
 				6CD6A3431D89008300AF2FEE /* PersonItemCellNode.m */,
+				6C93A4981D9902C400020B7E /* UIItemCell.h */,
+				6C93A4991D9902C400020B7E /* UIItemCell.m */,
 			);
 			path = TestItems;
 			sourceTree = "<group>";
@@ -431,6 +449,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C93A49A1D9902C400020B7E /* UIItemCell.m in Sources */,
 				6CD055371D824EFA002BB505 /* TodoHeaderNode.m in Sources */,
 				C495E6D01D7E4A4300BD8285 /* TFTableViewItem.m in Sources */,
 				6CD4C1181D87A53B004CD93E /* NameViewController.m in Sources */,
@@ -462,6 +481,7 @@
 				6CD6A33B1D88FE9B00AF2FEE /* BMChineseSort.m in Sources */,
 				C495E6D11D7E4A4300BD8285 /* TFTableViewManager.m in Sources */,
 				6CD055451D82BE8E002BB505 /* TFDefaultTableViewItem.m in Sources */,
+				6C93A4931D98F41F00020B7E /* HCSStarRatingView.m in Sources */,
 				C495E6C91D7E4A4300BD8285 /* TestASTableVIewManagerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
