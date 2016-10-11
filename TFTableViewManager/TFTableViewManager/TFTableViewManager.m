@@ -690,7 +690,7 @@
         item.selectionHandler (item,indexPath);
     }
     if (item.cellClickHandler) {
-        item.cellClickHandler (item, -1);
+        item.cellClickHandler (item, -1, nil);
     }
 }
 
