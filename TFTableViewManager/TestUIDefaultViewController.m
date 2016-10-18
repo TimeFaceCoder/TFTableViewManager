@@ -54,6 +54,7 @@
             TFDefaultTableViewItem *item = [TFDefaultTableViewItem item];
             item.text = contentDic[@"text"];
             item.cellStyle = [contentDic[@"style"] integerValue];
+            item.cellIdentifier = [NSString stringWithFormat:@"Cell%zd",item.cellStyle];
             item.image = [UIImage imageNamed:contentDic[@"image"]];
             item.detail = contentDic[@"detail"];
             item.selectionStyle = UITableViewCellSelectionStyleDefault;

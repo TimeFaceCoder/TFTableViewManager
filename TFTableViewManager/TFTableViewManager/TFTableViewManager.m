@@ -7,14 +7,15 @@
 //
 
 #import "TFTableViewManager.h"
+#import "TFTableViewItem.h"
 #import "TFTableViewItemCell.h"
 #import "TFTableViewItemCellNode.h"
-#import "TFDefaultTableViewItem.h"
-#import "TFTableViewItem.h"
 
 @interface TFTableViewManager ()<UITableViewDataSource,UITableViewDelegate,ASTableDataSource,ASTableDelegate>
 
 @property (nonatomic, strong) NSMutableArray *mutableSections;
+
+@property (nonatomic, strong) NSMutableDictionary *registeredClasses;
 
 @end
 
@@ -323,9 +324,9 @@
 {
     TFTableViewItem *item = [self itemAtIndexPath:indexPath];
     Class cellClass = [self classForCellAtIndexPath:indexPath];
-    NSString *identifier = NSStringFromClass(cellClass);
-    if ([item isKindOfClass:[TFDefaultTableViewItem class]]) {
-        identifier = [identifier stringByAppendingFormat:@"%ld",(long)((TFDefaultTableViewItem *)item).cellStyle];
+    NSString *identifier = item.cellIdentifier;
+    if (!identifier) {
+        identifier = NSStringFromClass(cellClass);
     }
     TFTableViewItemCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     

@@ -74,7 +74,7 @@
 - (UITableView *)tableView {
     if (!_tableView) {
         CGSize screenSize = [UIScreen mainScreen].bounds.size;
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, screenSize.width, screenSize.height) style:UITableViewStylePlain];
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, screenSize.width, screenSize.height) style:UITableViewStyleGrouped];
         _tableView.rowHeight = UITableViewAutomaticDimension;
         _tableView.estimatedRowHeight = 44.0;
         _tableView.tableFooterView = [UIView new];
