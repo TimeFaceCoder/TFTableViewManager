@@ -382,7 +382,7 @@
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     TFTableViewItem *item = [self itemAtIndexPath:indexPath];
-    BOOL edit = ((item.editingStyle != UITableViewCellEditingStyleNone) | (item.editActions.count!=0));
+    BOOL edit = ((item.editingStyle != UITableViewCellEditingStyleNone) | (item.editActions.count!=0) | (item.edit));
     return edit;
 }
 
@@ -557,7 +557,7 @@
         return CGRectGetHeight(tableViewSection.headerNode.frame);
     }
     if (tableViewSection.headerView) {
-        return CGRectGetHeight(tableViewSection.headerView.frame);
+        return CGRectGetHeight(tableViewSection.headerView.frame)? :UITableViewAutomaticDimension;
     }
     if (tableViewSection.headerTitle) {
         CGFloat headerHeight = 0;
@@ -594,7 +594,7 @@
         return CGRectGetHeight(tableViewSection.footerNode.frame);
     }
     if (tableViewSection.footerView) {
-        return CGRectGetHeight(tableViewSection.footerView.frame);
+        return CGRectGetHeight(tableViewSection.footerView.frame)? :UITableViewAutomaticDimension;
     }
     if (tableViewSection.footerTitle) {
         CGFloat footerHeight = 0;

@@ -34,6 +34,11 @@ typedef void(^MoveCompletionHandler)(__kindof TFTableViewItem *item, NSIndexPath
 @property (weak, nonatomic) TFTableViewSection *section;
 
 /**
+ *  @brief tell current item can be edit.
+ */
+@property (nonatomic, assign) BOOL edit;
+
+/**
  *  @brief Item cell editing style.
  */
 @property (assign, nonatomic) UITableViewCellEditingStyle editingStyle;
