@@ -388,7 +388,7 @@
 
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
     TFTableViewItem *item = [self itemAtIndexPath:indexPath];
-    return (item.moveHandler != nil);
+    return ((item.moveHandler != nil) | (item.moveCompletionHandler != nil));
 }
 
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
@@ -729,6 +729,13 @@
 }
 
 - (NSIndexPath *)tableView:(UITableView *)tableView targetIndexPathForMoveFromRowAtIndexPath:(NSIndexPath *)sourceIndexPath toProposedIndexPath:(NSIndexPath *)proposedDestinationIndexPath {
+    TFTableViewSection *sourceSection = self.mutableSections[sourceIndexPath.section];
+    TFTableViewItem *item = sourceSection.items[sourceIndexPath.row];
+    if (item.moveHandler) {
+        BOOL allowed = item.moveHandler(item, sourceIndexPath, proposedDestinationIndexPath);
+        if (!allowed)
+        return sourceIndexPath;
+    }
     if ([self.delegate respondsToSelector:@selector(tableView:targetIndexPathForMoveFromRowAtIndexPath:toProposedIndexPath:)]) {
         return [self.delegate tableView:tableView targetIndexPathForMoveFromRowAtIndexPath:sourceIndexPath toProposedIndexPath:proposedDestinationIndexPath];
     }
