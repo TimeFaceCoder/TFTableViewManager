@@ -30,7 +30,7 @@
     self.manager = [[TFTableViewManager alloc]initWithTableView:self.tableView];
     self.manager[@"TFDefaultTableViewItem"] = @"TFDefaultTableViewItemCell";
     NSArray *sections = @[@{@"title":@"UITableViewCellStyleDefault",@"contents":@[@{@"text":@"shortText",@"style":@(UITableViewCellStyleDefault)},
-                                                                                  @{@"text":@"shortTextWithImage",@"style":@(UITableViewCellStyleDefault),@"image":@"userpic1"},
+                                                                                  @{@"text":@"shortTextWithImage",@"style":@(UITableViewCellStyleDefault),@"image":@"calendar-icon-1"},
                                                                                   @{@"text":@"longText:的玩家爱豆我我就掉网的骄傲为大家我ID阿瓦的骄傲文件",@"style":@(UITableViewCellStyleDefault)},
                                                                                   @{@"text":@"longTextWithImage:的玩家爱豆我我就掉网的骄傲为大家我ID阿瓦的骄傲文件",@"style":@(UITableViewCellStyleDefault),@"image":@"contactSelected"}]},
                           @{@"title":@"UITableViewCellStyleValue1",@"contents":@[  @{@"text":@"shortText",@"style":@(UITableViewCellStyleValue1),@"detail":@"shortDetail"},
@@ -59,7 +59,7 @@
             item.detail = contentDic[@"detail"];
             item.selectionStyle = UITableViewCellSelectionStyleDefault;
             item.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-            item.cellHeight = 60.0;
+            item.cellHeight = 80.0;
             [section addItem:item];
             
         }
