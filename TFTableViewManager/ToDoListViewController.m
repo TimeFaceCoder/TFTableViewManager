@@ -32,9 +32,7 @@
     
     [self.view addSubnode:self.tableNode];
     self.manager = [[TFTableViewManager alloc] initWithTableNode:self.tableNode];
-    
-    self.manager[@"TestItem"] = @"TodoItemCellNode";
-    
+        
     
     
     for (NSInteger i = 1; i <= 15; i++)
@@ -52,6 +50,7 @@
                 [item reloadRowWithAnimation:UITableViewRowAnimationFade];
             }
         }];
+        item.registerCellClassName = @"TodoItemCellNode";
         item.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         [section addItem:item];
         [self.manager addSection:section];

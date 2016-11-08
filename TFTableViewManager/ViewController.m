@@ -34,7 +34,6 @@
     
     self.manager = [[TFTableViewManager alloc] initWithTableView:self.tableView];
     
-    self.manager[@"TFDefaultTableViewItem"] = @"TFDefaultTableViewItemCell";
     NSArray *contentArr = @[@"TFUITableViewManager",@"TFASTableViewManager",@"ASDefaultItem",@"UIDefaultItem",@"ToDoList", @"NIB",@"ContactsViewController"];
     TFTableViewSection *section = [TFTableViewSection section];
     typeof(self) __weak weakVC = self;

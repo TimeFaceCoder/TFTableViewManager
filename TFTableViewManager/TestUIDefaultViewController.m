@@ -28,7 +28,6 @@
 
     [self.view addSubview:self.tableView];
     self.manager = [[TFTableViewManager alloc]initWithTableView:self.tableView];
-    self.manager[@"TFDefaultTableViewItem"] = @"TFDefaultTableViewItemCell";
     NSArray *sections = @[@{@"title":@"UITableViewCellStyleDefault",@"contents":@[@{@"text":@"shortText",@"style":@(UITableViewCellStyleDefault)},
                                                                                   @{@"text":@"shortTextWithImage",@"style":@(UITableViewCellStyleDefault),@"image":@"calendar-icon-1"},
                                                                                   @{@"text":@"longText:的玩家爱豆我我就掉网的骄傲为大家我ID阿瓦的骄傲文件",@"style":@(UITableViewCellStyleDefault)},

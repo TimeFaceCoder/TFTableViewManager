@@ -24,7 +24,6 @@
     [super viewDidLoad];
     [self.view addSubnode:self.tableNode];
     self.manager = [[TFTableViewManager alloc] initWithTableNode:self.tableNode];
-    self.manager[@"TFDefaultTableViewItem"] = @"TFDefaultTableViewItemCellNode";
     
     NSArray *sections = @[@{@"title":@"UITableViewCellStyleDefault",@"contents":@[@{@"text":@"shortText",@"style":@(UITableViewCellStyleDefault)},
                                                                                   @{@"text":@"shortTextWithImage",@"style":@(UITableViewCellStyleDefault),@"image":@"contactSelected"},

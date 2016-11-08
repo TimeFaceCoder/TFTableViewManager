@@ -35,7 +35,6 @@
     
     [self.view addSubnode:self.tableNode];
     self.manager = [[TFTableViewManager alloc] initWithTableNode:self.tableNode];
-    self.manager[@"PersonItem"] = @"PersonItemCellNode";
 
     for (int i = 0; i < self.indexArray.count; ++i) {
         TFTableViewSection* section = [TFTableViewSection sectionWithHeaderTitle:[self.indexArray objectAtIndex:i]];

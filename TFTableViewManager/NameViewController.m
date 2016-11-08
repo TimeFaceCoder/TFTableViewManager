@@ -24,7 +24,6 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.manager = [[TFTableViewManager alloc] initWithTableView:self.tableView];
     [self.view addSubview:self.tableView];
-    self.manager[@"NameItem"] = @"NameItemCell";
 //    self.tableView register
     
     TFTableViewSection * section = [TFTableViewSection section];
