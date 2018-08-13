@@ -14,6 +14,7 @@ PODS:
   - PINRemoteImage/PINCache (3.0.0-beta.13):
     - PINCache (= 3.0.1-beta.6)
     - PINRemoteImage/Core
+  - SkeletonView (1.3)
   - Texture (2.7):
     - Texture/PINRemoteImage (= 2.7)
   - Texture/Core (2.7)
@@ -25,6 +26,7 @@ PODS:
     - Texture
 
 DEPENDENCIES:
+  - SkeletonView
   - TFTableViewManager (from `../`)
 
 SPEC REPOS:
@@ -32,6 +34,7 @@ SPEC REPOS:
     - PINCache
     - PINOperation
     - PINRemoteImage
+    - SkeletonView
     - Texture
 
 EXTERNAL SOURCES:
@@ -42,9 +45,10 @@ SPEC CHECKSUMS:
   PINCache: d195fdba255283f7e9900a55e3cced377f431f9b
   PINOperation: a6219e6fc9db9c269eb7a7b871ac193bcf400aac
   PINRemoteImage: d6d51c5d2adda55f1ce30c96e850b6c4ebd2856a
+  SkeletonView: 7694bfa90fae436487534900020ed39b8eabf94c
   Texture: 9d7e38965cf22ccd7cd9c249dd78b3f14e70ab6c
   TFTableViewManager: 592140a10379004f7e0c0fbebbceddc999eafafe
 
-PODFILE CHECKSUM: 7f842f4e0f02c67694990950ec2a44d9c5f49b68
+PODFILE CHECKSUM: 74ec22dc544fe1bddf02b47266644de9ae93050c
 
 COCOAPODS: 1.5.3

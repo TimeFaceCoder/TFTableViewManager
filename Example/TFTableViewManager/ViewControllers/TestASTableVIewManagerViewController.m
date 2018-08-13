@@ -66,7 +66,7 @@
 - (void)dealCellSelectionActionWithItem:(TestItem *)item {
     NSLog(@"%@",item.model.userName);
     item.model.selected = !item.model.selected;
-    [item reloadRowWithAnimation:UITableViewRowAnimationFade];
+    [item reloadRowWithAnimation:UITableViewRowAnimationNone];
 }
 
 

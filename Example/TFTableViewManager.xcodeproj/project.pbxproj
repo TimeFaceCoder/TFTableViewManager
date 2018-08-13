@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		70A25CCCAC67183A9EA21C68 /* Pods_TFTableViewManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 661DD5803152380DA2666724 /* Pods_TFTableViewManager.framework */; };
+		B092A3572121782B00F05898 /* LikesNode.m in Sources */ = {isa = PBXBuildFile; fileRef = B092A3542121782B00F05898 /* LikesNode.m */; };
+		B092A3582121782B00F05898 /* CommentsNode.m in Sources */ = {isa = PBXBuildFile; fileRef = B092A3562121782B00F05898 /* CommentsNode.m */; };
+		B092A35B2121784F00F05898 /* TimeLineItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B092A3592121784F00F05898 /* TimeLineItem.m */; };
+		B092A3612121787F00F05898 /* TimeLineItemCellNode.m in Sources */ = {isa = PBXBuildFile; fileRef = B092A3602121787F00F05898 /* TimeLineItemCellNode.m */; };
+		B092A365212178EF00F05898 /* TextStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = B092A363212178EF00F05898 /* TextStyle.m */; };
+		B092A368212178F500F05898 /* data.plist in Resources */ = {isa = PBXBuildFile; fileRef = B092A367212178F500F05898 /* data.plist */; };
+		B092A36B21217B8500F05898 /* TestTimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B092A36A21217B8500F05898 /* TestTimelineViewController.m */; };
+		B092A36E21217EAE00F05898 /* SimpleTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B092A36D21217EAE00F05898 /* SimpleTest.swift */; };
 		C407CDEF1FF233F000CD1DF4 /* TestSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C407CDEE1FF233F000CD1DF4 /* TestSectionHeaderView.m */; };
 		C42A2BE01F7B829200004F81 /* TestUIDefaultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C42A2BD61F7B829200004F81 /* TestUIDefaultViewController.m */; };
 		C42A2BE11F7B829200004F81 /* TestASDefaultItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C42A2BD81F7B829200004F81 /* TestASDefaultItemViewController.m */; };
@@ -28,6 +36,21 @@
 /* Begin PBXFileReference section */
 		661DD5803152380DA2666724 /* Pods_TFTableViewManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TFTableViewManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73F1DA04C906C2CB9F0BCDBC /* Pods-TFTableViewManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TFTableViewManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TFTableViewManager/Pods-TFTableViewManager.debug.xcconfig"; sourceTree = "<group>"; };
+		B092A3532121782B00F05898 /* CommentsNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentsNode.h; sourceTree = "<group>"; };
+		B092A3542121782B00F05898 /* LikesNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LikesNode.m; sourceTree = "<group>"; };
+		B092A3552121782B00F05898 /* LikesNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LikesNode.h; sourceTree = "<group>"; };
+		B092A3562121782B00F05898 /* CommentsNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentsNode.m; sourceTree = "<group>"; };
+		B092A3592121784F00F05898 /* TimeLineItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeLineItem.m; sourceTree = "<group>"; };
+		B092A35A2121784F00F05898 /* TimeLineItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeLineItem.h; sourceTree = "<group>"; };
+		B092A35F2121787F00F05898 /* TimeLineItemCellNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeLineItemCellNode.h; sourceTree = "<group>"; };
+		B092A3602121787F00F05898 /* TimeLineItemCellNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeLineItemCellNode.m; sourceTree = "<group>"; };
+		B092A363212178EF00F05898 /* TextStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextStyle.m; sourceTree = "<group>"; };
+		B092A364212178EF00F05898 /* TextStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextStyle.h; sourceTree = "<group>"; };
+		B092A367212178F500F05898 /* data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = data.plist; sourceTree = "<group>"; };
+		B092A36921217B8500F05898 /* TestTimelineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestTimelineViewController.h; sourceTree = "<group>"; };
+		B092A36A21217B8500F05898 /* TestTimelineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestTimelineViewController.m; sourceTree = "<group>"; };
+		B092A36C21217EAE00F05898 /* TFTableViewManager-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TFTableViewManager-Bridging-Header.h"; sourceTree = "<group>"; };
+		B092A36D21217EAE00F05898 /* SimpleTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTest.swift; sourceTree = "<group>"; };
 		C407CDED1FF233F000CD1DF4 /* TestSectionHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestSectionHeaderView.h; sourceTree = "<group>"; };
 		C407CDEE1FF233F000CD1DF4 /* TestSectionHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestSectionHeaderView.m; sourceTree = "<group>"; };
 		C42A2BD61F7B829200004F81 /* TestUIDefaultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestUIDefaultViewController.m; sourceTree = "<group>"; };
@@ -79,9 +102,30 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B092A362212178EF00F05898 /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				B092A363212178EF00F05898 /* TextStyle.m */,
+				B092A364212178EF00F05898 /* TextStyle.h */,
+			);
+			path = Style;
+			sourceTree = "<group>";
+		};
+		B092A366212178F500F05898 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				B092A367212178F500F05898 /* data.plist */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		C407CDEC1FF233D000CD1DF4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B092A3532121782B00F05898 /* CommentsNode.h */,
+				B092A3562121782B00F05898 /* CommentsNode.m */,
+				B092A3552121782B00F05898 /* LikesNode.h */,
+				B092A3542121782B00F05898 /* LikesNode.m */,
 				C407CDED1FF233F000CD1DF4 /* TestSectionHeaderView.h */,
 				C407CDEE1FF233F000CD1DF4 /* TestSectionHeaderView.m */,
 			);
@@ -101,6 +145,10 @@
 				C42A2BDE1F7B829200004F81 /* TestUITableVIewManagerViewController.m */,
 				C42A2BDB1F7B829200004F81 /* TMRootViewController.h */,
 				C42A2BDF1F7B829200004F81 /* TMRootViewController.m */,
+				B092A36921217B8500F05898 /* TestTimelineViewController.h */,
+				B092A36A21217B8500F05898 /* TestTimelineViewController.m */,
+				B092A36D21217EAE00F05898 /* SimpleTest.swift */,
+				B092A36C21217EAE00F05898 /* TFTableViewManager-Bridging-Header.h */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -117,6 +165,8 @@
 		C4C02FD51F7B8370002F0E96 /* CellsAndCellNodes */ = {
 			isa = PBXGroup;
 			children = (
+				B092A35F2121787F00F05898 /* TimeLineItemCellNode.h */,
+				B092A3602121787F00F05898 /* TimeLineItemCellNode.m */,
 				C4C02FD61F7B8370002F0E96 /* TestItemCell.h */,
 				C4C02FD71F7B8370002F0E96 /* TestItemCell.m */,
 				C4C02FD81F7B8370002F0E96 /* TestItemCellNode.h */,
@@ -128,6 +178,8 @@
 		C4C02FDA1F7B8370002F0E96 /* Items */ = {
 			isa = PBXGroup;
 			children = (
+				B092A35A2121784F00F05898 /* TimeLineItem.h */,
+				B092A3592121784F00F05898 /* TimeLineItem.m */,
 				C4C02FDB1F7B8370002F0E96 /* TestItem.h */,
 				C4C02FDC1F7B8370002F0E96 /* TestItem.m */,
 			);
@@ -155,6 +207,8 @@
 		C4EEA2C81F7A5C5C00B90410 /* TFTableViewManager */ = {
 			isa = PBXGroup;
 			children = (
+				B092A366212178F500F05898 /* Data */,
+				B092A362212178EF00F05898 /* Style */,
 				C407CDEC1FF233D000CD1DF4 /* Views */,
 				C4C02FD51F7B8370002F0E96 /* CellsAndCellNodes */,
 				C4C02FDA1F7B8370002F0E96 /* Items */,
@@ -213,6 +267,7 @@
 				TargetAttributes = {
 					C4EEA2C51F7A5C5B00B90410 = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Manual;
 					};
 				};
@@ -242,6 +297,7 @@
 			files = (
 				C4EEA2D61F7A5C5C00B90410 /* LaunchScreen.storyboard in Resources */,
 				C4EEA2D31F7A5C5C00B90410 /* Assets.xcassets in Resources */,
+				B092A368212178F500F05898 /* data.plist in Resources */,
 				C4EEA2D11F7A5C5C00B90410 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,6 +333,7 @@
 				"${BUILT_PRODUCTS_DIR}/PINCache/PINCache.framework",
 				"${BUILT_PRODUCTS_DIR}/PINOperation/PINOperation.framework",
 				"${BUILT_PRODUCTS_DIR}/PINRemoteImage/PINRemoteImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SkeletonView/SkeletonView.framework",
 				"${BUILT_PRODUCTS_DIR}/TFTableViewManager/TFTableViewManager.framework",
 				"${BUILT_PRODUCTS_DIR}/Texture/AsyncDisplayKit.framework",
 			);
@@ -285,6 +342,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINCache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINOperation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINRemoteImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkeletonView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TFTableViewManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AsyncDisplayKit.framework",
 			);
@@ -302,14 +360,21 @@
 			files = (
 				C42A2BE01F7B829200004F81 /* TestUIDefaultViewController.m in Sources */,
 				C4C02FE01F7B8370002F0E96 /* TestItem.m in Sources */,
+				B092A365212178EF00F05898 /* TextStyle.m in Sources */,
+				B092A36B21217B8500F05898 /* TestTimelineViewController.m in Sources */,
 				C42A2BE11F7B829200004F81 /* TestASDefaultItemViewController.m in Sources */,
+				B092A3582121782B00F05898 /* CommentsNode.m in Sources */,
+				B092A36E21217EAE00F05898 /* SimpleTest.swift in Sources */,
 				C4C02FDF1F7B8370002F0E96 /* TestItemCellNode.m in Sources */,
+				B092A3572121782B00F05898 /* LikesNode.m in Sources */,
 				C42A2BE31F7B829200004F81 /* TestUITableVIewManagerViewController.m in Sources */,
 				C4EEA2D91F7A5C5C00B90410 /* main.m in Sources */,
 				C4C02FDE1F7B8370002F0E96 /* TestItemCell.m in Sources */,
 				C42A2BE41F7B829200004F81 /* TMRootViewController.m in Sources */,
+				B092A35B2121784F00F05898 /* TimeLineItem.m in Sources */,
 				C4EEA2CB1F7A5C5C00B90410 /* AppDelegate.m in Sources */,
 				C42A2BE21F7B829200004F81 /* TestASTableVIewManagerViewController.m in Sources */,
+				B092A3612121787F00F05898 /* TimeLineItemCellNode.m in Sources */,
 				C4C02FDD1F7B8370002F0E96 /* TestModel.m in Sources */,
 				C407CDEF1FF233F000CD1DF4 /* TestSectionHeaderView.m in Sources */,
 			);
@@ -387,7 +452,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -438,7 +503,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -450,6 +515,7 @@
 			baseConfigurationReference = 73F1DA04C906C2CB9F0BCDBC /* Pods-TFTableViewManager.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 9LA25E73B7;
 				INFOPLIST_FILE = TFTableViewManager/Info.plist;
@@ -457,6 +523,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = cn.timeface.test.demo.TFTableViewManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = DemoAppTestDevelopmentProfile;
+				SWIFT_OBJC_BRIDGING_HEADER = "TFTableViewManager/ViewControllers/TFTableViewManager-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -466,6 +535,7 @@
 			baseConfigurationReference = D394F017D2F769F598342B42 /* Pods-TFTableViewManager.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 9LA25E73B7;
@@ -474,6 +544,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = cn.timeface.test.demo.TFTableViewManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = DemoAppTestAdHocProfile;
+				SWIFT_OBJC_BRIDGING_HEADER = "TFTableViewManager/ViewControllers/TFTableViewManager-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

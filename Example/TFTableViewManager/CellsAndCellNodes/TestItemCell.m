@@ -7,6 +7,7 @@
 //
 
 #import "TestItemCell.h"
+#import "SkeletonView-Swift.h"
 
 @interface TestItemCell ()
 
@@ -54,6 +55,7 @@
         [_selectedBtn setImage:[UIImage imageNamed:@"contactNotSelect"] forState:UIControlStateNormal];
         [_selectedBtn setImage:[UIImage imageNamed:@"contactSelected"] forState:UIControlStateSelected];
         _selectedBtn.userInteractionEnabled = NO;
+        _selectedBtn.isSkeletonable = YES;
     }
     return _selectedBtn;
 }
@@ -63,6 +65,7 @@
         _userPhotoImageView = [[UIImageView alloc] initWithFrame:CGRectMake(CGRectGetMaxX(_selectedBtn.frame)+10.0, 10, 40, 40)];
         _userPhotoImageView.layer.cornerRadius = 20.0;
         _userPhotoImageView.layer.masksToBounds = YES;
+        _userPhotoImageView.isSkeletonable = YES;
     }
     return _userPhotoImageView;
 }
@@ -72,6 +75,7 @@
         _userNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(_userPhotoImageView.frame)+10.0, 10, 200, 20)];
         _userNameLabel.font = [UIFont systemFontOfSize:15];
         _userNameLabel.textColor = [UIColor blackColor];
+        _userNameLabel.isSkeletonable = YES;
     }
     return _userNameLabel;
 }
@@ -83,6 +87,7 @@
         _userPhoneLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(_userPhotoImageView.frame)+10.0, 30, 200, 20)];
         _userPhoneLabel.font = [UIFont systemFontOfSize:13];
         _userPhoneLabel.textColor = [UIColor lightGrayColor];
+        _userPhoneLabel.isSkeletonable = YES;
     }
     return _userPhoneLabel;
 }

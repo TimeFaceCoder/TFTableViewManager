@@ -14,6 +14,7 @@
 #import "TestASDefaultItemViewController.h"
 #import "TestUITableVIewManagerViewController.h"
 #import "TestASTableVIewManagerViewController.h"
+#import "TestTimelineViewController.h"
 
 @interface TMRootViewController ()
 
@@ -32,7 +33,7 @@
     [self.view addSubview:self.tableView];
     self.manager = [[TFTableViewManager alloc] initWithTableView:self.tableView];
     
-    NSArray *contentArr = @[@"TFUITableViewManager",@"TFASTableViewManager",@"ASDefaultItem",@"UIDefaultItem"];
+    NSArray *contentArr = @[@"TFUITableViewManager",@"TFASTableViewManager",@"ASDefaultItem",@"UIDefaultItem",@"TimeLineItem"];
     TFTableViewSection *section = [TFTableViewSection section];
     typeof(self) __weak weakVC = self;
     for (NSString *content in contentArr) {
@@ -76,6 +77,12 @@
     else if (indexPath.row==3) {
         TestUIDefaultViewController *nextVC = [[TestUIDefaultViewController alloc] init];
         nextVC.title =@"TestUIDefault";
+        [self.navigationController pushViewController:nextVC animated:YES];
+    }
+    else if(indexPath.row == 4) {
+        //timeline demo
+        TestTimelineViewController *nextVC = [[TestTimelineViewController alloc] init];
+        nextVC.title = @"TimeLine";
         [self.navigationController pushViewController:nextVC animated:YES];
     }
 }

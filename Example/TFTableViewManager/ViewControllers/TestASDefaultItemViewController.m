@@ -57,7 +57,9 @@
                                     item.cellHeight = 70.0;
                                     [section addItem:item];
                                     item.selectionHandler = ^(TFDefaultTableViewItem *item, NSIndexPath *indexPath) {
-                                        [self.manager reloadAllSectionsWithRowAnimation:UITableViewRowAnimationFade];
+                                        
+                                        [self.manager reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+//                                        [self.manager reloadAllSectionsWithRowAnimation:UITableViewRowAnimationFade];
                                     };
                                     
                                 }
