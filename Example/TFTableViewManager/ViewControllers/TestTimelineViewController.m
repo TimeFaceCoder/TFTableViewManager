@@ -10,7 +10,6 @@
 #import "TFTableViewManager.h"
 #import "TFTableViewItemCellNode.h"
 #import "TimeLineItem.h"
-#import "SkeletonView-Swift.h"
 
 @interface TestTimelineViewController ()
 

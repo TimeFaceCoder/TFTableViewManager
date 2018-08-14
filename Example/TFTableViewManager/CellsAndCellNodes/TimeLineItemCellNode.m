@@ -11,7 +11,6 @@
 #import "LikesNode.h"
 #import "CommentsNode.h"
 
-#import "SkeletonView-Swift.h"
 
 @interface TimeLineItemCellNode()<ASTextNodeDelegate,ASNetworkImageNodeDelegate>
 
