@@ -11,4 +11,9 @@ Pod::Spec.new do |s|
   s.source_files  = "TFTableViewManager/**/*.{h,m,c}"
   s.requires_arc = true
   s.dependency 'Texture'
+  s.library = 'c++'
+  s.pod_target_xcconfig = {
+    'CLANG_CXX_LANGUAGE_STANDARD' => 'c++11',
+    'CLANG_CXX_LIBRARY' => 'libc++'
+   }
 end
