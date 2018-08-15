@@ -8,7 +8,14 @@ Pod::Spec.new do |s|
   s.social_media_url   = "http://www.timeface.cn"
   s.ios.deployment_target = "9.0"
   s.source       = { :git => "https://github.com/TimeFaceCoder/TFTableViewManager.git"}
-  s.source_files  = "TFTableViewManager/**/*.{h,m,c}"
+
+  s.subspec 'Core' do |core|
+    core.compiler_flags = '-fno-exceptions -fno-objc-arc-exceptions'
+    core.source_files = [
+      'TFTableViewManager/**/*.{h,m,mm}'
+    ]
+  end
+
   s.requires_arc = true
   s.dependency 'Texture'
   s.library = 'c++'
