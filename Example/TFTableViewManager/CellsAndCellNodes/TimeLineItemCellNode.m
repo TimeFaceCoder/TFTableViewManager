@@ -39,6 +39,10 @@
     _nickNameNode.attributedText = [[NSAttributedString alloc] initWithString:[[self.tableViewItem.data objectForKey:@"author"] objectForKey:@"nickName"]
                                                                    attributes:[TextStyle nameStyle]];
     _nickNameNode.maximumNumberOfLines = 1;
+    
+    _nickNameNode.placeholderEnabled = YES;
+    _nickNameNode.placeholderFadeDuration = 2;
+    
     [self addSubnode:_nickNameNode];
     
     _timeNode = [[ASTextNode alloc] init];
@@ -46,6 +50,11 @@
                                                                attributes:[TextStyle usernameStyle]];
     _timeNode.truncationMode = NSLineBreakByTruncatingTail;
     _timeNode.maximumNumberOfLines = 1;
+    
+    
+    _timeNode.placeholderEnabled = YES;
+    _timeNode.placeholderFadeDuration = 2;
+    
     [self addSubnode:_timeNode];
     
     _fromNode = [[ASTextNode alloc] init];
@@ -62,6 +71,8 @@
     _avatarNode.style.height = ASDimensionMakeWithPoints(44);
     _avatarNode.cornerRadius = 22.0;
     _avatarNode.URL = [NSURL URLWithString:[[self.tableViewItem.data objectForKey:@"author"] objectForKey:@"avatar"]];
+    _avatarNode.placeholderEnabled = YES;
+    _avatarNode.placeholderFadeDuration = 2;
     _avatarNode.imageModificationBlock = ^UIImage *(UIImage *image) {
         
         UIImage *modifiedImage;
@@ -89,11 +100,18 @@
     _titleNode.truncationMode = NSLineBreakByTruncatingTail;
     _titleNode.maximumNumberOfLines = 1;
     
+    _titleNode.placeholderEnabled = YES;
+    _titleNode.placeholderFadeDuration = 2;
+    
     [self addSubnode:_titleNode];
     
     // post node
     _contentNode = [[ASTextNode alloc] init];
     _contentNode.maximumNumberOfLines = 4;
+    
+    
+    _contentNode.placeholderEnabled = YES;
+    _contentNode.placeholderFadeDuration = 2;
     
     // processing URLs in post
     NSString *kLinkAttributeName = @"TextLinkAttributeName";
@@ -129,6 +147,7 @@
         _contentNode.linkAttributeNames = @[ kLinkAttributeName ];
         _contentNode.attributedText = attrString;
         
+        
     }
     
     [self addSubnode:_contentNode];
@@ -146,6 +165,9 @@
         _mediaNode.cornerRadius = 4.0;
         _mediaNode.URL = [NSURL URLWithString:imageURL];
         _mediaNode.delegate = self;
+        
+        _mediaNode.placeholderEnabled = YES;
+        _mediaNode.placeholderFadeDuration = 2;
         _mediaNode.imageModificationBlock = ^UIImage *(UIImage *image) {
             
             UIImage *modifiedImage;
