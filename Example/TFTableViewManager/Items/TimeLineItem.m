@@ -17,4 +17,13 @@
     return item;
 }
 
+
++ (TimeLineItem *)itemWithMock {
+    TimeLineItem *item = [[TimeLineItem alloc] init];
+    item.data = @{};
+    item.selectionStyle = UITableViewCellSelectionStyleNone;
+    return item;
+
+}
+
 @end

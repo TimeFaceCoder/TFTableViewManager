@@ -10,6 +10,8 @@
 #import "TFTableViewManager.h"
 #import "TFTableViewItemCellNode.h"
 #import "TimeLineItem.h"
+#import "TFTableViewManager-Bridging-Header.h"
+#import "TFTableViewManager-Swift.h"
 
 @interface TestTimelineViewController ()
 
@@ -32,16 +34,39 @@
             NSArray *temp = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"data"
                                                                                              ofType:@"plist"]];
             TFTableViewSection *section = [TFTableViewSection section];
+            NSInteger index = 0;
+            NSDictionary *tempData = nil;
             for (NSDictionary *entry in temp) {
+                if (index == 0) {
+                    tempData = entry;
+                }
                 [section addItem:[TimeLineItem itemWithModel:entry]];
+                index ++;
             }
             [self->_manager addSection:section];
         }
         dispatch_async(dispatch_get_main_queue(), ^{
             [self->_tableNode reloadData];
+            [self->_tableNode showLoader];
+            [NSTimer scheduledTimerWithTimeInterval:5
+                                             target:self
+                                           selector:@selector(showLoader)
+                                           userInfo:nil
+                                            repeats:NO];
         });
     });
     
+}
+
+
+- (void)showLoader {
+    [self.tableNode showLoader];
+    [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(removeLoader) userInfo:nil repeats:NO];
+
+}
+
+- (void)removeLoader {
+    [self.tableNode hideLoader];
 }
 
 #pragma mark - lazy init

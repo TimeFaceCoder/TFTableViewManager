@@ -18,6 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (TimeLineItem *)itemWithModel:(NSDictionary *)data;
 
++ (TimeLineItem *)itemWithMock;
+
 @end
 
 NS_ASSUME_NONNULL_END

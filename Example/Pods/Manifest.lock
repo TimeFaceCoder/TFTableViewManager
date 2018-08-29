@@ -23,6 +23,9 @@ PODS:
     - Texture/Core
   - TFTableViewManager (1.1.0):
     - Texture
+    - TFTableViewManager/Core (= 1.1.0)
+  - TFTableViewManager/Core (1.1.0):
+    - Texture
 
 DEPENDENCIES:
   - TFTableViewManager (from `../`)
@@ -43,8 +46,8 @@ SPEC CHECKSUMS:
   PINOperation: a6219e6fc9db9c269eb7a7b871ac193bcf400aac
   PINRemoteImage: d6d51c5d2adda55f1ce30c96e850b6c4ebd2856a
   Texture: 9d7e38965cf22ccd7cd9c249dd78b3f14e70ab6c
-  TFTableViewManager: 592140a10379004f7e0c0fbebbceddc999eafafe
+  TFTableViewManager: 62a4927f78f4ca4f9c7e4df925ccb5adeb4d798b
 
-PODFILE CHECKSUM: 7f842f4e0f02c67694990950ec2a44d9c5f49b68
+PODFILE CHECKSUM: 701d8a5b655c232eff5033957f2e22d76185b9d8
 
 COCOAPODS: 1.5.3
