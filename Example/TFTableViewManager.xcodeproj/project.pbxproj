@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		70A25CCCAC67183A9EA21C68 /* Pods_TFTableViewManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 661DD5803152380DA2666724 /* Pods_TFTableViewManager.framework */; };
-		B00CEDA72126AA16000CD9EB /* ASDisplayNode+NodePlaceholder.m in Sources */ = {isa = PBXBuildFile; fileRef = B00CEDA62126AA16000CD9EB /* ASDisplayNode+NodePlaceholder.m */; };
 		B05924DA212BA4DA001C483A /* NodeLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05924D9212BA4DA001C483A /* NodeLoader.swift */; };
-		B05924DD212BE846001C483A /* LoaderCutoutNode.m in Sources */ = {isa = PBXBuildFile; fileRef = B05924DC212BE846001C483A /* LoaderCutoutNode.m */; };
+		B078458421AFDBAF003DD98D /* DemoCollectionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B078458321AFDBAF003DD98D /* DemoCollectionItem.m */; };
+		B078458721AFDC12003DD98D /* DemoCollectionItemCellNode.m in Sources */ = {isa = PBXBuildFile; fileRef = B078458621AFDC12003DD98D /* DemoCollectionItemCellNode.m */; };
 		B092A3572121782B00F05898 /* LikesNode.m in Sources */ = {isa = PBXBuildFile; fileRef = B092A3542121782B00F05898 /* LikesNode.m */; };
 		B092A3582121782B00F05898 /* CommentsNode.m in Sources */ = {isa = PBXBuildFile; fileRef = B092A3562121782B00F05898 /* CommentsNode.m */; };
 		B092A35B2121784F00F05898 /* TimeLineItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B092A3592121784F00F05898 /* TimeLineItem.m */; };
@@ -19,9 +19,11 @@
 		B092A368212178F500F05898 /* data.plist in Resources */ = {isa = PBXBuildFile; fileRef = B092A367212178F500F05898 /* data.plist */; };
 		B092A36B21217B8500F05898 /* TestTimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B092A36A21217B8500F05898 /* TestTimelineViewController.m */; };
 		B092A36E21217EAE00F05898 /* SimpleTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B092A36D21217EAE00F05898 /* SimpleTest.swift */; };
-		B0EF5BDC212A96F100D79A1F /* ListLoaderOC.m in Sources */ = {isa = PBXBuildFile; fileRef = B0EF5BDB212A96F100D79A1F /* ListLoaderOC.m */; };
-		B0EF5BE2212A993500D79A1F /* CutoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = B0EF5BE1212A993500D79A1F /* CutoutView.m */; };
-		B0EF5BE5212A9F3600D79A1F /* UIColor+LoaderColor.m in Sources */ = {isa = PBXBuildFile; fileRef = B0EF5BE4212A9F3600D79A1F /* UIColor+LoaderColor.m */; };
+		B0D4679021AFCA4B00FA0069 /* TestCollectionNodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0D4678F21AFCA4B00FA0069 /* TestCollectionNodeViewController.m */; };
+		B0D4679A21AFCD2300FA0069 /* MosaicCollectionLayoutDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B0D4679221AFCD2200FA0069 /* MosaicCollectionLayoutDelegate.m */; };
+		B0D4679B21AFCD2300FA0069 /* ImageCellNode.m in Sources */ = {isa = PBXBuildFile; fileRef = B0D4679321AFCD2200FA0069 /* ImageCellNode.m */; };
+		B0D4679C21AFCD2300FA0069 /* MosaicCollectionLayoutInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B0D4679721AFCD2200FA0069 /* MosaicCollectionLayoutInfo.m */; };
+		B0D4679D21AFCD2300FA0069 /* ImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B0D4679821AFCD2200FA0069 /* ImageCollectionViewCell.m */; };
 		C407CDEF1FF233F000CD1DF4 /* TestSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C407CDEE1FF233F000CD1DF4 /* TestSectionHeaderView.m */; };
 		C42A2BE01F7B829200004F81 /* TestUIDefaultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C42A2BD61F7B829200004F81 /* TestUIDefaultViewController.m */; };
 		C42A2BE11F7B829200004F81 /* TestASDefaultItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C42A2BD81F7B829200004F81 /* TestASDefaultItemViewController.m */; };
@@ -42,11 +44,11 @@
 /* Begin PBXFileReference section */
 		661DD5803152380DA2666724 /* Pods_TFTableViewManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TFTableViewManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73F1DA04C906C2CB9F0BCDBC /* Pods-TFTableViewManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TFTableViewManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TFTableViewManager/Pods-TFTableViewManager.debug.xcconfig"; sourceTree = "<group>"; };
-		B00CEDA52126AA16000CD9EB /* ASDisplayNode+NodePlaceholder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ASDisplayNode+NodePlaceholder.h"; sourceTree = "<group>"; };
-		B00CEDA62126AA16000CD9EB /* ASDisplayNode+NodePlaceholder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ASDisplayNode+NodePlaceholder.m"; sourceTree = "<group>"; };
 		B05924D9212BA4DA001C483A /* NodeLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NodeLoader.swift; sourceTree = "<group>"; };
-		B05924DB212BE846001C483A /* LoaderCutoutNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoaderCutoutNode.h; sourceTree = "<group>"; };
-		B05924DC212BE846001C483A /* LoaderCutoutNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoaderCutoutNode.m; sourceTree = "<group>"; };
+		B078458221AFDBAF003DD98D /* DemoCollectionItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoCollectionItem.h; sourceTree = "<group>"; };
+		B078458321AFDBAF003DD98D /* DemoCollectionItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoCollectionItem.m; sourceTree = "<group>"; };
+		B078458521AFDC12003DD98D /* DemoCollectionItemCellNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoCollectionItemCellNode.h; sourceTree = "<group>"; };
+		B078458621AFDC12003DD98D /* DemoCollectionItemCellNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoCollectionItemCellNode.m; sourceTree = "<group>"; };
 		B092A3532121782B00F05898 /* CommentsNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentsNode.h; sourceTree = "<group>"; };
 		B092A3542121782B00F05898 /* LikesNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LikesNode.m; sourceTree = "<group>"; };
 		B092A3552121782B00F05898 /* LikesNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LikesNode.h; sourceTree = "<group>"; };
@@ -62,12 +64,16 @@
 		B092A36A21217B8500F05898 /* TestTimelineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestTimelineViewController.m; sourceTree = "<group>"; };
 		B092A36C21217EAE00F05898 /* TFTableViewManager-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TFTableViewManager-Bridging-Header.h"; sourceTree = "<group>"; };
 		B092A36D21217EAE00F05898 /* SimpleTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTest.swift; sourceTree = "<group>"; };
-		B0EF5BDA212A96F100D79A1F /* ListLoaderOC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListLoaderOC.h; sourceTree = "<group>"; };
-		B0EF5BDB212A96F100D79A1F /* ListLoaderOC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListLoaderOC.m; sourceTree = "<group>"; };
-		B0EF5BE0212A993500D79A1F /* CutoutView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CutoutView.h; sourceTree = "<group>"; };
-		B0EF5BE1212A993500D79A1F /* CutoutView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CutoutView.m; sourceTree = "<group>"; };
-		B0EF5BE3212A9F3600D79A1F /* UIColor+LoaderColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+LoaderColor.h"; sourceTree = "<group>"; };
-		B0EF5BE4212A9F3600D79A1F /* UIColor+LoaderColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+LoaderColor.m"; sourceTree = "<group>"; };
+		B0D4678E21AFCA4B00FA0069 /* TestCollectionNodeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestCollectionNodeViewController.h; sourceTree = "<group>"; };
+		B0D4678F21AFCA4B00FA0069 /* TestCollectionNodeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestCollectionNodeViewController.m; sourceTree = "<group>"; };
+		B0D4679221AFCD2200FA0069 /* MosaicCollectionLayoutDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MosaicCollectionLayoutDelegate.m; sourceTree = "<group>"; };
+		B0D4679321AFCD2200FA0069 /* ImageCellNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCellNode.m; sourceTree = "<group>"; };
+		B0D4679421AFCD2200FA0069 /* ImageCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCollectionViewCell.h; sourceTree = "<group>"; };
+		B0D4679521AFCD2200FA0069 /* MosaicCollectionLayoutInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MosaicCollectionLayoutInfo.h; sourceTree = "<group>"; };
+		B0D4679621AFCD2200FA0069 /* MosaicCollectionLayoutDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MosaicCollectionLayoutDelegate.h; sourceTree = "<group>"; };
+		B0D4679721AFCD2200FA0069 /* MosaicCollectionLayoutInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MosaicCollectionLayoutInfo.m; sourceTree = "<group>"; };
+		B0D4679821AFCD2200FA0069 /* ImageCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCollectionViewCell.m; sourceTree = "<group>"; };
+		B0D4679921AFCD2200FA0069 /* ImageCellNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCellNode.h; sourceTree = "<group>"; };
 		C407CDED1FF233F000CD1DF4 /* TestSectionHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestSectionHeaderView.h; sourceTree = "<group>"; };
 		C407CDEE1FF233F000CD1DF4 /* TestSectionHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestSectionHeaderView.m; sourceTree = "<group>"; };
 		C42A2BD61F7B829200004F81 /* TestUIDefaultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestUIDefaultViewController.m; sourceTree = "<group>"; };
@@ -119,23 +125,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		B01A5E94212AB06300EFC33D /* NodeLoader */ = {
-			isa = PBXGroup;
-			children = (
-				B00CEDA52126AA16000CD9EB /* ASDisplayNode+NodePlaceholder.h */,
-				B00CEDA62126AA16000CD9EB /* ASDisplayNode+NodePlaceholder.m */,
-				B0EF5BDA212A96F100D79A1F /* ListLoaderOC.h */,
-				B0EF5BDB212A96F100D79A1F /* ListLoaderOC.m */,
-				B0EF5BE0212A993500D79A1F /* CutoutView.h */,
-				B0EF5BE1212A993500D79A1F /* CutoutView.m */,
-				B0EF5BE3212A9F3600D79A1F /* UIColor+LoaderColor.h */,
-				B0EF5BE4212A9F3600D79A1F /* UIColor+LoaderColor.m */,
-				B05924DB212BE846001C483A /* LoaderCutoutNode.h */,
-				B05924DC212BE846001C483A /* LoaderCutoutNode.m */,
-			);
-			path = NodeLoader;
-			sourceTree = "<group>";
-		};
 		B092A362212178EF00F05898 /* Style */ = {
 			isa = PBXGroup;
 			children = (
@@ -153,11 +142,25 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		B0D4679121AFCD2200FA0069 /* CollectionNodeDemo */ = {
+			isa = PBXGroup;
+			children = (
+				B0D4679221AFCD2200FA0069 /* MosaicCollectionLayoutDelegate.m */,
+				B0D4679921AFCD2200FA0069 /* ImageCellNode.h */,
+				B0D4679321AFCD2200FA0069 /* ImageCellNode.m */,
+				B0D4679421AFCD2200FA0069 /* ImageCollectionViewCell.h */,
+				B0D4679521AFCD2200FA0069 /* MosaicCollectionLayoutInfo.h */,
+				B0D4679621AFCD2200FA0069 /* MosaicCollectionLayoutDelegate.h */,
+				B0D4679721AFCD2200FA0069 /* MosaicCollectionLayoutInfo.m */,
+				B0D4679821AFCD2200FA0069 /* ImageCollectionViewCell.m */,
+			);
+			path = CollectionNodeDemo;
+			sourceTree = "<group>";
+		};
 		C407CDEC1FF233D000CD1DF4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				B05924D9212BA4DA001C483A /* NodeLoader.swift */,
-				B01A5E94212AB06300EFC33D /* NodeLoader */,
 				B092A3532121782B00F05898 /* CommentsNode.h */,
 				B092A3562121782B00F05898 /* CommentsNode.m */,
 				B092A3552121782B00F05898 /* LikesNode.h */,
@@ -171,6 +174,7 @@
 		C42A2BD51F7B80E800004F81 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				B0D4679121AFCD2200FA0069 /* CollectionNodeDemo */,
 				C42A2BDD1F7B829200004F81 /* TestASDefaultItemViewController.h */,
 				C42A2BD81F7B829200004F81 /* TestASDefaultItemViewController.m */,
 				C42A2BD91F7B829200004F81 /* TestASTableVIewManagerViewController.h */,
@@ -185,6 +189,8 @@
 				B092A36A21217B8500F05898 /* TestTimelineViewController.m */,
 				B092A36D21217EAE00F05898 /* SimpleTest.swift */,
 				B092A36C21217EAE00F05898 /* TFTableViewManager-Bridging-Header.h */,
+				B0D4678E21AFCA4B00FA0069 /* TestCollectionNodeViewController.h */,
+				B0D4678F21AFCA4B00FA0069 /* TestCollectionNodeViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -207,6 +213,8 @@
 				C4C02FD71F7B8370002F0E96 /* TestItemCell.m */,
 				C4C02FD81F7B8370002F0E96 /* TestItemCellNode.h */,
 				C4C02FD91F7B8370002F0E96 /* TestItemCellNode.m */,
+				B078458521AFDC12003DD98D /* DemoCollectionItemCellNode.h */,
+				B078458621AFDC12003DD98D /* DemoCollectionItemCellNode.m */,
 			);
 			path = CellsAndCellNodes;
 			sourceTree = "<group>";
@@ -218,6 +226,8 @@
 				B092A3592121784F00F05898 /* TimeLineItem.m */,
 				C4C02FDB1F7B8370002F0E96 /* TestItem.h */,
 				C4C02FDC1F7B8370002F0E96 /* TestItem.m */,
+				B078458221AFDBAF003DD98D /* DemoCollectionItem.h */,
+				B078458321AFDBAF003DD98D /* DemoCollectionItem.m */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -393,7 +403,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C42A2BE01F7B829200004F81 /* TestUIDefaultViewController.m in Sources */,
-				B0EF5BDC212A96F100D79A1F /* ListLoaderOC.m in Sources */,
+				B0D4679021AFCA4B00FA0069 /* TestCollectionNodeViewController.m in Sources */,
 				C4C02FE01F7B8370002F0E96 /* TestItem.m in Sources */,
 				B092A365212178EF00F05898 /* TextStyle.m in Sources */,
 				B092A36B21217B8500F05898 /* TestTimelineViewController.m in Sources */,
@@ -401,20 +411,22 @@
 				B092A3582121782B00F05898 /* CommentsNode.m in Sources */,
 				B092A36E21217EAE00F05898 /* SimpleTest.swift in Sources */,
 				C4C02FDF1F7B8370002F0E96 /* TestItemCellNode.m in Sources */,
-				B0EF5BE5212A9F3600D79A1F /* UIColor+LoaderColor.m in Sources */,
+				B0D4679C21AFCD2300FA0069 /* MosaicCollectionLayoutInfo.m in Sources */,
 				B092A3572121782B00F05898 /* LikesNode.m in Sources */,
 				C42A2BE31F7B829200004F81 /* TestUITableVIewManagerViewController.m in Sources */,
-				B00CEDA72126AA16000CD9EB /* ASDisplayNode+NodePlaceholder.m in Sources */,
 				C4EEA2D91F7A5C5C00B90410 /* main.m in Sources */,
 				C4C02FDE1F7B8370002F0E96 /* TestItemCell.m in Sources */,
 				C42A2BE41F7B829200004F81 /* TMRootViewController.m in Sources */,
-				B05924DD212BE846001C483A /* LoaderCutoutNode.m in Sources */,
 				B05924DA212BA4DA001C483A /* NodeLoader.swift in Sources */,
+				B0D4679B21AFCD2300FA0069 /* ImageCellNode.m in Sources */,
+				B078458421AFDBAF003DD98D /* DemoCollectionItem.m in Sources */,
 				B092A35B2121784F00F05898 /* TimeLineItem.m in Sources */,
-				B0EF5BE2212A993500D79A1F /* CutoutView.m in Sources */,
+				B0D4679D21AFCD2300FA0069 /* ImageCollectionViewCell.m in Sources */,
 				C4EEA2CB1F7A5C5C00B90410 /* AppDelegate.m in Sources */,
 				C42A2BE21F7B829200004F81 /* TestASTableVIewManagerViewController.m in Sources */,
+				B0D4679A21AFCD2300FA0069 /* MosaicCollectionLayoutDelegate.m in Sources */,
 				B092A3612121787F00F05898 /* TimeLineItemCellNode.m in Sources */,
+				B078458721AFDC12003DD98D /* DemoCollectionItemCellNode.m in Sources */,
 				C4C02FDD1F7B8370002F0E96 /* TestModel.m in Sources */,
 				C407CDEF1FF233F000CD1DF4 /* TestSectionHeaderView.m in Sources */,
 			);

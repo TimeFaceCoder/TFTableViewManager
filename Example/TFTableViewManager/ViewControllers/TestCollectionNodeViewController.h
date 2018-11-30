@@ -1,8 +1,8 @@
 //
-//  CutoutView.h
+//  TestCollectionNodeViewController.h
 //  TFTableViewManager
 //
-//  Created by Melvin on 2018/8/20.
+//  Created by Melvin on 2018/11/29.
 //  Copyright © 2018 TFAppleWork-Summer. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CutoutView : UIView
+@interface TestCollectionNodeViewController : UIViewController
 
 @end
 

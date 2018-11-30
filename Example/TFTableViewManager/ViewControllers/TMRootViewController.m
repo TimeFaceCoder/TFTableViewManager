@@ -15,6 +15,7 @@
 #import "TestUITableVIewManagerViewController.h"
 #import "TestASTableVIewManagerViewController.h"
 #import "TestTimelineViewController.h"
+#import "TestCollectionNodeViewController.h"
 
 @interface TMRootViewController ()
 
@@ -33,7 +34,7 @@
     [self.view addSubview:self.tableView];
     self.manager = [[TFTableViewManager alloc] initWithTableView:self.tableView];
     
-    NSArray *contentArr = @[@"TFUITableViewManager",@"TFASTableViewManager",@"ASDefaultItem",@"UIDefaultItem",@"TimeLineItem"];
+    NSArray *contentArr = @[@"TFUITableViewManager",@"TFASTableViewManager",@"ASDefaultItem",@"UIDefaultItem",@"TimeLineItem",@"CollectionNodeDemo"];
     TFTableViewSection *section = [TFTableViewSection section];
     typeof(self) __weak weakVC = self;
     for (NSString *content in contentArr) {
@@ -84,6 +85,12 @@
         TestTimelineViewController *nextVC = [[TestTimelineViewController alloc] init];
         nextVC.title = @"TimeLine";
         [self.navigationController pushViewController:nextVC animated:YES];
+    }
+    else if(indexPath.row == 5) {
+        TestCollectionNodeViewController *nextVC = [[TestCollectionNodeViewController alloc] init];
+        nextVC.title = @"CollectionNode";
+        [self.navigationController pushViewController:nextVC animated:YES];
+
     }
 }
 
