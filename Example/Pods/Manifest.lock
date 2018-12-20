@@ -28,6 +28,7 @@ PODS:
     - Texture
 
 DEPENDENCIES:
+  - Texture
   - TFTableViewManager (from `../`)
 
 SPEC REPOS:
@@ -48,6 +49,6 @@ SPEC CHECKSUMS:
   Texture: 9d7e38965cf22ccd7cd9c249dd78b3f14e70ab6c
   TFTableViewManager: 62a4927f78f4ca4f9c7e4df925ccb5adeb4d798b
 
-PODFILE CHECKSUM: 701d8a5b655c232eff5033957f2e22d76185b9d8
+PODFILE CHECKSUM: 7cb4c742e5bbcc878b6685828383b9bb0d4da41a
 
 COCOAPODS: 1.5.3
